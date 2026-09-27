@@ -1106,3 +1106,21 @@ body{
     animation-play-state:running !important;
   }
 }
+
+
+/* Correção do selo do Kit Premium no mobile */
+@media (max-width: 520px){
+  .cacha-page .plan.featured .badge{
+    width:calc(100% + 36px);
+    max-width:none;
+    margin-left:-18px;
+    margin-right:-18px;
+    box-sizing:border-box;
+    white-space:nowrap;
+    overflow:visible;
+    font-size:10px;
+    letter-spacing:.02em;
+    padding:9px 6px;
+    text-align:center;
+  }
+}
