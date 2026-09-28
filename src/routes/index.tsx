@@ -117,7 +117,7 @@ function Index() {
       </section>
 
       <section className="bonus dark-section">
-        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO</div>
+        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO.</div>
         <h2>Uma coleção completa. Cinco bônus para ir além.</h2>
         <p className="section-intro">Do cuidado com a sua cachaça à combinação perfeita à mesa: conheça os materiais que acompanham o Kit Completo.</p>
         <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><img key={"b"+set+i} src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
