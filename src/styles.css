@@ -1154,3 +1154,19 @@ body{
     letter-spacing: .01em !important;
   }
 }
+
+
+/* ===== Ajuste das novas imagens de depoimentos ===== */
+.testimonial-image{
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.testimonial-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
