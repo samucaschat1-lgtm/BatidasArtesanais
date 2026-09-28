@@ -1162,11 +1162,12 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  aspect-ratio:9 / 16;
 }
 .testimonial-image img{
   display:block;
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
   object-position:center;
 }
