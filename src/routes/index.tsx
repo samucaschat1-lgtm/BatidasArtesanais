@@ -109,8 +109,8 @@ function Index() {
         <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
         <div className="testimonial-carousel">
           <div className="testimonial-track">
-            {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
-              <img src={IMG + "depoimento-" + n + "-600.webp"} alt={"Depoimento " + n + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
+            {["Fernanda Rocha .png","Juliana Souza.png","Marcos Vinícius .png","Patrícia Lima .png","Carlos Henrique.png","Fernanda Rocha .png","Juliana Souza.png","Marcos Vinícius .png","Patrícia Lima .png","Carlos Henrique.png"].map((file, i)=><article className="quote testimonial-image" key={i}>
+              <img src={"/" + file} alt={"Relato de " + file.replace(/\.png$/i, "").trim() + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
             </article>)}
           </div>
         </div>
