@@ -109,15 +109,15 @@ function Index() {
         <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
         <div className="testimonial-carousel">
           <div className="testimonial-track">
-            {["Fernanda Rocha .webp","Juliana Souza.webp","Marcos Vinícius .webp","Patrícia Lima .webp","Carlos Henrique.webp","Fernanda Rocha .webp","Juliana Souza.webp","Marcos Vinícius .webp","Patrícia Lima .webp","Carlos Henrique.webp"].map((file, i)=><article className="quote testimonial-image" key={i}>
-              <img src={"/" + file} alt={"Relato de " + file.replace(/\.png$/i, "").trim() + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
+            {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
+              <img src={IMG + "depoimento-" + n + "-600.webp"} alt={"Depoimento " + n + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
             </article>)}
           </div>
         </div>
       </section>
 
       <section className="bonus dark-section">
-        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO.</div>
+        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO</div>
         <h2>Uma coleção completa. Cinco bônus para ir além.</h2>
         <p className="section-intro">Do cuidado com a sua cachaça à combinação perfeita à mesa: conheça os materiais que acompanham o Kit Completo.</p>
         <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><img key={"b"+set+i} src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
