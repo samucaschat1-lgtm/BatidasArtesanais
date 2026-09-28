@@ -1173,6 +1173,6 @@ body{
   min-height:100%;
   object-fit:fill !important;
   object-position:center center;
-  transform:scaleY(1.45) !important;
+  transform:scaleY(1.7) !important;
   transform-origin:center center;
 }
