@@ -852,16 +852,6 @@ body{
   content-visibility:auto;
   contain-intrinsic-size:800px;
 }
-.cacha-page .marquee-track,
-.cacha-page .testimonial-track{
-  will-change:transform;
-}
-
-
-/* Performance final: evitar trabalho de pintura fora da viewport */
-.cacha-page .marquee-track,
-.cacha-page .testimonial-track{backface-visibility:hidden;transform:translateZ(0);}
-.cacha-page img{content-visibility:auto;}
 
 
 /* ÁREA DE MIEMBROS */
@@ -950,7 +940,6 @@ body{
   .cacha-page .marquee-track,
   .cacha-page .testimonial-track{
     will-change:auto;
-    backface-visibility:visible;
   }
 
   .cacha-page .steps article,
@@ -1091,6 +1080,7 @@ body{
 .cacha-page .marquee-track,
 .cacha-page .testimonial-track{
   animation-play-state:running !important;
+  will-change:auto;
 }
 
 /* Não pausar ao passar o mouse ou tocar */
