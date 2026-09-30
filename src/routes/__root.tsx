@@ -115,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // UTMify pixel
       {
         type: "text/javascript",
-        children: 'window.pixelId = "6ab46cc8675b5c7c515affaf";',
+        children: 'window.pixelId = "6abcfddb5b027f4610e14fe6";',
       },
       {
         src: "https://cdn.utmify.com.br/scripts/pixel/pixel.js",
