@@ -85,6 +85,7 @@ function Index() {
             ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
+        <a className="cta" href={CAKTO_FULL}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
       </section>
 
       <section className="testimonials section">
@@ -98,6 +99,7 @@ function Index() {
             </article>)}
           </div>
         </div>
+        <a className="cta" href={CAKTO_FULL}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
       </section>
 
       <section className="bonus dark-section">
