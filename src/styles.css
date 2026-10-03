@@ -1144,3 +1144,5 @@ body{
     letter-spacing: .01em !important;
   }
 }
+
+.cta-note{display:block;margin-top:10px;font-size:13px;opacity:.75;}
