@@ -111,26 +111,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-    scripts: [
-      // UTMify pixel
-      {
-        type: "text/javascript",
-        children: 'window.pixelId = "6abcfddb5b027f4610e14fe6";',
-      },
-      {
-        src: "https://cdn.utmify.com.br/scripts/pixel/pixel.js",
-        async: true,
-        defer: true,
-      },
-      // UTMify captura de UTMs
-      {
-        src: "https://cdn.utmify.com.br/scripts/utms/latest.js",
-        async: true,
-        defer: true,
-        "data-utmify-prevent-xcod-sck": "",
-        "data-utmify-prevent-subids": "",
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
