@@ -139,13 +139,13 @@ function Index() {
         <h2>Escolha como quer começar hoje:</h2>
         <div className="plans">
           <article className="plan simple"><img className="basic-mockup" width="800" height="800" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CHECKOUT_BASIC}>QUERO O BÁSICO — R$10,00</a></article>
-          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><img width="800" height="800" src="/704AF2B4-946F-437D-B364-D4AB9BCAD364.webp" alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$4,98</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CHECKOUT_PREMIUM}>QUERO O PREMIUM — R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><img width="800" height="800" src="/704AF2B4-946F-437D-B364-D4AB9BCAD364.webp" alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,71</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CHECKOUT_PREMIUM}>QUERO O PREMIUM — R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
       </section>
 
       <section className="payment section">
         <h3>🔒 Formas de pagamento</h3>
-        <p>Cartão de crédito em até 5x sem juros ou Pix aprovado na hora</p>
+        <p>Cartão de crédito em até 5x ou Pix</p>
         <div className="pay-icons" aria-label="Formas de pagamento">
           <img src="https://cdn.simpleicons.org/visa/1434CB" alt="Visa" width="56" height="32" loading="lazy" decoding="async"/>
           <img src="https://cdn.simpleicons.org/mastercard/EB001B" alt="Mastercard" width="56" height="32" loading="lazy" decoding="async"/>
