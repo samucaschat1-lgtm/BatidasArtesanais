@@ -56,7 +56,9 @@ function Index() {
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
-        <a className="cta" href="#oferta">🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
+        <a className="cta" href={CAKTO_FULL}>🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
+        <small className="cta-note">🔒 Compra 100% segura • Pix ou cartão em até 5x • Acesso imediato</small>
+        <p className="social-proof">⭐ <strong>4,9/5</strong> — avaliação de quem já adquiriu o material</p>
         <div className="micro trust-micro">
           <span><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
           <span><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
@@ -86,6 +88,7 @@ function Index() {
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
         <a className="cta" href={CAKTO_FULL}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
+        <small className="cta-note">🔒 Pagamento processado pela Cakto • Garantia de 7 dias</small>
       </section>
 
       <section className="testimonials section">
@@ -100,6 +103,7 @@ function Index() {
           </div>
         </div>
         <a className="cta" href={CAKTO_FULL}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
+        <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
       <section className="bonus dark-section">
@@ -141,11 +145,15 @@ function Index() {
         <img src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
       </section>
 
-      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CAKTO_FULL}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a></section>
+      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CAKTO_FULL}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
 
       <FAQ />
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CAKTO_FULL}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
+      <div className="sticky-cta">
+        <div className="sticky-info"><s>R$97,00</s><strong>5x R$4,98</strong><span>ou R$24,90 à vista</span></div>
+        <a className="cta sticky-btn" href={CAKTO_FULL}>QUERO O KIT COMPLETO</a>
+      </div>
     </main>
   );
 }
