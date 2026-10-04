@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 
 const IMG = "https://maisde150receitasdecachacas.vercel.app/assets/optimized/";
 const CAKTO_40 = "https://pay.cakto.com.br/s398a9j_1138649";
@@ -22,17 +21,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Countdown() {
-  const [seconds, setSeconds] = useState(13 * 60 + 56);
-  useEffect(() => {
-    const timer = setInterval(() => setSeconds((s) => (s > 0 ? s - 1 : 13 * 60 + 56)), 1000);
-    return () => clearInterval(timer);
-  }, []);
-  const m = String(Math.floor(seconds / 60)).padStart(2, "0");
-  const s = String(seconds % 60).padStart(2, "0");
-  return <>{m}:{s}</>;
-}
-
 const bonuses = [
   ["BÔNUS 01", "bonus-1-600.webp", "Manual de Higiene e de Conservação", "Conheça os cuidados de higiene, armazenamento e conservação da sua cachaça."],
   ["BÔNUS 02", "bonus-2-600.webp", "Guia de Precificação e Apresentação Profissional", "Organize seus custos e aprimore a apresentação do seu produto artesanal."],
@@ -46,19 +34,21 @@ function Index() {
 
   return (
     <main className="cacha-page">
-      <div className="topbar">🥃 OFERTA ESPECIAL TERMINA EM: <strong><Countdown /></strong></div>
+      <div className="topbar">🥃 RECEITAS DIGITAIS • PAGAMENTO ÚNICO • ACESSO APÓS A CONFIRMAÇÃO</div>
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 Batidas de Cachaça Artesanal</em> Para Começar a Produzir na sua própria casa</h1>
+        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
         <img className="hero-mockup" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead">Explore batidas, infusões e combinações com frutas brasileiras para preparar sabores especiais e valorizar nossa tradição. Um universo de aromas e sabores em um só material.</p>
+        <p className="lead">Receitas passo a passo para preparar em casa, com sabores tradicionais, frutados e cremosos. Consulte o material pelo celular e escolha sua próxima receita.</p>
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
-        <a className="cta" href={CAKTO_40}>🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
-        <small className="cta-note">🔒 Compra 100% segura • Pix ou cartão em até 5x • Acesso imediato</small>
-        <p className="social-proof">⭐ <strong>4,9/5</strong> — avaliação de quem já adquiriu o material</p>
+        <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
+        <a className="cta" href={CAKTO_40}>🥃 QUERO AS RECEITAS — R$10,00</a>
+        <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
+        <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
+        <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$24,90.</p>
         <div className="micro trust-micro">
           <span><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
           <span><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
@@ -107,15 +97,15 @@ function Index() {
       </section>
 
       <section className="bonus dark-section">
-        <div className="section-kicker">CONTEÚDO EXTRA INCLUSO NO KIT COMPLETO</div>
-        <h2>Uma coleção completa. Cinco bônus para ir além.</h2>
-        <p className="section-intro">Do cuidado com a sua cachaça à combinação perfeita à mesa: conheça os materiais que acompanham o Kit Completo.</p>
+        <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
+        <h2>Vá além das receitas com o Plano Premium</h2>
+        <p className="section-intro">Os cinco materiais abaixo acompanham somente o Plano Premium de R$24,90. O Básico de R$10 inclui as +200 receitas, sem estes bônus.</p>
         <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><img key={"b"+set+i} src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
         <div className="bonus-grid">
-          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><img src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>BÔNUS GRÁTIS NO KIT</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Incluso no Kit Completo</small></article>)}
+          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><img src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
         </div>
-        <div className="bonus-total">Valor total dos 5 bônus: <s>R$90,00</s><br/><strong>VOCÊ PAGA PELOS 5 BÔNUS</strong><br/><b><s>R$0,00</s></b><span>Todos inclusos na compra do Kit Completo, sem custo adicional.</span></div>
-        <a className="cta" href={CAKTO_40}>🥃 QUERO AS +200 BATIDAS POR R$10,00</a>
+        <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$24,90</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
+        <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
 
@@ -124,11 +114,11 @@ function Index() {
       </section>
 
       <section className="offer section" id="oferta">
-        <div className="section-kicker">⏰ OFERTA POR TEMPO LIMITADO</div>
+        <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
         <h2>Escolha como quer começar hoje:</h2>
         <div className="plans">
-          <article className="plan simple"><img className="basic-mockup" width="800" height="800" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>KIT +200 BATIDAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CAKTO_40}>QUERO O KIT +200 POR R$10,00</a></article>
-          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><img width="800" height="800" src="/704AF2B4-946F-437D-B364-D4AB9BCAD364.webp" alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>KIT COMPLETO +200 BATIDAS + BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$4,98</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CAKTO_FULL}>QUERO O KIT COMPLETO POR R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+          <article className="plan simple"><img className="basic-mockup" width="800" height="800" src="/5116834A-F50E-4E6B-9B7E-8A5CE3A5CBB6.webp" alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CAKTO_40}>QUERO O BÁSICO — R$10,00</a></article>
+          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><img width="800" height="800" src="/704AF2B4-946F-437D-B364-D4AB9BCAD364.webp" alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$4,98</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CAKTO_FULL}>QUERO O PREMIUM — R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
       </section>
 
@@ -152,9 +142,9 @@ function Index() {
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
       <a className="fixed-buy-bar" href={CAKTO_40} aria-label="Comprar o Kit +200 Batidas por R$10,00">
-        <span className="fixed-buy-price"><s>R$97,00</s> R$10,00</span>
-        <span className="fixed-buy-label">🥃 QUERO O KIT +200 BATIDAS</span>
-        <small>Pix ou cartão • Acesso imediato</small>
+        <span className="fixed-buy-price">R$10,00</span>
+        <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
+        <small>Pagamento único • Material digital • Pix ou cartão</small>
       </a>
     </main>
   );
@@ -164,7 +154,7 @@ function FAQ() {
   const items = [
     ["Preciso ter experiência para acompanhar?","Não. O material foi organizado para facilitar a consulta, mesmo para quem está começando."],
     ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
-    ["O que está incluído no Kit Completo?","Você recebe mais de 200 batidas, além dos cinco bônus apresentados nesta página."],
+    ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui as +200 receitas. O Premium de R$24,90 inclui as +200 receitas e os cinco bônus apresentados nesta página. Ambos são digitais e têm pagamento único."],
     ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
     ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
     ["Funciona no celular?","Sim. Por ser digital, você pode consultar o material pelo celular."],
