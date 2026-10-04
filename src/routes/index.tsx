@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
 const IMG = "https://maisde150receitasdecachacas.vercel.app/assets/optimized/";
 const CAKTO_40 = "https://pay.cakto.com.br/s398a9j_1138649";
@@ -30,11 +31,31 @@ const bonuses = [
 ];
 
 
+function TodayOffer() {
+  const [date, setDate] = useState("");
+  useEffect(() => {
+    const formatter = new Intl.DateTimeFormat("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      day: "2-digit",
+      month: "2-digit",
+    });
+    const updateDate = () => setDate(formatter.format(new Date()));
+    updateDate();
+    const timer = window.setInterval(updateDate, 30_000);
+    document.addEventListener("visibilitychange", updateDate);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", updateDate);
+    };
+  }, []);
+  return <div className="topbar">🥃 OFERTA DE HOJE{date ? `, ${date}` : ""} • +200 RECEITAS POR R$10</div>;
+}
+
 function Index() {
 
   return (
     <main className="cacha-page">
-      <div className="topbar">🥃 +200 RECEITAS • APENAS R$10 • PAGAMENTO ÚNICO</div>
+      <TodayOffer />
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
