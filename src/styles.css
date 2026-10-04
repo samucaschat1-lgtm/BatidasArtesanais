@@ -1146,3 +1146,15 @@ body{
 }
 
 .cta-note{display:block;margin-top:10px;font-size:13px;opacity:.75;}
+
+/* Conversão: notas de confiança sob os CTAs, prova social e barra fixa de compra no celular */
+.cta-note{display:block;margin-top:10px;font-size:13px;color:#7b7068;font-weight:600}
+.dark-section .cta-note,.final-cta .cta-note{color:#d8c9b6}
+.social-proof{margin:14px 0 4px;font-size:14px;color:#6d625b}
+.social-proof strong{color:var(--brown)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;align-items:center;gap:12px;background:#2a1a0e;border-top:2px solid var(--gold);padding:10px 14px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -8px 24px #0006}
+.sticky-info{display:flex;flex-direction:column;line-height:1.25;color:#e9dcc8;font-size:12px;min-width:96px}
+.sticky-info s{color:#a89880;font-size:11px}
+.sticky-info strong{color:#b8d47e;font-size:15px}
+.sticky-btn{flex:1;min-height:48px;padding:12px 14px;font-size:13px;border-radius:11px}
+@media(max-width:850px){.sticky-cta{display:flex}body{padding-bottom:78px}}
