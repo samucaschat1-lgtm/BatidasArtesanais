@@ -56,7 +56,7 @@ function Index() {
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
-        <a className="cta" href={CAKTO_FULL}>🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
+        <a className="cta" href={CAKTO_40}>🥃 QUERO MINHAS BATIDAS DE CACHAÇAS</a>
         <small className="cta-note">🔒 Compra 100% segura • Pix ou cartão em até 5x • Acesso imediato</small>
         <p className="social-proof">⭐ <strong>4,9/5</strong> — avaliação de quem já adquiriu o material</p>
         <div className="micro trust-micro">
@@ -150,10 +150,6 @@ function Index() {
       <FAQ />
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CAKTO_FULL}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
-      <div className="sticky-cta">
-        <div className="sticky-info"><s>R$97,00</s><strong>5x R$4,98</strong><span>ou R$24,90 à vista</span></div>
-        <a className="cta sticky-btn" href={CAKTO_FULL}>QUERO O KIT COMPLETO</a>
-      </div>
     </main>
   );
 }
