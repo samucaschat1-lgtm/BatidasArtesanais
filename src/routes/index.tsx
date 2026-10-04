@@ -34,7 +34,7 @@ function Index() {
 
   return (
     <main className="cacha-page">
-      <div className="topbar">🥃 RECEITAS DIGITAIS • PAGAMENTO ÚNICO • ACESSO APÓS A CONFIRMAÇÃO</div>
+      <div className="topbar">🥃 +200 RECEITAS • APENAS R$10 • PAGAMENTO ÚNICO</div>
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
@@ -142,9 +142,8 @@ function Index() {
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
       <a className="fixed-buy-bar" href={CAKTO_40} aria-label="Comprar o Kit +200 Batidas por R$10,00">
-        <span className="fixed-buy-price">R$10,00</span>
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
-        <small>Pagamento único • Material digital • Pix ou cartão</small>
+        <small>Pagamento único • Pix ou cartão</small>
       </a>
     </main>
   );
