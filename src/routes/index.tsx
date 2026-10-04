@@ -150,6 +150,12 @@ function Index() {
       <FAQ />
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CAKTO_FULL}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
+
+      <a className="fixed-buy-bar" href={CAKTO_40} aria-label="Comprar o Kit +200 Batidas por R$10,00">
+        <span className="fixed-buy-price"><s>R$97,00</s> R$10,00</span>
+        <span className="fixed-buy-label">🥃 QUERO O KIT +200 BATIDAS</span>
+        <small>Pix ou cartão • Acesso imediato</small>
+      </a>
     </main>
   );
 }
