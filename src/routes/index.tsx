@@ -73,7 +73,7 @@ function Index() {
         <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["img-6-440.webp","img-9-440.webp","img-1-440.webp","img-4-440.webp","img-7-440.webp","img-2-440.webp","img-5-440.webp"].map((x,i)=><img key={"r"+set+i} src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><img key={"p"+set+i} src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
-        <a className="cta" href="#oferta">QUERO ACESSO AO MATERIAL COMPLETO</a>
+        <a className="cta" href={CAKTO_40}>QUERO AS +200 BATIDAS POR R$10,00</a>
       </section>
 
       <section className="how section">
@@ -87,7 +87,7 @@ function Index() {
             ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
-        <a className="cta" href={CAKTO_FULL}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
+        <a className="cta" href={CAKTO_40}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
         <small className="cta-note">🔒 Pagamento processado pela Cakto • Garantia de 7 dias</small>
       </section>
 
@@ -102,7 +102,7 @@ function Index() {
             </article>)}
           </div>
         </div>
-        <a className="cta" href={CAKTO_FULL}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
+        <a className="cta" href={CAKTO_40}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
         <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
@@ -115,7 +115,7 @@ function Index() {
           {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><img src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>BÔNUS GRÁTIS NO KIT</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Incluso no Kit Completo</small></article>)}
         </div>
         <div className="bonus-total">Valor total dos 5 bônus: <s>R$90,00</s><br/><strong>VOCÊ PAGA PELOS 5 BÔNUS</strong><br/><b><s>R$0,00</s></b><span>Todos inclusos na compra do Kit Completo, sem custo adicional.</span></div>
-        <a className="cta" href={CAKTO_FULL}>🎁 QUERO O KIT COMPLETO COM OS 5 BÔNUS GRÁTIS</a>
+        <a className="cta" href={CAKTO_40}>🥃 QUERO AS +200 BATIDAS POR R$10,00</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
 
@@ -145,10 +145,10 @@ function Index() {
         <img src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
       </section>
 
-      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CAKTO_FULL}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
+      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CAKTO_40}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
 
       <FAQ />
-      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CAKTO_FULL}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CAKTO_40}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
       <a className="fixed-buy-bar" href={CAKTO_40} aria-label="Comprar o Kit +200 Batidas por R$10,00">
