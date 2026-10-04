@@ -1152,3 +1152,23 @@ body{
 .dark-section .cta-note,.final-cta .cta-note{color:#d8c9b6}
 .social-proof{margin:14px 0 4px;font-size:14px;color:#6d625b}
 .social-proof strong{color:var(--brown)}
+
+/* Barra fixa de compra — checkout do kit básico */
+.fixed-buy-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  background:var(--green,#5f8031);color:#fff;text-align:center;
+  padding:10px 16px 12px;text-decoration:none;
+  box-shadow:0 -6px 22px rgba(26,15,5,.28);
+}
+.fixed-buy-bar .fixed-buy-price{font-size:13px;font-weight:700;opacity:.95}
+.fixed-buy-bar .fixed-buy-price s{opacity:.6;margin-right:6px}
+.fixed-buy-bar .fixed-buy-label{font-family:var(--font-sans);font-weight:900;font-size:16px;letter-spacing:.01em;line-height:1.2}
+.fixed-buy-bar small{font-size:11px;opacity:.8}
+.fixed-buy-bar:active{transform:translateY(1px)}
+footer{padding-bottom:110px}
+@media(min-width:769px){
+  .fixed-buy-bar{flex-direction:row;justify-content:center;gap:14px;padding:9px 16px}
+  .fixed-buy-bar .fixed-buy-label{font-size:15px}
+  footer{padding-bottom:70px}
+}
