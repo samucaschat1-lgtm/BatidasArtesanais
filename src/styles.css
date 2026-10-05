@@ -1170,3 +1170,19 @@ footer{padding-bottom:110px}
   .fixed-buy-bar .fixed-buy-label{font-size:14px}
   footer{padding-bottom:70px}
 }
+
+/* Oferta opcional de upgrade: portal acima da barra fixa de compra. */
+.upgrade-overlay{position:fixed;inset:0;z-index:100;background:rgba(25,14,8,.78);backdrop-filter:blur(4px)}
+.upgrade-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:101;width:min(560px,calc(100% - 28px));max-height:calc(100dvh - 28px);overflow-y:auto;overscroll-behavior:contain;padding:30px;background:linear-gradient(145deg,#fffaf0,#f3e6ce);color:#302014;border:1px solid #d6ae65;border-radius:24px;box-shadow:0 24px 90px #0006;font-family:var(--font-sans);text-align:center}
+.upgrade-close{position:absolute;right:12px;top:10px;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:#4a24160d;color:#4a2416;font-size:27px;cursor:pointer}
+.upgrade-kicker{margin:4px 25px 12px;color:#936020;font-size:11px;font-weight:900;letter-spacing:.13em}
+.upgrade-title{margin:0;font-size:clamp(25px,5vw,34px);line-height:1.14;font-weight:900;letter-spacing:-.035em}.upgrade-title span{display:block;color:#8f4b13}
+.upgrade-description{margin:13px auto 18px;max-width:450px;font-size:14px;line-height:1.55;color:#71604e}
+.upgrade-package{display:flex;align-items:center;justify-content:center;gap:12px;padding:4px 12px;background:#ffffff73;border:1px solid #dfcca9;border-radius:15px}
+.upgrade-package img{width:145px;height:130px;object-fit:contain}.upgrade-summary{text-align:left}.upgrade-summary strong{display:block;font-size:18px;line-height:1.3}.upgrade-summary span{display:block;font-size:11px;color:#7b6651;margin-top:7px}
+.upgrade-benefits{list-style:none;margin:18px 0;padding:0;display:grid;gap:8px;text-align:left}.upgrade-benefits li{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.4}.upgrade-benefits li span{color:#49752b;font-weight:900}
+.upgrade-price{padding:14px 12px;margin-bottom:16px;background:#4a2416;border-radius:14px;color:#fff}.upgrade-price>span{display:block;color:#e4cfb0;font-size:12px}.upgrade-price strong{display:block;color:#ffda86;font-size:42px;font-weight:900;line-height:1.18}.upgrade-price small{display:block;font-size:11px;color:#f3e2c8;margin-top:3px}
+.upgrade-accept{display:flex;align-items:center;justify-content:center;gap:10px;padding:17px 12px;border-radius:12px;background:linear-gradient(180deg,#32c54d,#149334);border:1px solid #31bb49;box-shadow:0 4px 0 #087326;color:white;text-decoration:none;font-size:14px;font-weight:900;line-height:1.35}.upgrade-accept:hover{filter:brightness(1.07)}
+.upgrade-decline{display:inline-block;margin-top:18px;padding:7px 3px;color:#67523f;text-decoration:underline;text-underline-offset:3px;font-size:13px}.upgrade-trust{font-size:10px;color:#7b6651;margin:12px 0 0;line-height:1.5}
+.upgrade-modal a:focus-visible,.upgrade-close:focus-visible{outline:3px solid #c58a32;outline-offset:4px}
+@media(max-width:520px){.upgrade-modal{padding:24px 18px 18px;border-radius:18px}.upgrade-kicker{font-size:9px}.upgrade-description{font-size:12px;margin:10px 0 14px}.upgrade-package img{width:115px;height:100px}.upgrade-summary strong{font-size:15px}.upgrade-benefits{gap:7px;margin:14px 0}.upgrade-benefits li{font-size:12px}.upgrade-price{padding:10px}.upgrade-price strong{font-size:36px}.upgrade-accept{font-size:12px;padding:15px 10px}}
