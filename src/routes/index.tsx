@@ -52,8 +52,7 @@ function TodayOffer() {
   return <div className="topbar">🥃 OFERTA DE HOJE{date ? `, ${date}` : ""} • +200 RECEITAS POR R$10</div>;
 }
 
-// Activate only after configuring a checkout that charges R$17,90.
-const CHECKOUT_PREMIUM_UPGRADE = "";
+const CHECKOUT_PREMIUM_UPGRADE = "https://ggcheckout.app/checkout/v5/OUw0ZukdRUiMvA1DYVk2";
 
 function Index() {
   const [upgradeOpen, setUpgradeOpen] = useState(false);
