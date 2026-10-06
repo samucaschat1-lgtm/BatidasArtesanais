@@ -88,6 +88,9 @@ function Index() {
   function offerPremium(event: MouseEvent<HTMLAnchorElement>) {
     if (!CHECKOUT_PREMIUM_UPGRADE || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
+    // Capture the click before checkout pixels intercept it at the link.
+    // Only the final checkout choice should be tracked as InitiateCheckout.
+    event.stopPropagation();
     setBasicCheckout(event.currentTarget.href);
     setUpgradeOpen(true);
   }
@@ -127,7 +130,7 @@ function Index() {
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
         <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
-        <a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>🥃 QUERO AS RECEITAS — R$10,00</a>
+        <a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>🥃 QUERO AS RECEITAS — R$10,00</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
         <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
         <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$24,90.</p>
@@ -145,7 +148,7 @@ function Index() {
         <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["img-6-440.webp","img-9-440.webp","img-1-440.webp","img-4-440.webp","img-7-440.webp","img-2-440.webp","img-5-440.webp"].map((x,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 125px, 160px" src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><OptimizedImage key={"p"+set+i} sizes="(max-width: 520px) 210px, 280px" src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
-        <a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>QUERO AS +200 BATIDAS POR R$10,00</a>
+        <a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>QUERO AS +200 BATIDAS POR R$10,00</a>
       </section>
 
       <section className="how section">
@@ -159,7 +162,7 @@ function Index() {
             ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
-        <a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
+        <a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
         <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>
       </section>
 
@@ -174,7 +177,7 @@ function Index() {
             </article>)}
           </div>
         </div>
-        <a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
+        <a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
         <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
@@ -199,7 +202,7 @@ function Index() {
         <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
         <h2>Escolha como quer começar hoje:</h2>
         <div className="plans">
-          <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>QUERO O BÁSICO — R$10,00</a></article>
+          <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>QUERO O BÁSICO — R$10,00</a></article>
           <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,71</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={CHECKOUT_PREMIUM}>QUERO O PREMIUM — R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
       </section>
@@ -217,13 +220,13 @@ function Index() {
         <OptimizedImage src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
       </section>
 
-      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
+      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
 
       <FAQ />
-      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CHECKOUT_BASIC} onClick={offerPremium}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={CHECKOUT_BASIC} onClickCapture={offerPremium}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={CHECKOUT_BASIC} onClick={offerPremium} aria-label="Comprar o Kit +200 Batidas por R$10,00">
+      <a className="fixed-buy-bar" href={CHECKOUT_BASIC} onClickCapture={offerPremium} aria-label="Comprar o Kit +200 Batidas por R$10,00">
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
