@@ -14,7 +14,7 @@
 .testimonials{text-align:center}.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.quote{background:#fdfaf2;padding:27px;border-radius:15px;border:1px solid #e7dbc5;text-align:left;box-shadow:0 8px 24px #3922150a}.stars{color:#d39a2e;letter-spacing:2px}.quote p{font-size:16px}.quote strong{font-size:13px;color:#6e625a}
 .bonus{padding-bottom:80px}.section-intro{text-align:center;color:#ead9c4;max-width:720px}.bonus-grid{max-width:1050px;margin:45px auto;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.bonus-card{background:#fdfaf2;color:var(--ink);border-radius:14px;padding:15px;text-align:center}.bonus-card>span{font-size:11px;font-weight:900;color:var(--gold)}.bonus-card img{width:100%;aspect-ratio:1/1.2;object-fit:cover;border-radius:8px;margin:10px 0}.bonus-card h3{font-size:17px;line-height:1.15}.bonus-card p{font-size:13px;color:#665b54}.bonus-card>b{font-size:10px;color:#7b4b29}.bonus-price{font-size:13px}.bonus-price strong{color:#5f8031}.bonus-card small{display:block;margin-top:6px;color:#777}.bonus-total{text-align:center;line-height:1.7}.bonus-total s{color:#aaa}.bonus-total strong{font-size:20px}.bonus-total>b{font-size:36px;color:#b8d47e}.bonus-total span{display:block;color:#ddd;font-size:13px}
 .secure{text-align:center}.security-card{background:#fdfaf2;border:1px solid #e7dbc5;border-radius:15px;padding:25px;max-width:700px;margin:auto}
-.offer{padding-top:25px}.plans{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}.plan{background:#fdfaf2;border:1px solid #e5d8c1;border-radius:18px;padding:30px;box-shadow:0 15px 40px #32170e10}.plan h3{font-size:25px;margin-top:0}.plan ul{padding-left:20px}.plan li{margin:9px 0}.price{font-size:34px;font-weight:950;margin:25px 0}.simple .cta{width:100%}.featured{border:3px solid #b98732;position:relative}.badge{background:#b98732;color:#fff;font-weight:900;text-align:center;padding:9px;border-radius:9px;margin:-45px -18px 20px}.featured>img{width:min(360px,100%);display:block;margin:0 auto 15px}.featured s{color:#999}.installments{font-size:26px;margin-top:8px}.cash{font-size:18px;margin-bottom:18px}.featured .cta{width:100%;font-size:17px}.featured small{display:block;text-align:center;margin-top:10px;color:#777}
+.offer{padding-top:25px}.plans{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}.plan{background:#fdfaf2;border:1px solid #e5d8c1;border-radius:18px;padding:30px;box-shadow:0 15px 40px #32170e10}.plan h3{font-size:25px;margin-top:0}.plan ul{padding-left:20px}.plan li{margin:9px 0}.price{font-size:34px;font-weight:950;margin:25px 0}.simple .cta{width:100%}.featured{border:3px solid #b98732;position:relative}.badge{background:#b98732;color:#fff;font-weight:900;text-align:center;padding:9px;border-radius:9px;margin:-45px -18px 20px}.featured .premium-mockup{width:min(360px,100%);display:block;margin:0 auto 15px}.featured s{color:#999}.installments{font-size:26px;margin-top:8px}.cash{font-size:18px;margin-bottom:18px}.featured .cta{width:100%;font-size:17px}.featured small{display:block;text-align:center;margin-top:10px;color:#777}
 .payment{text-align:center}.pay-icons{display:flex;justify-content:center;gap:25px;align-items:center;margin:25px 0;font-weight:900}.pay-icons span{background:#fdfaf2;border:1px solid #ddd;padding:10px 16px;border-radius:7px}.seal{width:230px;max-width:100%;display:block;margin:20px auto;filter:brightness(0)}.guarantee-img{width:260px;max-width:100%;display:block;margin:25px auto}
 .risk{text-align:center;background:#f0e8d5;max-width:none}.risk h2{max-width:800px;margin:0 auto 12px}.risk p{max-width:650px;margin:auto}
 .faq{max-width:850px}.faq details{background:#fdfaf2;border:1px solid #e6dac4;border-radius:10px;margin:10px 0;padding:0 18px}.faq summary{cursor:pointer;list-style:none;padding:19px 3px;font-weight:800;display:flex;justify-content:space-between}.faq summary::-webkit-details-marker{display:none}.faq summary span{font-size:24px;color:var(--gold)}.faq details p{color:#665d57;padding:0 3px 18px;margin:0}.final-cta{text-align:center;background:var(--brown2);color:#fff;padding:75px 20px}.final-cta h2{font-size:clamp(28px,4vw,48px);max-width:800px;margin:0 auto 30px;line-height:1.08}footer{text-align:center;background:#2a1a0e;color:#c9bdb5;padding:28px 15px;font-size:13px}footer small{display:block;margin-top:7px}
@@ -400,7 +400,7 @@ body{
   background:linear-gradient(145deg,#fffefb,#f5ead7);
   box-shadow:0 20px 55px #6d431d22;
 }
-.featured>img{
+.featured .premium-mockup{
   width:min(390px,100%);
   filter:drop-shadow(0 18px 26px #3a211428);
 }
@@ -445,13 +445,13 @@ body{
   .dark-section{padding-top:58px;padding-bottom:58px}
   .offer{padding-top:58px;padding-bottom:62px}
   .plan{padding:24px 18px}
-  .featured>img{width:min(330px,100%)}
+  .featured .premium-mockup{width:min(330px,100%)}
 }
 
 
 /* Ajuste das imagens dos planos: preserva a proporção original sem achatamento */
 .plan.simple .basic-mockup,
-.plan.featured > img{
+.plan.featured .premium-mockup{
   display:block;
   width:min(390px,100%);
   height:auto !important;
@@ -465,12 +465,12 @@ body{
   width:min(350px,100%);
   filter:drop-shadow(0 16px 24px #32170e20);
 }
-.plan.featured > img{
+.plan.featured .premium-mockup{
   filter:drop-shadow(0 18px 26px #3a211428);
 }
 @media(max-width:520px){
   .plan.simple .basic-mockup,
-  .plan.featured > img{
+  .plan.featured .premium-mockup{
     width:min(330px,100%);
     height:auto !important;
     max-height:none;
@@ -480,7 +480,7 @@ body{
 
 /* Correção definitiva: imagens dos planos sem distorção */
 .plan.simple .basic-mockup,
-.plan.featured > img{
+.plan.featured .premium-mockup{
   width:auto !important;
   max-width:100% !important;
   height:auto !important;
@@ -495,14 +495,14 @@ body{
 .plan.simple .basic-mockup{
   max-width:min(350px,100%) !important;
 }
-.plan.featured > img{
+.plan.featured .premium-mockup{
   max-width:min(390px,100%) !important;
 }
 @media(max-width:520px){
   .plan.simple .basic-mockup{
     max-width:min(330px,100%) !important;
   }
-  .plan.featured > img{
+  .plan.featured .premium-mockup{
     max-width:min(330px,100%) !important;
   }
 }
@@ -515,7 +515,7 @@ body{
 }
 .cacha-page .hero-mockup,
 .cacha-page .basic-mockup,
-.cacha-page .plan.featured > img,
+.cacha-page .plan.featured .premium-mockup,
 .cacha-page .testimonial-image img,
 .cacha-page .bonus-card img,
 .cacha-page .seal,
@@ -533,7 +533,7 @@ body{
   width:min(350px,100%) !important;
   height:auto !important;
 }
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   width:min(390px,100%) !important;
   height:auto !important;
 }
@@ -542,7 +542,7 @@ body{
   .cacha-page .plan.simple .basic-mockup{
     width:min(330px,100%) !important;
   }
-  .cacha-page .plan.featured > img{
+  .cacha-page .plan.featured .premium-mockup{
     width:min(330px,100%) !important;
   }
 }
@@ -576,7 +576,7 @@ body{
   height:auto !important;
   max-height:none !important;
 }
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   width:min(390px,100%) !important;
   height:auto !important;
   max-height:none !important;
@@ -667,7 +667,7 @@ body{
     width:min(100%,620px) !important;
   }
   .cacha-page .basic-mockup,
-  .cacha-page .plan.featured > img{
+  .cacha-page .plan.featured .premium-mockup{
     width:min(330px,100%) !important;
   }
   .cacha-page .preview .marquee:not(.preview-large) img{
@@ -697,14 +697,14 @@ body{
 /* Correção visual final dos mockups: recupera a altura aparente da arte sem alterar o layout */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleY(1.14) !important;
   transform-origin:center center !important;
 }
 @media(max-width:520px){
   .cacha-page .hero-mockup,
   .cacha-page .plan.simple .basic-mockup,
-  .cacha-page .plan.featured > img{
+  .cacha-page .plan.featured .premium-mockup{
     transform:scaleY(1.10) !important;
   }
 }
@@ -713,7 +713,7 @@ body{
 /* Ajuste final de proporção visual dos mockups quadrados */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   object-fit:fill !important;
   aspect-ratio:4 / 5 !important;
   height:auto !important;
@@ -727,7 +727,7 @@ body{
   width:min(350px,100%) !important;
   aspect-ratio:4 / 5 !important;
 }
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   width:min(390px,100%) !important;
   aspect-ratio:4 / 5 !important;
 }
@@ -736,7 +736,7 @@ body{
     width:min(100%,620px) !important;
   }
   .cacha-page .plan.simple .basic-mockup,
-  .cacha-page .plan.featured > img{
+  .cacha-page .plan.featured .premium-mockup{
     width:min(330px,100%) !important;
   }
 }
@@ -745,7 +745,7 @@ body{
 /* Correção final do achatamento vertical dos mockups */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   object-fit:fill !important;
   aspect-ratio:4 / 5 !important;
   height:auto !important;
@@ -757,7 +757,7 @@ body{
 /* Achatamento horizontal aplicado aos mockups substituídos */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleY(0.78) !important;
   transform-origin:center center !important;
 }
@@ -766,7 +766,7 @@ body{
 /* Achatamento horizontal adicional dos mockups substituídos */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleY(0.72) !important;
   transform-origin:center center !important;
 }
@@ -775,7 +775,7 @@ body{
 /* Esticar horizontalmente os mockups substituídos */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleX(1.12) scaleY(0.72) !important;
   transform-origin:center center !important;
 }
@@ -784,7 +784,7 @@ body{
 /* Restaurar proporção natural das imagens substituídas */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:none !important;
   aspect-ratio:auto !important;
   width:auto !important;
@@ -796,17 +796,17 @@ body{
 }
 .cacha-page .hero-mockup{max-width:min(620px,96%) !important;}
 .cacha-page .plan.simple .basic-mockup{max-width:min(350px,100%) !important;}
-.cacha-page .plan.featured > img{max-width:min(390px,100%) !important;}
+.cacha-page .plan.featured .premium-mockup{max-width:min(390px,100%) !important;}
 @media(max-width:520px){
   .cacha-page .hero-mockup,
   .cacha-page .plan.simple .basic-mockup,
-  .cacha-page .plan.featured > img{max-width:100% !important;}
+  .cacha-page .plan.featured .premium-mockup{max-width:100% !important;}
 }
 
 /* Ajuste horizontal das imagens principais */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleX(1.18) !important;
   transform-origin:center center !important;
   height:auto !important;
@@ -816,7 +816,7 @@ body{
 /* Reduzir levemente o tamanho das imagens mantendo o achatamento horizontal */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleX(1.18) scaleY(0.92) !important;
   transform-origin:center center !important;
 }
@@ -824,13 +824,13 @@ body{
 /* Redução adicional do tamanho das imagens */
 .cacha-page .hero-mockup,
 .cacha-page .plan.simple .basic-mockup,
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleX(1.18) scaleY(0.82) !important;
   transform-origin:center center !important;
 }
 
 /* Corrigir proporção da imagem do plano Premium */
-.cacha-page .plan.featured > img{
+.cacha-page .plan.featured .premium-mockup{
   transform:scaleX(1.10) scaleY(0.94) !important;
   transform-origin:center center !important;
 }
@@ -906,7 +906,7 @@ body{
   margin-left:auto;
   margin-right:auto;
 }
-.featured > img{
+.featured .premium-mockup{
   display:block;
   margin-left:auto !important;
   margin-right:auto !important;
@@ -1186,3 +1186,13 @@ footer{padding-bottom:110px}
 .upgrade-decline{display:inline-block;margin-top:18px;padding:7px 3px;color:#67523f;text-decoration:underline;text-underline-offset:3px;font-size:13px}.upgrade-trust{font-size:10px;color:#7b6651;margin:12px 0 0;line-height:1.5}
 .upgrade-modal a:focus-visible,.upgrade-close:focus-visible{outline:3px solid #c58a32;outline-offset:4px}
 @media(max-width:520px){.upgrade-modal{padding:24px 18px 18px;border-radius:18px}.upgrade-kicker{font-size:9px}.upgrade-description{font-size:12px;margin:10px 0 14px}.upgrade-package img{width:115px;height:100px}.upgrade-summary strong{font-size:15px}.upgrade-benefits{gap:7px;margin:14px 0}.upgrade-benefits li{font-size:12px}.upgrade-price{padding:10px}.upgrade-price strong{font-size:36px}.upgrade-accept{font-size:12px;padding:15px 10px}}
+
+/* Animate only visible carousels; preserve their position while off screen. */
+.cacha-page .marquee .marquee-track,
+.cacha-page .testimonial-carousel .testimonial-track{animation-play-state:paused !important;}
+.cacha-page .marquee[data-active="true"] .marquee-track,
+.cacha-page .testimonial-carousel[data-active="true"] .testimonial-track{animation-play-state:running !important;}
+@media(prefers-reduced-motion:reduce){
+  .cacha-page .marquee .marquee-track,
+  .cacha-page .testimonial-carousel .testimonial-track{animation:none !important;}
+}
