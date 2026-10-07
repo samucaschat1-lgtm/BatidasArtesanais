@@ -124,4 +124,29 @@ export default {
     "height": 200,
     "srcSet": "/assets/optimized-v1/selo-compra-segura-600-320.avif 320w, /assets/optimized-v1/selo-compra-segura-600-480.avif 480w, /assets/optimized-v1/selo-compra-segura-600-600.avif 600w"
   }
+  "depoimento-atual-1-600.webp": {
+    "width": 600,
+    "height": 1066,
+    "srcSet": "/assets/optimized-v1/depoimento-atual-1-600-320.avif 320w, /assets/optimized-v1/depoimento-atual-1-600-480.avif 480w, /assets/optimized-v1/depoimento-atual-1-600-600.avif 600w"
+  },
+  "depoimento-atual-2-600.webp": {
+    "width": 600,
+    "height": 1066,
+    "srcSet": "/assets/optimized-v1/depoimento-atual-2-600-320.avif 320w, /assets/optimized-v1/depoimento-atual-2-600-480.avif 480w, /assets/optimized-v1/depoimento-atual-2-600-600.avif 600w"
+  },
+  "depoimento-atual-3-600.webp": {
+    "width": 600,
+    "height": 1066,
+    "srcSet": "/assets/optimized-v1/depoimento-atual-3-600-320.avif 320w, /assets/optimized-v1/depoimento-atual-3-600-480.avif 480w, /assets/optimized-v1/depoimento-atual-3-600-600.avif 600w"
+  },
+  "depoimento-atual-4-600.webp": {
+    "width": 600,
+    "height": 1066,
+    "srcSet": "/assets/optimized-v1/depoimento-atual-4-600-320.avif 320w, /assets/optimized-v1/depoimento-atual-4-600-480.avif 480w, /assets/optimized-v1/depoimento-atual-4-600-600.avif 600w"
+  },
+  "depoimento-atual-5-600.webp": {
+    "width": 600,
+    "height": 1066,
+    "srcSet": "/assets/optimized-v1/depoimento-atual-5-600-320.avif 320w, /assets/optimized-v1/depoimento-atual-5-600-480.avif 480w, /assets/optimized-v1/depoimento-atual-5-600-600.avif 600w"
+  },
 } as Record<string, { width: number; height: number; srcSet: string }>;
