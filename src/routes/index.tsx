@@ -10,6 +10,8 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL8
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
+      { rel: "preconnect", href: "https://ggcheckout.app", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://ggcheckout.app" },
       { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 90vw, 560px", fetchPriority: "high" },
     ],
     meta: [
