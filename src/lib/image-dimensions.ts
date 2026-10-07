@@ -1,4 +1,13 @@
 export default {
+  "batida-out07-1-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-1-440-250.avif 250w, /assets/optimized-v1/batida-out07-1-440-320.avif 320w, /assets/optimized-v1/batida-out07-1-440-440.avif 440w" },
+  "batida-out07-2-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-2-440-250.avif 250w, /assets/optimized-v1/batida-out07-2-440-320.avif 320w, /assets/optimized-v1/batida-out07-2-440-440.avif 440w" },
+  "batida-out07-3-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-3-440-250.avif 250w, /assets/optimized-v1/batida-out07-3-440-320.avif 320w, /assets/optimized-v1/batida-out07-3-440-440.avif 440w" },
+  "batida-out07-4-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-4-440-250.avif 250w, /assets/optimized-v1/batida-out07-4-440-320.avif 320w, /assets/optimized-v1/batida-out07-4-440-440.avif 440w" },
+  "batida-out07-5-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-5-440-250.avif 250w, /assets/optimized-v1/batida-out07-5-440-320.avif 320w, /assets/optimized-v1/batida-out07-5-440-440.avif 440w" },
+  "batida-out07-6-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-6-440-250.avif 250w, /assets/optimized-v1/batida-out07-6-440-320.avif 320w, /assets/optimized-v1/batida-out07-6-440-440.avif 440w" },
+  "batida-out07-7-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-7-440-250.avif 250w, /assets/optimized-v1/batida-out07-7-440-320.avif 320w, /assets/optimized-v1/batida-out07-7-440-440.avif 440w" },
+  "batida-out07-8-440.webp": { "width": 440, "height": 440, "srcSet": "/assets/optimized-v1/batida-out07-8-440-250.avif 250w, /assets/optimized-v1/batida-out07-8-440-320.avif 320w, /assets/optimized-v1/batida-out07-8-440-440.avif 440w" },
+
   "bonus-1-600.webp": {
     "width": 600,
     "height": 600,
