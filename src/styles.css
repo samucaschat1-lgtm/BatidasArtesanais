@@ -671,7 +671,7 @@ body{
     width:min(330px,100%) !important;
   }
   .cacha-page .preview .marquee:not(.preview-large) img{
-    width:125px !important;
+    width:140px !important;
     height:auto !important;
   }
   .cacha-page .preview .preview-large img{
