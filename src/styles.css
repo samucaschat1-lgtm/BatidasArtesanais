@@ -1265,3 +1265,52 @@ footer{padding-bottom:110px}
     margin-right:auto;
   }
 }
+
+
+/* Cards dos cinco bônus mais compactos, somente no celular. */
+@media(max-width:520px){
+  .cacha-page .bonus-grid{
+    width:88%;
+    max-width:300px;
+    gap:10px;
+    margin:18px auto;
+  }
+  .cacha-page .bonus-card{
+    grid-template-columns:minmax(0,1fr);
+    gap:3px;
+    padding:10px 12px;
+    border-radius:10px;
+  }
+  .cacha-page .bonus-card>span{
+    font-size:9px;
+    line-height:1.3;
+  }
+  .cacha-page .bonus-card img{
+    width:65% !important;
+    max-width:150px;
+    margin:4px auto 5px;
+  }
+  .cacha-page .bonus-card h3{
+    font-size:14px;
+    line-height:1.2;
+    margin:0;
+  }
+  .cacha-page .bonus-card p{
+    font-size:11.5px;
+    line-height:1.35;
+    margin:2px 0;
+  }
+  .cacha-page .bonus-card>b{
+    font-size:9px;
+    line-height:1.3;
+  }
+  .cacha-page .bonus-card .bonus-price{
+    font-size:11px;
+    line-height:1.3;
+  }
+  .cacha-page .bonus-card small{
+    font-size:9px;
+    line-height:1.3;
+    margin-top:0;
+  }
+}
