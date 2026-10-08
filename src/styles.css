@@ -1314,39 +1314,3 @@ footer{padding-bottom:110px}
     margin-top:0;
   }
 }
-
-
-/* Hero compacto: imagem menor e CTA imediatamente abaixo. */
-.cacha-page .hero-mockup{
-  width:380px !important;
-  max-width:100% !important;
-  height:auto !important;
-  transform:none !important;
-  left:0 !important;
-  margin:0 auto 12px;
-}
-.cacha-page .hero h1.hero-headline{margin-bottom:16px;}
-.cacha-page .hero > .cta{margin-top:0;}
-.cacha-page .hero > .cta-note + .lead{margin-top:20px;}
-@media(max-width:520px){
-  .cacha-page .hero-mockup{width:230px !important;margin-bottom:10px;}
-  .cacha-page .hero h1.hero-headline{margin-bottom:12px;}
-}
-
-
-/* Mockup do hero bem achatado na horizontal, sem espaço vazio abaixo. */
-.cacha-page .hero-mockup{
-  height:210px !important;
-  aspect-ratio:auto !important;
-  object-fit:fill !important;
-}
-@media(max-width:520px){
-  .cacha-page .hero-mockup{height:128px !important;}
-}
-
-
-/* Leve achatamento lateral do mockup do hero, mantendo a altura atual. */
-.cacha-page .hero-mockup{width:342px !important;}
-@media(max-width:520px){
-  .cacha-page .hero-mockup{width:207px !important;}
-}
