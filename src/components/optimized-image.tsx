@@ -1,11 +1,11 @@
-import type { ImgHTMLAttributes } from "react";
+import { memo, type ImgHTMLAttributes } from "react";
 import dimensions from "../lib/image-dimensions";
 
 const ASSETS = "/assets/optimized-v1/";
 type Props = ImgHTMLAttributes<HTMLImageElement> & { src: string; sizes?: string };
 
 /** AVIF responsive images with the original WebP as a fallback. */
-export function OptimizedImage({ src, sizes = "(max-width: 520px) 285px, 320px", ...props }: Props) {
+export const OptimizedImage = memo(function OptimizedImage({ src, sizes = "(max-width: 520px) 285px, 320px", ...props }: Props) {
   const name = src.replace(ASSETS, "");
   const asset = dimensions[name];
   const mockup = name === "basic-800.webp" ? "basic" : name === "premium-800.webp" ? "premium" : null;
@@ -19,4 +19,4 @@ export function OptimizedImage({ src, sizes = "(max-width: 520px) 285px, 320px",
       <img src={src} width={asset?.width ?? 800} height={asset?.height ?? 800} decoding="async" {...props} />
     </picture>
   );
-}
+});

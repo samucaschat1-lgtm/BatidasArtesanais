@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type MouseEvent } from "react";
 import { OptimizedImage } from "../components/optimized-image";
 import * as Dialog from "@radix-ui/react-dialog";
-import { getTrackedCheckoutUrl } from "../lib/checkout-tracking";
+import { getTrackedCheckoutUrl, warmCheckoutConnection } from "../lib/checkout-tracking";
 
 const IMG = "/assets/optimized-v1/";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/5SfdPOXyzhseBblYFSS4";
@@ -11,7 +11,7 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL8
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
-      { rel: "preconnect", href: "https://ggcheckout.app", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://ggcheckout.app" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
       { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 90vw, 560px", fetchPriority: "high" },
     ],
@@ -71,6 +71,7 @@ function Index() {
   }, []);
 
   function prepareCheckout(event: MouseEvent<HTMLAnchorElement>) {
+    warmCheckoutConnection();
     // Update before native checkout listeners run; retain normal link behavior.
     event.currentTarget.href = getTrackedCheckoutUrl(event.currentTarget.href, basicCheckout);
   }
@@ -103,6 +104,7 @@ function Index() {
   }, []);
 
   function offerPremium(event: MouseEvent<HTMLAnchorElement>) {
+    warmCheckoutConnection();
     prepareCheckout(event);
     if (!CHECKOUT_PREMIUM_UPGRADE || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
@@ -115,7 +117,11 @@ function Index() {
   }
 
   return (
-    <main className="cacha-page">
+    <main className="cacha-page" onPointerOver={event => {
+      if ((event.target as Element).closest("a[href^='https://ggcheckout.app/']")) warmCheckoutConnection();
+    }} onFocusCapture={event => {
+      if ((event.target as Element).closest("a[href^='https://ggcheckout.app/']")) warmCheckoutConnection();
+    }}>
       <Dialog.Root open={upgradeOpen} onOpenChange={setUpgradeOpen}>
         <Dialog.Portal>
           <Dialog.Overlay className="upgrade-overlay" />
@@ -204,9 +210,9 @@ function Index() {
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
         <p className="section-intro">Os cinco materiais abaixo acompanham somente o Plano Premium de R$24,90. O Básico de R$10 inclui as +200 receitas, sem estes bônus.</p>
-        <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, 220px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
+        <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, (max-width: 850px) 220px, 270px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
         <div className="bonus-grid">
-          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
+          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage sizes="(max-width: 520px) 150px, (max-width: 850px) 40vw, 180px" src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
         </div>
         <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$24,90</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
@@ -235,8 +241,8 @@ function Index() {
           <OptimizedImage src="https://upload.wikimedia.org/wikipedia/commons/1/14/Logotipo_da_Elo.svg" alt="Elo" width="56" height="32" loading="lazy" decoding="async" />
           <OptimizedImage src="https://cdn.simpleicons.org/pix/32BCAD" alt="Pix" width="56" height="32" loading="lazy" decoding="async"/>
         </div>
-        <OptimizedImage src={IMG+"selo-compra-segura-600.webp"} alt="Compra segura, satisfação garantida e privacidade protegida" className="seal" loading="lazy" decoding="async"/>
-        <OptimizedImage src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
+        <OptimizedImage sizes="230px" src={IMG+"selo-compra-segura-600.webp"} alt="Compra segura, satisfação garantida e privacidade protegida" className="seal" loading="lazy" decoding="async"/>
+        <OptimizedImage sizes="260px" src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
       </section>
 
       <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>

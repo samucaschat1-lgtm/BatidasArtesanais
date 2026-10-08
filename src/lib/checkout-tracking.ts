@@ -1,5 +1,6 @@
 const STORAGE_KEY = "batidas-checkout-attribution-v1";
 let sessionAttribution = "";
+let capturedSearch: string | undefined;
 
 function isTrackingParameter(key: string) {
   return key.startsWith("utm_") || [
@@ -20,7 +21,10 @@ function trackingParameters(search: string) {
 // attribution as a whole, so campaign/ad IDs from different visits cannot mix.
 export function captureCheckoutAttribution() {
   if (typeof window === "undefined") return new URLSearchParams();
-  const current = trackingParameters(window.location.search);
+  const search = window.location.search;
+  if (search === capturedSearch) return trackingParameters(sessionAttribution);
+  capturedSearch = search;
+  const current = trackingParameters(search);
   if (current.size) {
     sessionAttribution = current.toString();
     try { window.sessionStorage.setItem(STORAGE_KEY, sessionAttribution); } catch { /* Storage may be disabled. */ }
@@ -49,4 +53,19 @@ export function getTrackedCheckoutUrl(checkoutUrl: string, sourceUrl?: string) {
     url.searchParams.set(key, value);
   });
   return url.toString();
+}
+
+// Warm only the connection: never fetch a checkout page or fire an IC event.
+let lastConnectionWarmup = 0;
+export function warmCheckoutConnection() {
+  if (typeof document === "undefined") return;
+  const now = Date.now();
+  if (now - lastConnectionWarmup < 15_000) return;
+  lastConnectionWarmup = now;
+  document.getElementById("checkout-intent-preconnect")?.remove();
+  const link = document.createElement("link");
+  link.id = "checkout-intent-preconnect";
+  link.rel = "preconnect";
+  link.href = "https://ggcheckout.app";
+  document.head.appendChild(link);
 }
