@@ -1332,3 +1332,14 @@ footer{padding-bottom:110px}
   .cacha-page .hero-mockup{width:230px !important;margin-bottom:10px;}
   .cacha-page .hero h1.hero-headline{margin-bottom:12px;}
 }
+
+
+/* Mockup do hero bem achatado na horizontal, sem espaço vazio abaixo. */
+.cacha-page .hero-mockup{
+  height:210px !important;
+  aspect-ratio:auto !important;
+  object-fit:fill !important;
+}
+@media(max-width:520px){
+  .cacha-page .hero-mockup{height:128px !important;}
+}
