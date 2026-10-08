@@ -209,12 +209,11 @@ function Index() {
       <section className="bonus dark-section">
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
-        <p className="section-intro">Os cinco materiais abaixo acompanham somente o Plano Premium de R$24,90. O Básico de R$10 inclui as +200 receitas, sem estes bônus.</p>
-        <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, (max-width: 850px) 220px, 270px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
+        <p className="section-intro">Somente o Plano Premium de R$24,90 inclui os cinco bônus abaixo, além das +200 receitas.</p>
         <div className="bonus-grid">
-          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage sizes="(max-width: 520px) 150px, (max-width: 850px) 40vw, 180px" src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
+          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><OptimizedImage className="bonus-cover" sizes="(max-width: 520px) 62px, 180px" src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><div className="bonus-info"><span>{tag}</span><h3>{title}</h3><p>{desc}</p><div className="bonus-price"><s>R$18,00</s> <strong>INCLUSO NO PREMIUM</strong></div></div></article>)}
         </div>
-        <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$24,90</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
+        <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$24,90</b><span>Prefere só as receitas? Escolha o Básico de R$10,00 abaixo.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
