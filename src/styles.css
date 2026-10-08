@@ -1211,3 +1211,44 @@ footer{padding-bottom:110px}
   .cacha-page .marquee .marquee-track,
   .cacha-page .testimonial-carousel .testimonial-track{animation:none !important;}
 }
+
+
+/* Headline completa com hierarquia e linhas equilibradas. */
+.cacha-page .hero{padding-top:36px;}
+.cacha-page .hero .eyebrow{margin-bottom:18px;}
+.cacha-page .hero h1.hero-headline{
+  max-width:820px;
+  margin:0 auto 24px;
+  line-height:1.16;
+  letter-spacing:-.025em;
+  text-shadow:none;
+  text-wrap:balance;
+}
+.hero-headline-product,
+.hero-headline-benefit,
+.hero-headline-start{display:block;}
+.hero-headline-product{
+  font-size:clamp(25px,3.5vw,40px);
+  line-height:1.18;
+}
+.hero-headline-benefit{
+  margin-top:12px;
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.14;
+}
+.hero-headline-amount{white-space:nowrap;}
+.hero-headline-start{
+  margin-top:12px;
+  font-size:clamp(17px,2vw,23px);
+  line-height:1.3;
+  font-weight:700;
+  letter-spacing:0;
+}
+@media(max-width:520px){
+  .cacha-page .hero{padding-top:26px;}
+  .cacha-page .hero .eyebrow{font-size:10px;letter-spacing:.08em;margin-bottom:16px;}
+  .cacha-page .hero h1.hero-headline{max-width:390px;margin-bottom:18px;}
+  .hero-headline-product{font-size:clamp(23px,6.2vw,29px);}
+  .hero-headline-benefit{font-size:clamp(26px,7vw,32px);margin-top:10px;}
+  .hero-headline-start{font-size:clamp(15px,4vw,18px);margin-top:10px;}
+}
