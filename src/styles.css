@@ -1309,3 +1309,47 @@ footer{padding-bottom:110px}
     margin-top:0;
   }
 }
+
+/* =========================================================
+   BÔNUS — versão final compacta e simples
+   ========================================================= */
+.cacha-page .bonus-marquee{display:none !important}
+.cacha-page .bonus-card{padding:12px}
+.cacha-page .bonus-info{display:grid;gap:3px;min-width:0}
+.cacha-page .bonus-card .bonus-price{margin-top:2px}
+@media(max-width:520px){
+  .cacha-page .bonus-grid{
+    grid-template-columns:1fr !important;
+    width:100%;
+    max-width:440px;
+    gap:8px;
+    margin:18px auto 22px;
+  }
+  .cacha-page .bonus-card{
+    display:grid !important;
+    grid-template-columns:62px minmax(0,1fr) !important;
+    gap:10px !important;
+    align-items:center;
+    text-align:left !important;
+    padding:10px 11px;
+  }
+  .cacha-page .bonus-card .bonus-cover{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    width:62px !important;
+    max-width:none !important;
+    height:76px !important;
+    aspect-ratio:auto !important;
+    object-fit:cover !important;
+    object-position:top center !important;
+    border-radius:7px;
+    margin:0 !important;
+    justify-self:start;
+  }
+  .cacha-page .bonus-info{grid-column:2 !important;grid-row:1 !important;text-align:left}
+  .cacha-page .bonus-info>span{font-size:9px;letter-spacing:.08em}
+  .cacha-page .bonus-info h3{font-size:13.5px;line-height:1.2;margin:0;text-align:left !important}
+  .cacha-page .bonus-info p{font-size:11px;line-height:1.35;margin:0;text-align:left !important}
+  .cacha-page .bonus-info .bonus-price{font-size:11px;text-align:left}
+  .cacha-page .bonus-info .bonus-price strong{font-size:10px}
+}
