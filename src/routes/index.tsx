@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://ggcheckout.app" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
-      { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 230px, 380px", fetchPriority: "high" },
+      { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 90vw, 560px", fetchPriority: "high" },
     ],
     meta: [
       { title: "+200 Batidas de Cachaça Artesanal" },
@@ -149,14 +149,14 @@ function Index() {
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
         <h1 className="hero-headline" style={{ fontSize: "clamp(26px, 4.3vw, 46px)" }}><em>+200 RECEITAS DE BATIDAS DE CACHAÇA ARTESANAIS</em> PARA FATURAR ATÉ <span style={{ whiteSpace: "nowrap" }}><span style={{ color: "var(--green)" }}>R$3.000</span>/MÊS</span> MESMO COMEÇANDO DO ZERO!</h1>
-        <OptimizedImage sizes="(max-width: 520px) 230px, 380px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
-        <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
+        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <p className="lead">Comece do zero com receitas passo a passo para preparar em casa e consultar pelo celular.</p>
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
         <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
+        <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
         <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
         <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$24,90.</p>
         <div className="micro trust-micro">
