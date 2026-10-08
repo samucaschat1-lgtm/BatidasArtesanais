@@ -142,9 +142,9 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 RECEITAS DE BATIDAS DE CACHAÇA ARTESANAL</em> PARA FATURAR ATÉ <span style={{ color: "var(--green)", whiteSpace: "nowrap" }}>R$3.000</span> POR MÊS MESMO COMEÇANDO DO ZERO!</h1>
+        <h1><em>+200 RECEITAS DE BATIDAS ARTESANAIS</em> PARA FATURAR ATÉ <span style={{ color: "var(--green)", whiteSpace: "nowrap" }}>R$3.000</span>/MÊS</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead">Receitas passo a passo para preparar em casa, com sabores tradicionais, frutados e cremosos. Consulte o material pelo celular e escolha sua próxima receita.</p>
+        <p className="lead">Comece do zero com receitas passo a passo para preparar em casa e consultar pelo celular.</p>
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
