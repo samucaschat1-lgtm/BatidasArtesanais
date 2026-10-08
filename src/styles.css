@@ -1343,3 +1343,10 @@ footer{padding-bottom:110px}
 @media(max-width:520px){
   .cacha-page .hero-mockup{height:128px !important;}
 }
+
+
+/* Leve achatamento lateral do mockup do hero, mantendo a altura atual. */
+.cacha-page .hero-mockup{width:342px !important;}
+@media(max-width:520px){
+  .cacha-page .hero-mockup{width:207px !important;}
+}
