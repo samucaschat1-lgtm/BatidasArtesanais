@@ -159,6 +159,11 @@ function Index() {
           <li>Acesso digital pelo celular</li>
         </ul>
         <small className="cta-note hero-short-note">Pagamento único • Acesso após a confirmação do pagamento • Sem produtos físicos</small>
+        <div className="micro trust-micro" style={{ marginTop: "12px" }}>
+          <span><OptimizedImage src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
+          <span><OptimizedImage src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
+          <span>Acesso imediato</span>
+        </div>
       </section>
 
       <section className="dark-section preview" id="batidas">
