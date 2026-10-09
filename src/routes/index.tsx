@@ -178,14 +178,16 @@ function Index() {
 
       <section className="how section">
         <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
-        <div className="steps">
-          {[
-            ["1","📩","Receba o acesso","Material digital disponível após a compra."],
-            ["2","🥃","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
-            ["3","🍋","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
-            ["4","📸","Fotografe","Registre os detalhes da sua criação artesanal."],
-            ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
-          ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
+        <div className="marquee how-carousel" role="region" aria-label="Fotos de cachaças artesanais" tabIndex={0}>
+          <div className="marquee-track">
+            {[0, 1].map(set => (
+              <div className="how-carousel-group" key={set} aria-hidden={set === 1 ? true : undefined}>
+                {Array.from({ length: 8 }, (_, i) => (
+                  <img key={i} src={`${IMG}como-funciona-out08-${i + 1}-320.webp`} alt={set === 0 ? `Cachaças artesanais de frutas — foto ${i + 1}` : ""} width={160} height={160} loading="lazy" decoding="async" />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
         <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>

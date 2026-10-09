@@ -1711,3 +1711,16 @@ footer{padding-bottom:110px}
     margin:4px auto 0;
   }
 }
+
+/* Eight square photos, moving continuously from left to right. */
+.cacha-page .how-carousel{margin:24px 0 28px;padding:4px 0 10px}
+.cacha-page .how-carousel .marquee-track{gap:0;animation:how-photos-right 38s linear infinite}
+.cacha-page .how-carousel-group{display:flex;flex:none;gap:14px;padding-right:14px}
+.cacha-page .how-carousel img{display:block;width:160px !important;height:160px !important;max-width:none;flex:0 0 160px;object-fit:cover !important;border:1px solid #e7d5b5;border-radius:14px;box-sizing:border-box}
+@keyframes how-photos-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.cacha-page .how-carousel:focus .marquee-track{animation-play-state:paused !important}
+@media(prefers-reduced-motion:reduce){
+  .cacha-page .how-carousel{overflow-x:auto}
+  .cacha-page .how-carousel .marquee-track{animation:none !important}
+  .cacha-page .how-carousel-group[aria-hidden="true"]{display:none}
+}
