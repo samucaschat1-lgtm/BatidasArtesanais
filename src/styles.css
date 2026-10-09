@@ -1402,3 +1402,27 @@ footer{padding-bottom:110px}
     line-height:1.35;
   }
 }
+
+/* Plano Premium: benefícios mais próximos, sem remover conteúdo */
+.cacha-page .plans .plan.featured > ul.checks{
+  grid-template-columns:1fr;
+  gap:4px;
+  padding:0;
+  margin:12px auto 14px;
+}
+.cacha-page .plans .plan.featured > ul.checks > li{
+  margin:0;
+  padding:3px 0;
+  line-height:1.35;
+}
+@media(max-width:520px){
+  .cacha-page .plans .plan.featured > ul.checks{
+    gap:3px;
+    margin:10px auto 12px;
+  }
+  .cacha-page .plans .plan.featured > ul.checks > li{
+    padding:2px 0;
+    font-size:15px;
+    line-height:1.32;
+  }
+}
