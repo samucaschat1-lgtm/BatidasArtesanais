@@ -1863,3 +1863,27 @@ footer{padding-bottom:110px}
   .cacha-page .bonus .bonus-card .bonus-cover { width: 65px !important; max-width: 65px !important; height: 86px !important; }
   .cacha-page .bonus .bonus-info h3 { font-size: 14px !important; }
 }
+
+/* Showcase do kit Premium acima do título dos cinco bônus. */
+.cacha-page .bonus .premium-showcase {
+  width: min(100%, 900px);
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cacha-page .bonus .premium-showcase img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+@media (max-width: 520px) {
+  .cacha-page .bonus .premium-showcase {
+    width: 100%;
+    margin: 0 auto 14px;
+  }
+}
