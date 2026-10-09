@@ -186,6 +186,17 @@ function Index() {
         <div className="bonus-grid">
           {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><OptimizedImage className="bonus-cover" sizes="(max-width: 520px) 62px, 180px" src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><div className="bonus-info"><span>{tag}</span><h3>{title}</h3><p>{desc}</p><div className="bonus-price"><s>R$18,00</s> <strong>INCLUSO NO PREMIUM</strong></div></div></article>)}
         </div>
+        <div className="marquee fruit-carousel" role="region" aria-label="Fotos de cachaças artesanais de frutas" tabIndex={0}>
+          <div className="marquee-track">
+            {[0, 1].map(set => (
+              <div className="fruit-carousel-group" key={set} aria-hidden={set === 1 ? true : undefined}>
+                {Array.from({ length: 8 }, (_, i) => (
+                  <img key={i} src={`${IMG}frutas-out09-${i + 1}-480.webp`} alt={set === 0 ? `Cachaças artesanais de frutas — foto ${i + 1}` : ""} width={480} height={480} loading="lazy" decoding="async" />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$24,90</b><span>Prefere só as receitas? Escolha o Básico de R$10,00 abaixo.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
