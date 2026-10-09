@@ -182,6 +182,12 @@ function Index() {
 
       <section className="bonus dark-section">
         <div className="premium-showcase" aria-label="Biblioteca de cachaças artesanais e os cinco bônus do Plano Premium">
+          <picture style={{ display: "contents" }}>
+            <source
+              type="image/avif"
+              srcSet="/assets/optimized-v1/showcase-premium-480.avif 480w, /assets/optimized-v1/showcase-premium-800.avif 800w, /assets/optimized-v1/showcase-premium-1120.avif 1120w"
+              sizes="(max-width: 520px) 74vw, (max-width: 850px) 88vw, 520px"
+            />
           <img
             src="/assets/optimized-v1/showcase-premium-800.webp"
             srcSet="/assets/optimized-v1/showcase-premium-480.webp 480w, /assets/optimized-v1/showcase-premium-800.webp 800w, /assets/optimized-v1/showcase-premium-1120.webp 1120w"

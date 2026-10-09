@@ -97,6 +97,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "preconnect", href: "https://cdn.utmify.com.br" },
+      { rel: "preconnect", href: "https://cdn.simpleicons.org" },
+      { rel: "dns-prefetch", href: "https://cdn.simpleicons.org" },
       {
         rel: "stylesheet",
         href: appCss,
