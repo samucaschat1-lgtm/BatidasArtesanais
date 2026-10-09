@@ -1730,3 +1730,49 @@ footer{padding-bottom:110px}
 .cacha-page .how > .section-kicker{margin-bottom:6px}
 .cacha-page .how > h2{margin-bottom:12px}
 .cacha-page .how > .cta-note{margin-top:6px}
+
+/* Compact, centered page layout across desktop and mobile. */
+.cacha-page .section,.cacha-page .dark-section,.cacha-page .final-cta{padding-top:32px;padding-bottom:32px;text-align:center}
+.cacha-page .hero{padding-top:24px;padding-bottom:28px;text-align:center}
+.cacha-page .how.section,.cacha-page .payment.section{padding-top:22px;padding-bottom:22px}
+.cacha-page .secure.section{padding-top:18px;padding-bottom:18px}
+.cacha-page .section > h2,.cacha-page .dark-section > h2,.cacha-page .final-cta > h2{margin-top:0;margin-bottom:18px}
+.cacha-page .section-kicker,.cacha-page .hero .eyebrow{margin-bottom:8px}
+.cacha-page .section > p,.cacha-page .section-intro{margin-top:0;margin-bottom:16px}
+.cacha-page .hero h1.hero-headline{margin-bottom:16px}
+.cacha-page .preview .marquee{margin-top:16px;margin-bottom:24px}
+.cacha-page .preview .text-link{margin-bottom:16px}
+.cacha-page .how-carousel{margin:12px auto 16px}
+.cacha-page .how-carousel img{width:260px !important;height:260px !important;flex-basis:260px}
+.cacha-page .testimonial-carousel{max-width:900px;margin:16px auto 18px;padding:3px 0 6px}
+.cacha-page .testimonial-track .testimonial-image{width:260px;flex-basis:260px;margin:0;padding:0}
+.cacha-page .testimonial-track .testimonial-image img{width:100% !important;height:auto !important;object-fit:contain !important}
+.cacha-page .plans{margin-top:18px;margin-bottom:0;gap:18px;justify-content:center}
+.cacha-page .plan{padding:22px 18px;text-align:center}
+.cacha-page .checks{padding-left:0;padding-right:0;text-align:center;justify-items:center}
+.cacha-page .checks li{width:100%;text-align:center}
+.cacha-page .security-card{padding:20px;margin:0 auto}
+.cacha-page .security-card h3{margin:0 0 8px}
+.cacha-page .security-card p{margin:0}
+.cacha-page .bonus .bonus-grid{gap:12px;margin:18px auto}
+.cacha-page .bonus .bonus-card{grid-template-columns:minmax(0,1fr) !important;justify-items:center;text-align:center !important;gap:8px !important;padding:14px !important}
+.cacha-page .bonus .bonus-card .bonus-cover{grid-column:1 !important;grid-row:1 !important;justify-self:center !important;margin:0 auto !important;width:80px !important;height:100px !important}
+.cacha-page .bonus .bonus-info{grid-column:1 !important;grid-row:2 !important;align-items:center;text-align:center;gap:4px}
+.cacha-page .bonus .bonus-info h3,.cacha-page .bonus .bonus-info p{width:100%;text-align:center !important}
+.cacha-page .bonus .bonus-card .bonus-price{justify-content:center;text-align:center;padding-top:6px;margin-top:2px}
+.cacha-page .bonus-total{margin:16px auto}
+.cacha-page .faq details{margin:8px auto;text-align:center}
+.cacha-page .faq summary{position:relative;display:block;text-align:center;padding-right:32px;padding-left:32px}
+.cacha-page .faq summary > span{position:absolute;right:12px;top:50%;transform:translateY(-50%)}
+.cacha-page .faq details p{text-align:center}
+.cacha-page video,.cacha-page iframe,.cacha-page figure{display:block;max-width:100%;margin-left:auto;margin-right:auto}
+.cacha-page footer{padding-top:20px;padding-bottom:24px;text-align:center}
+@media(max-width:520px){
+ .cacha-page .section,.cacha-page .dark-section,.cacha-page .final-cta{padding-top:24px;padding-bottom:24px}
+ .cacha-page .hero{padding-top:20px;padding-bottom:22px}
+ .cacha-page .secure.section,.cacha-page .payment.section{padding-top:16px;padding-bottom:16px}
+ .cacha-page .testimonial-carousel{max-width:100%;margin-top:12px;margin-bottom:14px}
+ .cacha-page .testimonial-track .testimonial-image{width:230px;flex-basis:230px}
+ .cacha-page .plan{padding:18px 14px}
+ .cacha-page .section > h2,.cacha-page .dark-section > h2{margin-bottom:14px}
+}
