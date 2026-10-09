@@ -192,7 +192,7 @@ function Index() {
           />
           <div className="premium-access-guide">
             <span className="premium-access-eyebrow">SIMPLES DE ACESSAR, FÁCIL DE APROVEITAR</span>
-            <h3>Suas receitas favoritas, sempre à mão</h3>
+            
             <p className="premium-access-intro">Cachaças artesanais, batidas, licores cremosos e muito mais, com ingredientes e passo a passo para preparar em casa.</p>
             <div className="premium-access-highlights" aria-label="Benefícios do acesso">
               <span>✓ 100% digital</span>
