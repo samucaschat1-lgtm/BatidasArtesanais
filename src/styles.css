@@ -1649,3 +1649,65 @@ footer{padding-bottom:110px}
   }
   .cacha-page .bonus .bonus-info h3{font-size:14px}
 }
+
+/* Pagamento: aproximar bandeiras e eliminar espaços vazios */
+.cacha-page .payment.section{
+  padding-top:30px;
+  padding-bottom:35px;
+}
+.cacha-page .payment h3{
+  margin:0 0 6px;
+  line-height:1.3;
+}
+.cacha-page .payment>p{
+  margin:0 auto 9px;
+  line-height:1.4;
+}
+.cacha-page .payment .pay-icons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  width:max-content;
+  max-width:100%;
+  gap:11px;
+  margin:12px auto 15px;
+}
+.cacha-page .payment .seal{
+  display:block;
+  width:215px;
+  max-width:100%;
+  margin:8px auto 6px;
+}
+.cacha-page .payment .guarantee-img{
+  display:block;
+  width:230px;
+  max-width:100%;
+  margin:6px auto 0;
+}
+@media(max-width:520px){
+  .cacha-page .payment.section{
+    padding-top:23px;
+    padding-bottom:22px;
+  }
+  .cacha-page .payment h3{
+    margin-bottom:4px;
+    font-size:20px;
+  }
+  .cacha-page .payment>p{
+    margin-bottom:6px;
+    font-size:14px;
+  }
+  .cacha-page .payment .pay-icons{
+    gap:6px;
+    margin:10px auto 13px;
+  }
+  .cacha-page .payment .seal{
+    width:210px;
+    margin:7px auto 3px;
+  }
+  .cacha-page .payment .guarantee-img{
+    width:218px;
+    margin:4px auto 0;
+  }
+}
