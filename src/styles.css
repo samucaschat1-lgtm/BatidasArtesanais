@@ -1892,3 +1892,24 @@ footer{padding-bottom:110px}
 .cacha-page .bonus .premium-showcase { flex-direction:column; }
 .cacha-page .bonus .premium-showcase-note { margin:10px auto 0; color:#f3e6d2; font-weight:700; font-size:18px; line-height:1.35; text-align:center; }
 @media(max-width:520px){.cacha-page .bonus .premium-showcase-note{font-size:15px;margin-top:8px;padding:0 8px}}
+
+/* Ajuste fino do mockup Premium: menor e levemente comprimido na horizontal. */
+.cacha-page .bonus .premium-showcase {
+  width: 100%;
+  margin: 0 auto 18px;
+}
+.cacha-page .bonus .premium-showcase img {
+  width: 88% !important;
+  max-width: 720px !important;
+  height: auto !important;
+  transform: scaleX(0.93);
+  transform-origin: center center;
+}
+@media (max-width: 520px) {
+  .cacha-page .bonus .premium-showcase { margin-bottom: 12px; }
+  .cacha-page .bonus .premium-showcase img {
+    width: 84% !important;
+    max-width: 320px !important;
+    transform: scaleX(0.94);
+  }
+}
