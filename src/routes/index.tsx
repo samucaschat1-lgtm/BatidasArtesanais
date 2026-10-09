@@ -130,17 +130,22 @@ function Index() {
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$17,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +200 receitas e os cinco bônus para ir além do preparo.</Dialog.Description>
-            <div className="upgrade-package">
-              <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
-              <div className="upgrade-summary"><strong>+200 receitas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
+            <Dialog.Description className="upgrade-description">Adicione os 5 bônus por mais R$7,90 ou continue com as +200 receitas do Básico. Você escolhe.</Dialog.Description>
+            <div className="upgrade-choices" aria-label="Escolha seu plano para continuar ao pagamento">
+              <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>
+                <span><strong>Quero o Premium — R$17,90</strong><small>+200 receitas + 5 bônus • Pagamento único</small></span><span aria-hidden="true">→</span>
+              </a>
+              <a className="upgrade-basic" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>
+                <span><strong>Continuar com o Básico — R$10,00</strong><small>+200 receitas • Pagamento único</small></span><span aria-hidden="true">→</span>
+              </a>
             </div>
-            <ul className="upgrade-benefits">
-              {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
-            </ul>
-            <div className="upgrade-price"><span>Premium na página: <s>R$24,90</s></span><strong>R$17,90</strong><small>Valor total • Pagamento único</small></div>
-            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$17,90 <span aria-hidden="true">→</span></a>
-            <a className="upgrade-accept" style={{ marginTop: "16px" }} href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>Continuar com o Básico por R$10,00 <span aria-hidden="true">→</span></a>
+            <p className="upgrade-next">Na próxima tela, escolha Pix ou cartão e finalize sua compra.</p>
+            <details className="upgrade-details">
+              <summary>Ver os 5 bônus incluídos no Premium</summary>
+              <ul className="upgrade-benefits">
+                {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
+              </ul>
+            </details>
             <p className="upgrade-trust">🔒 Compra segura · Acesso após o pagamento · Garantia de 7 dias</p>
           </Dialog.Content>
         </Dialog.Portal>
@@ -153,24 +158,24 @@ function Index() {
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
-        <p className="lead hero-summary">Prepare suas bebidas artesanais em casa, mesmo começando do zero.</p>
+        <p className="lead hero-summary">Ingredientes, quantidades e passo a passo para preparar batidas, licores e drinks em casa.</p>
         <ul className="checks hero-quick-benefits">
           <li>+200 receitas passo a passo</li>
           <li>Batidas, licores, infusões e drinks</li>
-          <li>Acesso digital pelo celular</li>
+          <li>Acesso 100% digital e vitalício</li>
         </ul>
         <small className="cta-note hero-short-note">Pagamento único • Acesso após a confirmação do pagamento • Sem produtos físicos</small>
         <div className="micro trust-micro" style={{ marginTop: "12px" }}>
           <span><OptimizedImage src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
           <span><OptimizedImage src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
-          <span>Acesso imediato</span>
+          <span>Acesso após o pagamento</span>
         </div>
       </section>
 
       <section className="dark-section preview" id="batidas">
         <div className="section-kicker">+200 BATIDAS NO MATERIAL COMPLETO</div>
         <h2>Tradição e sabores para inspirar suas batidas:</h2>
-        <a className="text-link" href="#oferta">Ver batidas completas ↓</a>
+        <a className="text-link" href="#oferta">Ver planos e preços ↓</a>
         <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["batida-out07-1-440.webp","batida-out07-2-440.webp","batida-out07-3-440.webp","batida-out07-4-440.webp","batida-out07-5-440.webp","batida-out07-6-440.webp","batida-out07-7-440.webp","batida-out07-8-440.webp"].map((x,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 155px, 170px" src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><OptimizedImage key={"p"+set+i} sizes="(max-width: 520px) 210px, 280px" src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
@@ -199,6 +204,8 @@ function Index() {
               <span>✓ Acesso vitalício</span>
               <span>✓ Celular, computador ou tablet</span>
             </div>
+            <a className="cta access-guide-cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS RECEITAS — R$10,00</a>
+            <small className="cta-note">Pagamento único • Sem mensalidade • Acesso após o pagamento</small>
           </div>
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
@@ -269,7 +276,7 @@ function Index() {
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o Kit +200 Batidas por R$10,00">
+      <a className="fixed-buy-bar" hidden={upgradeOpen} href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o Kit +200 Batidas por R$10,00">
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
@@ -282,7 +289,8 @@ function FAQ() {
     ["Preciso ter experiência para acompanhar?","Não. O material foi organizado para facilitar a consulta, mesmo para quem está começando."],
     ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
     ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui as +200 receitas. O Premium de R$24,90 inclui as +200 receitas e os cinco bônus apresentados nesta página. Ambos são digitais e têm pagamento único."],
-    ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
+    ["O pagamento é único ou tem mensalidade?","O pagamento é único, sem mensalidade. O acesso ao material digital é vitalício."],
+    ["Vou receber garrafas ou um livro físico?","Não. Você recebe receitas e materiais digitais para consultar pelo celular, computador ou tablet. Não enviamos bebidas, ingredientes ou livros físicos."],
     ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
     ["Funciona no celular?","Sim. Por ser digital, você pode consultar o material pelo celular."],
     ["Tem garantia?","Sim. Você tem 7 dias para conhecer o material e solicitar o reembolso conforme as condições da plataforma."]

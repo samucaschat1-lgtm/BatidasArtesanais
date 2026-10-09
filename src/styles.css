@@ -2119,3 +2119,27 @@ footer{padding-bottom:110px}
 @media(prefers-reduced-motion:reduce){
  .cacha-page .bonus .premium-access-step{transition:none}
 }
+
+/* Compact plan choice: both checkout paths appear before optional details. */
+.upgrade-modal{width:min(480px,calc(100% - 24px));padding:26px 22px 20px;scroll-padding:16px}
+.upgrade-modal .upgrade-title{font-size:28px}
+.upgrade-modal .upgrade-description{margin:12px 0 18px;line-height:1.5}
+.upgrade-choices{display:grid;gap:12px}
+.upgrade-choices a{min-height:64px;text-align:left;justify-content:space-between;touch-action:manipulation}
+.upgrade-choices strong{display:block;font-size:15px;line-height:1.4}
+.upgrade-choices small{display:block;font-size:11px;font-weight:500;line-height:1.4;margin-top:4px}
+.upgrade-basic{display:flex;align-items:center;gap:10px;padding:15px 12px;background:#fffdf8;border:1px solid #94734b;border-radius:12px;color:#493021;text-decoration:none}
+.upgrade-basic:hover{background:#f9eedc}
+.upgrade-next{font-size:12px;line-height:1.5;color:#67523f;margin:16px 0 12px}
+.upgrade-details{border-top:1px solid #dcccaf;padding-top:12px;text-align:left}
+.upgrade-details summary{cursor:pointer;font-size:12px;font-weight:700;line-height:1.5;padding:6px 0;color:#493021}
+.upgrade-details summary:focus-visible{outline:3px solid #c58a32;outline-offset:3px}
+.cacha-page .fixed-buy-bar[hidden]{display:none}
+@media(max-width:520px){
+  .upgrade-modal{padding:24px 16px 16px}
+  .upgrade-modal .upgrade-title{font-size:25px}
+  .upgrade-choices strong{font-size:13px}
+  .upgrade-choices a{padding:14px 12px}
+}
+
+.cacha-page .premium-access-guide .access-guide-cta{margin-top:18px}
