@@ -189,8 +189,6 @@ function Index() {
             ))}
           </div>
         </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
-        <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>
       </section>
 
       <section className="testimonials section">
