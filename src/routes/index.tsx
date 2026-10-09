@@ -199,11 +199,6 @@ function Index() {
               <span>✓ Acesso vitalício</span>
               <span>✓ Celular, computador ou tablet</span>
             </div>
-            <div className="premium-access-steps" aria-label="Como funciona o acesso">
-              <div className="premium-access-step"><b>01</b><div><strong>Escolha seu plano</strong><p>Selecione a opção ideal para você.</p></div></div>
-              <div className="premium-access-step"><b>02</b><div><strong>Receba seu acesso</strong><p>Após a confirmação do pagamento, acesse o material digital.</p></div></div>
-              <div className="premium-access-step"><b>03</b><div><strong>Prepare suas receitas</strong><p>Consulte pelo celular, computador ou tablet, quando quiser.</p></div></div>
-            </div>
           </div>
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
