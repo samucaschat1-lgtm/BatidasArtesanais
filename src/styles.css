@@ -1789,3 +1789,16 @@ footer{padding-bottom:110px}
  .cacha-page .fruit-carousel .marquee-track{animation:none !important}
  .cacha-page .fruit-carousel-group[aria-hidden="true"]{display:none}
 }
+
+
+/* Loop infinito e contínuo exclusivamente no carrossel de fotos acima do resumo Premium. */
+@media (prefers-reduced-motion: no-preference) {
+  .cacha-page .bonus .fruit-carousel .marquee-track,
+  .cacha-page .bonus .fruit-carousel[data-active="false"] .marquee-track,
+  .cacha-page .bonus .fruit-carousel:hover .marquee-track,
+  .cacha-page .bonus .fruit-carousel:focus-within .marquee-track {
+    animation: fruit-photos-left 38s linear infinite !important;
+    animation-play-state: running !important;
+    will-change: transform;
+  }
+}
