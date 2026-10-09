@@ -1980,3 +1980,57 @@ footer{padding-bottom:110px}
   .cacha-page .testimonial-image img{box-shadow:none;}
   .cacha-page .hero-mockup{filter:drop-shadow(0 8px 12px #3a211418);}
 }
+
+
+/* Guia de acesso abaixo do mockup — sem alterar imagem nem demais seções */
+.cacha-page .bonus .premium-access-guide{
+  width:min(100%,760px);margin:18px auto 30px;padding:0 16px;
+  text-align:center;color:#f7eadc;
+}
+.cacha-page .bonus .premium-access-eyebrow{
+  display:block;font-size:12px;font-weight:800;letter-spacing:.11em;color:#f4c979;
+}
+.cacha-page .bonus .premium-access-guide h3{
+  font-size:clamp(24px,3.4vw,34px);line-height:1.16;margin:9px auto 11px;
+  color:#fff8ef;max-width:620px;
+}
+.cacha-page .bonus .premium-access-intro{
+  font-size:clamp(14px,1.8vw,17px);line-height:1.55;
+  max-width:630px;margin:0 auto 16px;color:#eddbc9;
+}
+.cacha-page .bonus .premium-access-highlights{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 auto 20px;
+}
+.cacha-page .bonus .premium-access-highlights span{
+  border:1px solid #d9b57d77;border-radius:999px;background:#fff6e911;
+  color:#ffebc7;font-size:13px;font-weight:700;padding:8px 12px;
+}
+.cacha-page .bonus .premium-access-steps{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;text-align:left;
+}
+.cacha-page .bonus .premium-access-step{
+  display:flex;align-items:flex-start;gap:11px;padding:15px 12px;
+  background:#fff8ef;border:1px solid #e1c99f;border-radius:14px;
+  color:#493021;min-width:0;
+}
+.cacha-page .bonus .premium-access-step b{
+  flex:0 0 32px;display:grid;place-items:center;height:32px;border-radius:50%;
+  background:#ecd1a2;color:#5a3825;font-size:12px;font-weight:900;
+}
+.cacha-page .bonus .premium-access-step strong{
+  display:block;font-size:14px;line-height:1.28;color:#4b2e1d;
+}
+.cacha-page .bonus .premium-access-step p{
+  margin:5px 0 0;font-size:12px;line-height:1.45;color:#715b4b;
+}
+@media(max-width:600px){
+  .cacha-page .bonus .premium-access-guide{margin:13px auto 26px;padding:0 4px;}
+  .cacha-page .bonus .premium-access-eyebrow{font-size:10px;letter-spacing:.08em;}
+  .cacha-page .bonus .premium-access-guide h3{font-size:24px;margin:7px auto 9px;}
+  .cacha-page .bonus .premium-access-intro{font-size:14px;margin-bottom:13px;}
+  .cacha-page .bonus .premium-access-highlights{gap:6px;margin-bottom:15px;}
+  .cacha-page .bonus .premium-access-highlights span{font-size:11px;padding:7px 9px;}
+  .cacha-page .bonus .premium-access-steps{grid-template-columns:1fr;gap:8px;}
+  .cacha-page .bonus .premium-access-step{padding:11px 13px;align-items:center;}
+  .cacha-page .bonus .premium-access-step p{font-size:12px;}
+}
