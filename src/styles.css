@@ -1887,3 +1887,8 @@ footer{padding-bottom:110px}
     margin: 0 auto 14px;
   }
 }
+
+/* Legenda do mockup Premium no bloco de bônus. */
+.cacha-page .bonus .premium-showcase { flex-direction:column; }
+.cacha-page .bonus .premium-showcase-note { margin:10px auto 0; color:#f3e6d2; font-weight:700; font-size:18px; line-height:1.35; text-align:center; }
+@media(max-width:520px){.cacha-page .bonus .premium-showcase-note{font-size:15px;margin-top:8px;padding:0 8px}}
