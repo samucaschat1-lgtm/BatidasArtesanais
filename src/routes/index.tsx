@@ -77,7 +77,7 @@ function Index() {
   }
 
   useEffect(() => {
-    const carousels = Array.from(document.querySelectorAll<HTMLElement>(".marquee, .testimonial-carousel"));
+    const carousels = Array.from(document.querySelectorAll<HTMLElement>(".marquee:not(.fruit-carousel), .testimonial-carousel"));
     const visible = new Set<HTMLElement>();
     const update = () => carousels.forEach(element => {
       element.dataset["active"] = String(visible.has(element) && !document.hidden);
