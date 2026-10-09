@@ -183,7 +183,7 @@ function Index() {
       <section className="bonus dark-section">
         <div className="premium-showcase" aria-label="Biblioteca de cachaças artesanais e os cinco bônus do Plano Premium">
           <img
-            src="/mocup%20celular%20.PNG"
+            src="/mocup%20celular%20.webp"
             alt="Kit Premium com biblioteca digital e cinco livros bônus: higiene, precificação, harmonização, madeiras e drinks"
             width={1600}
             height={1600}
