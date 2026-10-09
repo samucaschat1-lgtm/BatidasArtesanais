@@ -193,7 +193,6 @@ function Index() {
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
-        <p className="section-intro">Somente o Plano Premium de R$24,90 inclui os cinco bônus abaixo, além das +200 receitas.</p>
         <div className="bonus-grid">
           {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><OptimizedImage className="bonus-cover" sizes="(max-width: 520px) 62px, 180px" src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><div className="bonus-info"><span>{tag}</span><h3>{title}</h3><p>{desc}</p><div className="bonus-price"><s>R$18,00</s> <strong>INCLUSO NO PREMIUM</strong></div></div></article>)}
         </div>
