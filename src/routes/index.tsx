@@ -182,14 +182,14 @@ function Index() {
       <section className="bonus dark-section">
         <div className="premium-showcase" aria-label="Biblioteca de cachaças artesanais e os cinco bônus do Plano Premium">
           <img
-            src="/assets/optimized-v1/premium-mockup-new.webp"
+            src="/assets/optimized-v1/mocup%20celular%20.PNG"
             alt="Kit Premium com biblioteca digital e cinco livros bônus: higiene, precificação, harmonização, madeiras e drinks"
             width={1448}
             height={1086}
             loading="lazy"
             decoding="async"
-            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = IMG + "premium-800.webp"; }}
           />
+          <p className="premium-showcase-note">Acesso fácil e simples pelo seu celular</p>
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
