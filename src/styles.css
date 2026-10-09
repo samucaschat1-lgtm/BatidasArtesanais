@@ -2034,3 +2034,38 @@ footer{padding-bottom:110px}
   .cacha-page .bonus .premium-access-step{padding:11px 13px;align-items:center;}
   .cacha-page .bonus .premium-access-step p{font-size:12px;}
 }
+
+
+/* Refinamento visual dos três cards do passo a passo */
+.cacha-page .bonus .premium-access-steps{gap:14px;margin-top:6px}
+.cacha-page .bonus .premium-access-step{
+  position:relative;align-items:flex-start;gap:12px;padding:16px 14px;
+  background:linear-gradient(180deg,#fffdf9 0%,#f7efe3 100%);
+  border:1px solid #e7cfac;border-radius:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.65);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  overflow:hidden;
+}
+.cacha-page .bonus .premium-access-step::before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+  background:linear-gradient(90deg,#d8b074 0%,#f0d4a0 50%,#c8914b 100%);
+}
+.cacha-page .bonus .premium-access-step:hover{
+  transform:translateY(-2px);border-color:#ddb781;
+  box-shadow:0 14px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.7);
+}
+.cacha-page .bonus .premium-access-step b{
+  flex:0 0 38px;width:38px;height:38px;
+  background:linear-gradient(180deg,#f4dfba,#dfbd84);
+  font-size:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 4px 10px rgba(115,74,26,.16);
+}
+.cacha-page .bonus .premium-access-step > div{min-width:0}
+.cacha-page .bonus .premium-access-step strong{font-size:16px;line-height:1.25;margin-bottom:5px}
+.cacha-page .bonus .premium-access-step p{margin:0;font-size:13px;line-height:1.5}
+@media(max-width:600px){
+  .cacha-page .bonus .premium-access-steps{gap:10px}
+  .cacha-page .bonus .premium-access-step{padding:14px 13px;border-radius:16px}
+  .cacha-page .bonus .premium-access-step b{flex-basis:34px;width:34px;height:34px;font-size:12px}
+  .cacha-page .bonus .premium-access-step strong{font-size:16px}
+  .cacha-page .bonus .premium-access-step p{font-size:12px;line-height:1.45}
+}
