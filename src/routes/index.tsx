@@ -21,6 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "+200 Batidas de Cachaça Artesanal" },
       { property: "og:description", content: "Para começar a produzir na sua própria casa." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -148,7 +149,7 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1 className="hero-headline" style={{ fontSize: "clamp(26px, 4.3vw, 46px)" }}><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
+        <h1 className="hero-headline"><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
@@ -182,10 +183,12 @@ function Index() {
       <section className="bonus dark-section">
         <div className="premium-showcase" aria-label="Biblioteca de cachaças artesanais e os cinco bônus do Plano Premium">
           <img
-            src="/mocup%20celular%20.webp"
+            src="/assets/optimized-v1/showcase-premium-800.webp"
+            srcSet="/assets/optimized-v1/showcase-premium-480.webp 480w, /assets/optimized-v1/showcase-premium-800.webp 800w, /assets/optimized-v1/showcase-premium-1120.webp 1120w"
+            sizes="(max-width: 520px) 74vw, (max-width: 850px) 88vw, 520px"
             alt="Kit Premium com biblioteca digital e cinco livros bônus: higiene, precificação, harmonização, madeiras e drinks"
-            width={1448}
-            height={1086}
+            width={1600}
+            height={1600}
             loading="lazy"
             decoding="async"
           />

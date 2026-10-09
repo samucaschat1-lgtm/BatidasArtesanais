@@ -1913,3 +1913,38 @@ footer{padding-bottom:110px}
     transform: scaleX(1.35);
   }
 }
+
+/* Desktop framing is independent of the existing mobile showcase. */
+@media (min-width: 851px) {
+  .cacha-page .bonus .premium-showcase { max-width: 600px; margin-bottom: 24px; }
+  .cacha-page .bonus .premium-showcase img {
+    width: 100% !important;
+    max-width: 520px !important;
+    transform: none;
+  }
+}
+
+/* Stable typography and readable wrapping at intermediate widths. */
+.cacha-page h1,.cacha-page h2,.cacha-page h3,.cacha-page .cta,.cacha-page .section-kicker {
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+}
+.cacha-page .hero h1.hero-headline { font-size: 46px; line-height: 1.16; text-wrap: balance; }
+.cacha-page .section > h2,.cacha-page .dark-section > h2,.cacha-page .final-cta > h2 {
+  font-size: 36px; line-height: 1.2; text-wrap: balance; max-width: 850px;
+}
+.cacha-page .cta { max-width: 100%; white-space: normal; }
+.cacha-page .faq summary { overflow-wrap: anywhere; }
+.cacha-page #oferta { scroll-margin-top: 24px; }
+.cacha-page > section:not(.hero) { contain-intrinsic-size: auto 800px; }
+@media (max-width: 850px) {
+  .cacha-page .hero h1.hero-headline { font-size: 34px; }
+  .cacha-page .section > h2,.cacha-page .dark-section > h2,.cacha-page .final-cta > h2 { font-size: 30px; }
+}
+@media (max-width: 520px) {
+  .cacha-page .hero h1.hero-headline { font-size: 26px; }
+  .cacha-page .section > h2,.cacha-page .dark-section > h2,.cacha-page .final-cta > h2 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cacha-page .cta,.cacha-page .cta::before,.cacha-page .cta::after { transition: none; }
+}
