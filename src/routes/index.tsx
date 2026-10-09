@@ -180,6 +180,17 @@ function Index() {
 
 
       <section className="bonus dark-section">
+        <div className="premium-showcase" aria-label="Biblioteca de cachaças artesanais e os cinco bônus do Plano Premium">
+          <img
+            src="/assets/optimized-v1/premium-mockup-new.webp"
+            alt="Kit Premium com biblioteca digital e cinco livros bônus: higiene, precificação, harmonização, madeiras e drinks"
+            width={1448}
+            height={1086}
+            loading="lazy"
+            decoding="async"
+            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = IMG + "premium-800.webp"; }}
+          />
+        </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
         <p className="section-intro">Somente o Plano Premium de R$24,90 inclui os cinco bônus abaixo, além das +200 receitas.</p>
