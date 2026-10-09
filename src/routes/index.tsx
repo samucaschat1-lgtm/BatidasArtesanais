@@ -177,20 +177,7 @@ function Index() {
       </section>
 
 
-      <section className="testimonials section">
-        <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
-        <h2>Veja o que dizem sobre o material:</h2>
-        <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
-        <div className="testimonial-carousel">
-          <div className="testimonial-track">
-            {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
-              <OptimizedImage src={IMG + "depoimento-atual-" + n + "-600.webp"} alt={"Depoimento " + n + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
-            </article>)}
-          </div>
-        </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
-        <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
-      </section>
+
 
       <section className="bonus dark-section">
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
@@ -215,6 +202,21 @@ function Index() {
           <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO O BÁSICO — R$10,00</a></article>
           <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,71</strong></div><div className="cash">ou <strong>R$24,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$24,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
+      </section>
+
+      <section className="testimonials section">
+        <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
+        <h2>Veja o que dizem sobre o material:</h2>
+        <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
+        <div className="testimonial-carousel">
+          <div className="testimonial-track">
+            {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
+              <OptimizedImage src={IMG + "depoimento-atual-" + n + "-600.webp"} alt={"Depoimento " + n + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
+            </article>)}
+          </div>
+        </div>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
+        <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
       <section className="payment section">
