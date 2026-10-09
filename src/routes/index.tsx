@@ -176,20 +176,6 @@ function Index() {
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS +200 BATIDAS POR R$10,00</a>
       </section>
 
-      <section className="how section">
-        
-        <div className="marquee how-carousel" role="region" aria-label="Fotos de cachaças artesanais" tabIndex={0}>
-          <div className="marquee-track">
-            {[0, 1].map(set => (
-              <div className="how-carousel-group" key={set} aria-hidden={set === 1 ? true : undefined}>
-                {Array.from({ length: 8 }, (_, i) => (
-                  <img key={i} src={`${IMG}como-funciona-out08-${i + 1}-320.webp`} alt={set === 0 ? `Cachaças artesanais de frutas — foto ${i + 1}` : ""} width={160} height={160} loading="lazy" decoding="async" />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="testimonials section">
         <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
