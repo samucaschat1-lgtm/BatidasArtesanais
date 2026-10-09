@@ -198,6 +198,7 @@ function Index() {
             loading="lazy"
             decoding="async"
           />
+          </picture>
           <p className="premium-showcase-note">Acesso fácil e simples pelo seu celular</p>
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
