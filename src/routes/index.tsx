@@ -190,7 +190,21 @@ function Index() {
             loading="lazy"
             decoding="async"
           />
-          <p className="premium-showcase-note">Acesso fácil e simples pelo seu celular</p>
+          <div className="premium-access-guide">
+            <span className="premium-access-eyebrow">SIMPLES DE ACESSAR, FÁCIL DE APROVEITAR</span>
+            <h3>Suas receitas favoritas, sempre à mão</h3>
+            <p className="premium-access-intro">Cachaças artesanais, batidas, licores cremosos e muito mais, com ingredientes e passo a passo para preparar em casa.</p>
+            <div className="premium-access-highlights" aria-label="Benefícios do acesso">
+              <span>✓ 100% digital</span>
+              <span>✓ Acesso vitalício</span>
+              <span>✓ Celular, computador ou tablet</span>
+            </div>
+            <div className="premium-access-steps" aria-label="Como funciona o acesso">
+              <div className="premium-access-step"><b>01</b><div><strong>Escolha seu plano</strong><p>Selecione a opção ideal para você.</p></div></div>
+              <div className="premium-access-step"><b>02</b><div><strong>Receba seu acesso</strong><p>Após a confirmação do pagamento, acesse o material digital.</p></div></div>
+              <div className="premium-access-step"><b>03</b><div><strong>Prepare suas receitas</strong><p>Consulte pelo celular, computador ou tablet, quando quiser.</p></div></div>
+            </div>
+          </div>
         </div>
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
         <h2>Vá além das receitas com o Plano Premium</h2>
