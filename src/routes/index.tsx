@@ -148,7 +148,7 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1 className="hero-headline" style={{ fontSize: "clamp(26px, 4.3vw, 46px)" }}><em>+200 RECEITAS DE BATIDAS DE CACHAÇA ARTESANAIS</em> PARA FATURAR ATÉ <span style={{ whiteSpace: "nowrap" }}><span style={{ color: "var(--green)" }}>R$3.000</span>/MÊS</span> MESMO COMEÇANDO DO ZERO!</h1>
+        <h1 className="hero-headline" style={{ fontSize: "clamp(26px, 4.3vw, 46px)" }}><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
