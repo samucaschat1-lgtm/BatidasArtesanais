@@ -1902,7 +1902,7 @@ footer{padding-bottom:110px}
   width: 88% !important;
   max-width: 720px !important;
   height: auto !important;
-  transform: scaleX(1.28);
+  transform: scaleX(1.33);
   transform-origin: center center;
 }
 @media (max-width: 520px) {
@@ -1910,6 +1910,6 @@ footer{padding-bottom:110px}
   .cacha-page .bonus .premium-showcase img {
     width: 74% !important;
     max-width: 320px !important;
-    transform: scaleX(1.30);
+    transform: scaleX(1.35);
   }
 }
