@@ -177,7 +177,7 @@ function Index() {
       </section>
 
       <section className="how section">
-        <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
+        
         <div className="marquee how-carousel" role="region" aria-label="Fotos de cachaças artesanais" tabIndex={0}>
           <div className="marquee-track">
             {[0, 1].map(set => (
