@@ -1802,3 +1802,64 @@ footer{padding-bottom:110px}
     will-change: transform;
   }
 }
+
+/* Bônus compactos no celular: capa ao lado do texto, sem remover conteúdo. */
+@media (max-width: 760px) {
+  .cacha-page .bonus .bonus-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin: 16px auto 20px !important;
+    max-width: 560px;
+  }
+  .cacha-page .bonus .bonus-card {
+    display: grid !important;
+    grid-template-columns: 76px minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-items: stretch !important;
+    column-gap: 12px !important;
+    row-gap: 0 !important;
+    padding: 11px 12px !important;
+    text-align: left !important;
+    border-radius: 14px;
+  }
+  .cacha-page .bonus .bonus-card .bonus-cover {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 76px !important;
+    height: 96px !important;
+    max-width: 76px !important;
+    margin: 0 !important;
+    justify-self: center !important;
+    object-fit: contain !important;
+  }
+  .cacha-page .bonus .bonus-card .bonus-info {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    align-items: stretch !important;
+    text-align: left !important;
+    gap: 3px !important;
+    min-width: 0;
+  }
+  .cacha-page .bonus .bonus-info h3,
+  .cacha-page .bonus .bonus-info p {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  .cacha-page .bonus .bonus-info h3 { font-size: 15px !important; line-height: 1.2 !important; }
+  .cacha-page .bonus .bonus-info p { font-size: 12px !important; line-height: 1.35 !important; }
+  .cacha-page .bonus .bonus-info > span { font-size: 10px !important; padding: 3px 7px !important; align-self: flex-start; }
+  .cacha-page .bonus .bonus-card .bonus-price {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 5px !important;
+    padding-top: 5px !important;
+    margin-top: 3px !important;
+  }
+  .cacha-page .bonus .bonus-price s { font-size: 10px !important; }
+  .cacha-page .bonus .bonus-price strong { font-size: 9px !important; padding: 4px 7px !important; }
+}
+@media (max-width: 360px) {
+  .cacha-page .bonus .bonus-card { grid-template-columns: 65px minmax(0, 1fr) !important; gap: 9px !important; padding: 10px !important; }
+  .cacha-page .bonus .bonus-card .bonus-cover { width: 65px !important; max-width: 65px !important; height: 86px !important; }
+  .cacha-page .bonus .bonus-info h3 { font-size: 14px !important; }
+}
