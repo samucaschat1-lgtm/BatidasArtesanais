@@ -152,18 +152,13 @@ function Index() {
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
-        <p className="lead">Comece do zero com receitas passo a passo para preparar em casa e consultar pelo celular.</p>
-        <ul className="checks">
-          <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
+        <p className="lead hero-summary">Prepare suas bebidas artesanais em casa, mesmo começando do zero.</p>
+        <ul className="checks hero-quick-benefits">
+          <li>+200 receitas passo a passo</li>
+          <li>Batidas, licores, infusões e drinks</li>
+          <li>Acesso digital pelo celular</li>
         </ul>
-        <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
-        <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
-        <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$24,90.</p>
-        <div className="micro trust-micro">
-          <span><OptimizedImage src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
-          <span><OptimizedImage src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
-          <span>Acesso imediato</span>
-        </div>
+        <small className="cta-note hero-short-note">Pagamento único • Acesso após a confirmação do pagamento • Sem produtos físicos</small>
       </section>
 
       <section className="dark-section preview" id="batidas">
