@@ -1353,3 +1353,52 @@ footer{padding-bottom:110px}
   .cacha-page .bonus-info .bonus-price{font-size:11px;text-align:left}
   .cacha-page .bonus-info .bonus-price strong{font-size:10px}
 }
+
+/* Compactacao dos beneficios no hero, sem alterar cards de outras secoes */
+.cacha-page .hero .hero-summary{
+  max-width:620px;
+  margin:18px auto 9px;
+  font-size:17px;
+  line-height:1.45;
+}
+.cacha-page .hero .hero-quick-benefits{
+  grid-template-columns:1fr;
+  max-width:600px;
+  gap:5px;
+  margin:12px auto 8px;
+  padding:13px 18px;
+}
+.cacha-page .hero .hero-quick-benefits li{
+  padding:3px 0;
+  font-size:15px;
+  line-height:1.35;
+}
+.cacha-page .hero .hero-short-note{
+  display:block;
+  max-width:640px;
+  margin:9px auto 0;
+  font-size:12px;
+  line-height:1.4;
+}
+@media(max-width:520px){
+  .cacha-page .hero .hero-summary{
+    margin:14px auto 8px;
+    font-size:15px;
+    line-height:1.4;
+  }
+  .cacha-page .hero .hero-quick-benefits{
+    gap:2px;
+    margin:9px auto 7px;
+    padding:11px 10px;
+  }
+  .cacha-page .hero .hero-quick-benefits li{
+    padding:3px 0;
+    font-size:14px;
+    line-height:1.3;
+  }
+  .cacha-page .hero .hero-short-note{
+    margin-top:8px;
+    font-size:11px;
+    line-height:1.35;
+  }
+}
