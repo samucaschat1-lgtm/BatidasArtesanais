@@ -1211,3 +1211,59 @@ footer{padding-bottom:110px}
   .cacha-page .marquee .marquee-track,
   .cacha-page .testimonial-carousel .testimonial-track{animation:none !important;}
 }
+
+
+/* Ajuste de densidade visual — espaços menores sem alterar conteúdo ou cores */
+.cacha-page .hero{padding-top:34px;padding-bottom:42px}
+.cacha-page .hero h1{margin-bottom:17px}
+.cacha-page .hero .lead{margin-bottom:14px;line-height:1.48}
+.cacha-page .hero-mockup{margin-bottom:15px}
+.cacha-page .section{padding-top:48px;padding-bottom:48px}
+.cacha-page .dark-section{padding-top:48px;padding-bottom:48px}
+.cacha-page .section>h2{margin-bottom:22px}
+.cacha-page .dark-section h2{margin-bottom:20px}
+.cacha-page .eyebrow,.cacha-page .section-kicker{margin-bottom:8px}
+.cacha-page .checks{margin-top:14px;margin-bottom:18px;row-gap:7px}
+.cacha-page .marquee{margin-top:18px;margin-bottom:30px}
+.cacha-page .testimonial-grid{margin-top:22px;gap:14px}
+.cacha-page .steps{gap:12px}
+.cacha-page .steps article{padding:18px 13px}
+.cacha-page .steps h3{margin:8px 0}
+.cacha-page .steps p{margin:7px 0}
+.cacha-page .bonus-grid{margin-top:25px;margin-bottom:27px;gap:11px}
+.cacha-page .bonus-card{padding:12px}
+.cacha-page .bonus-card h3{margin:8px 0}
+.cacha-page .bonus-card p{margin:7px 0}
+.cacha-page .bonus{padding-bottom:48px}
+.cacha-page .bonus-total{line-height:1.5}
+.cacha-page .offer{padding-top:30px}
+.cacha-page .plans{gap:18px}
+.cacha-page .plan{padding:23px}
+.cacha-page .plan li{margin:6px 0}
+.cacha-page .plan .checks{margin-top:12px;margin-bottom:14px}
+.cacha-page .price{margin:16px 0}
+.cacha-page .pay-icons{gap:12px;margin:15px 0}
+.cacha-page .seal,.cacha-page .guarantee-img{margin-top:16px;margin-bottom:16px}
+.cacha-page .faq summary{padding-top:15px;padding-bottom:15px}
+.cacha-page .faq details{margin-top:7px;margin-bottom:7px}
+.cacha-page .final-cta{padding-top:48px;padding-bottom:52px}
+.cacha-page .final-cta h2{margin-bottom:20px}
+.cacha-page .cta-note{margin-top:7px}
+@media(max-width:520px){
+  .cacha-page .hero{padding-top:26px;padding-bottom:32px}
+  .cacha-page .hero h1{margin-bottom:15px}
+  .cacha-page .hero-mockup{margin-bottom:12px}
+  .cacha-page .section,.cacha-page .dark-section{padding-top:34px;padding-bottom:34px}
+  .cacha-page .section>h2{margin-bottom:17px}
+  .cacha-page .dark-section h2{margin-bottom:16px}
+  .cacha-page .marquee{margin-top:14px;margin-bottom:22px}
+  .cacha-page .steps{gap:10px}
+  .cacha-page .steps article{padding:15px 12px}
+  .cacha-page .bonus-grid{margin-top:20px;margin-bottom:22px}
+  .cacha-page .bonus-card{padding:11px}
+  .cacha-page .plans{gap:18px}
+  .cacha-page .plan{padding:20px 17px}
+  .cacha-page .plan.featured{margin-top:22px}
+  .cacha-page .pay-icons{gap:7px}
+  .cacha-page .final-cta{padding-top:36px;padding-bottom:42px}
+}
