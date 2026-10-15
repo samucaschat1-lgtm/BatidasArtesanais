@@ -14,11 +14,11 @@ export function OptimizedImage({ src, sizes = "(max-width: 520px) 285px, 320px",
   const srcSet = mockup
     ? [320, 480, 640, 800].map(width => `${ASSETS}${mockup}-${width}.avif ${width}w`).join(", ")
     : asset?.srcSet;
-  if (!srcSet) return <img src={src} loading={loading} decoding="async" loading={loading} {...props} />;
+  if (!srcSet) return <img src={src} loading={loading} decoding="async" {...props} />;
   return (
     <picture style={{ display: "contents" }}>
       <source type="image/avif" srcSet={srcSet} sizes={sizes} />
-      <img src={src} width={asset?.width ?? 800} height={asset?.height ?? 800} decoding="async" {...props} />
+      <img src={src} width={asset?.width ?? 800} height={asset?.height ?? 800} loading={loading} decoding="async" {...props} />
     </picture>
   );
 }
