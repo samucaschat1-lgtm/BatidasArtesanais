@@ -7,12 +7,14 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & { src: string; sizes?: string
 /** AVIF responsive images with the original WebP as a fallback. */
 export function OptimizedImage({ src, sizes = "(max-width: 520px) 285px, 320px", ...props }: Props) {
   const name = src.replace(ASSETS, "");
+  // Only the hero image is eager; below-the-fold media loads when needed.
+  const loading = props.loading ?? (props.fetchPriority === "high" ? "eager" : "lazy");
   const asset = dimensions[name];
   const mockup = name === "basic-800.webp" ? "basic" : name === "premium-800.webp" ? "premium" : null;
   const srcSet = mockup
     ? [320, 480, 640, 800].map(width => `${ASSETS}${mockup}-${width}.avif ${width}w`).join(", ")
     : asset?.srcSet;
-  if (!srcSet) return <img src={src} {...props} />;
+  if (!srcSet) return <img src={src} loading={loading} decoding="async" loading={loading} {...props} />;
   return (
     <picture style={{ display: "contents" }}>
       <source type="image/avif" srcSet={srcSet} sizes={sizes} />
