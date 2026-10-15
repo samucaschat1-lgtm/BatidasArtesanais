@@ -1304,3 +1304,100 @@ footer{padding-bottom:110px}
  .upgrade-modal .upgrade-description{margin-top:8px;margin-bottom:10px}
  .upgrade-modal .upgrade-benefits{gap:5px;margin:10px 0}
 }
+
+
+/* Alinhamento responsivo dos blocos — desktop e mobile */
+.cacha-page .hero,
+.cacha-page .section,
+.cacha-page .dark-section,
+.cacha-page .final-cta {
+  text-align: center;
+}
+.cacha-page .section > h2,
+.cacha-page .dark-section > h2,
+.cacha-page .section > p,
+.cacha-page .dark-section > .section-intro,
+.cacha-page .final-cta > h2 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(100%, 850px);
+}
+.cacha-page .steps,
+.cacha-page .bonus-grid,
+.cacha-page .plans {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+.cacha-page .steps > *,
+.cacha-page .bonus-card,
+.cacha-page .plans > .plan {
+  min-width: 0;
+  text-align: center;
+}
+.cacha-page .bonus-card img,
+.cacha-page .plan img,
+.cacha-page .testimonials img,
+.cacha-page .payment img,
+.cacha-page .risk img {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cacha-page .plan .checks {
+  max-width: 100%;
+  width: fit-content;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cacha-page .bonus-card h3,
+.cacha-page .bonus-card p,
+.cacha-page .steps h3,
+.cacha-page .steps p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.cacha-page .cta {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 767px) {
+  .cacha-page .hero,
+  .cacha-page .section,
+  .cacha-page .dark-section,
+  .cacha-page .final-cta {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  .cacha-page .steps,
+  .cacha-page .bonus-grid,
+  .cacha-page .plans {
+    width: 100%;
+    max-width: 100%;
+  }
+  .cacha-page h1,
+  .cacha-page h2,
+  .cacha-page h3,
+  .cacha-page p {
+    overflow-wrap: break-word;
+  }
+  .cacha-page .plan,
+  .cacha-page .bonus-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* Evita a renderização inicial de seções distantes sem alterar os carrosséis. */
+@supports (content-visibility: auto) {
+  .cacha-page .testimonials,
+  .cacha-page .bonus,
+  .cacha-page .payment,
+  .cacha-page .faq {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+}
