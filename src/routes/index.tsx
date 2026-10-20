@@ -27,11 +27,11 @@ export const Route = createFileRoute("/")({
 });
 
 const bonuses = [
-  ["BÔNUS 01", "bonus-1-600.webp", "Manual de Higiene e de Conservação", "Conheça os cuidados de higiene, armazenamento e conservação da sua cachaça."],
-  ["BÔNUS 02", "bonus-2-600.webp", "Guia de Precificação e Apresentação Profissional", "Organize seus custos e aprimore a apresentação do seu produto artesanal."],
-  ["BÔNUS 03", "bonus-3-600.webp", "50 Drinks e Coquetéis", "Explore 50 combinações para levar criatividade e tradição a cada brinde."],
-  ["BÔNUS 04", "bonus-4-600.webp", "Guia de Madeiras e Sabores", "Descubra a influência de madeiras como carvalho, amburana, bálsamo e jequitibá."],
-  ["BÔNUS 05", "bonus-5-600.webp", "Guia de Harmonização", "Conheça combinações de cachaças, pratos e petiscos para diferentes ocasiões."],
+  ["BÔNUS 01", "bonus-1-600.webp", "Manual de Higiene e de Conservação", "Aprenda cuidados importantes de higiene e conservação para preparar e armazenar suas bebidas com mais segurança."],
+  ["BÔNUS 02", "bonus-2-600.webp", "Guia de Precificação e Apresentação Profissional", "Entenda melhor os custos e veja formas de apresentar suas criações artesanais com mais capricho."],
+  ["BÔNUS 03", "bonus-3-600.webp", "50 Drinks e Coquetéis", "Tenha mais 50 ideias de drinks e coquetéis para variar suas receitas e experimentar novas combinações."],
+  ["BÔNUS 04", "bonus-4-600.webp", "Guia de Madeiras e Sabores", "Conheça como madeiras como carvalho, amburana, bálsamo e jequitibá influenciam aromas e sabores."],
+  ["BÔNUS 05", "bonus-5-600.webp", "Guia de Harmonização", "Descubra sugestões de combinações com pratos e petiscos para servir em diferentes ocasiões."],
 ];
 
 
@@ -52,13 +52,14 @@ function TodayOffer() {
       document.removeEventListener("visibilitychange", updateDate);
     };
   }, []);
-  return <div className="topbar">🥃 OFERTA DE HOJE{date ? `, ${date}` : ""} • +200 RECEITAS POR R$10</div>;
+  return <div className="topbar">🥃 OFERTA DE HOJE{date ? `, ${date}` : ""} • BÁSICO R$10 • PREMIUM R$29,90</div>;
 }
 
 const CHECKOUT_PREMIUM_UPGRADE = "https://ggcheckout.app/checkout/v5/OUw0ZukdRUiMvA1DYVk2";
 
 function Index() {
   const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [upgradeShown, setUpgradeShown] = useState(false);
   const [basicCheckout, setBasicCheckout] = useState(CHECKOUT_BASIC);
 
   const [premiumCheckout, setPremiumCheckout] = useState(CHECKOUT_PREMIUM);
@@ -104,13 +105,14 @@ function Index() {
 
   function offerPremium(event: MouseEvent<HTMLAnchorElement>) {
     prepareCheckout(event);
-    if (!CHECKOUT_PREMIUM_UPGRADE || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!CHECKOUT_PREMIUM_UPGRADE || upgradeShown || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     // Capture the click before checkout pixels intercept it at the link.
     // Only the final checkout choice should be tracked as InitiateCheckout.
     event.stopPropagation();
     setBasicCheckout(event.currentTarget.href);
     setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE, event.currentTarget.href));
+    setUpgradeShown(true);
     setUpgradeOpen(true);
   }
 
@@ -123,7 +125,7 @@ function Index() {
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$19,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +200 receitas e os cinco bônus para ir além do preparo.</Dialog.Description>
+            <Dialog.Description className="upgrade-description">Por apenas R$9,90 a mais que o Básico, leve as +200 receitas e 5 guias para conservar, harmonizar e apresentar suas bebidas com mais recursos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
               <div className="upgrade-summary"><strong>+200 receitas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
@@ -148,16 +150,44 @@ function Index() {
         <ul className="checks">
           <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
-        <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
+        <p className="lead"><strong>Escolha entre o Básico com as receitas e o Premium com 5 guias especiais.</strong></p>
+        <a className="cta" href="#comparar-planos">🥃 CONHECER O KIT COMPLETO</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
         <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
-        <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$29,90.</p>
+        <p className="social-proof">Premium com +200 receitas e 5 bônus, ou Básico para começar somente com as receitas.</p>
         <div className="micro trust-micro">
           <span><OptimizedImage src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
           <span><OptimizedImage src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
           <span>Acesso imediato</span>
         </div>
+      </section>
+
+
+      <section className="quick-compare section" id="comparar-planos" aria-labelledby="quick-compare-title">
+        <div className="section-kicker">ESCOLHA O PACOTE IDEAL PARA VOCÊ</div>
+        <h2 id="quick-compare-title">🥃 Você pode levar apenas as receitas... ou ter o kit completo!</h2>
+        <p className="quick-compare-intro">Com o Plano Premium, além das +200 receitas, você recebe 5 guias especiais para aprender sobre conservação, novas combinações, harmonização, apresentação e muito mais.</p>
+        <p className="quick-compare-difference">Tudo isso por apenas <strong>R$19,90 a mais</strong> que o Básico.</p>
+        <div className="quick-compare-grid">
+          <article className="quick-plan quick-plan-premium">
+            <span className="quick-plan-tag">⭐ PACOTE MAIS COMPLETO</span>
+            <OptimizedImage className="quick-plan-image" src={IMG+"premium-800.webp"} sizes="(max-width: 767px) 180px, 210px" alt="Kit Premium com mais de 200 receitas e cinco guias extras" loading="lazy" decoding="async" />
+            <h3>Plano Premium</h3>
+            <p className="quick-plan-summary">+200 receitas <strong>+ 5 guias exclusivos</strong> para aproveitar ainda mais o material.</p>
+            <div className="quick-plan-price">R$29,90</div>
+            <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O KIT COMPLETO</a>
+            <small>Pagamento único • Acesso digital • Garantia de 7 dias</small>
+          </article>
+          <article className="quick-plan quick-plan-basic">
+            <span className="quick-plan-label">OPÇÃO ESSENCIAL</span>
+            <h3>Plano Básico</h3>
+            <p className="quick-plan-summary">As +200 receitas digitais, sem os cinco guias complementares do Premium.</p>
+            <div className="quick-plan-price">R$10,00</div>
+            <a className="quick-basic-link" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>Quero somente as receitas por R$10,00 →</a>
+            <small>Pagamento único • Acesso digital • Garantia de 7 dias</small>
+          </article>
+        </div>
+        <a className="quick-compare-more" href="#oferta">Ver a comparação detalhada dos planos ↓</a>
       </section>
 
       <section className="dark-section preview" id="batidas">
@@ -167,7 +197,7 @@ function Index() {
         <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["batida-out07-1-440.webp","batida-out07-2-440.webp","batida-out07-3-440.webp","batida-out07-4-440.webp","batida-out07-5-440.webp","batida-out07-6-440.webp","batida-out07-7-440.webp","batida-out07-8-440.webp"].map((x,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 155px, 170px" src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><OptimizedImage key={"p"+set+i} sizes="(max-width: 520px) 210px, 280px" src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS +200 BATIDAS POR R$10,00</a>
+        <a className="cta" href="#oferta">CONHECER O PREMIUM + 5 BÔNUS</a>
       </section>
 
       <section className="how section">
@@ -181,7 +211,7 @@ function Index() {
             ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
+        <a className="cta" href="#oferta">COMPARAR OS PLANOS</a>
         <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>
       </section>
 
@@ -196,19 +226,19 @@ function Index() {
             </article>)}
           </div>
         </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
+        <a className="cta" href="#oferta">CONHECER O KIT COMPLETO</a>
         <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
       <section className="bonus dark-section">
         <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
-        <h2>Vá além das receitas com o Plano Premium</h2>
-        <p className="section-intro">Os cinco materiais abaixo acompanham somente o Plano Premium de R$29,90. O Básico de R$10 inclui as +200 receitas, sem estes bônus.</p>
+        <h2>Com o Premium, você aproveita muito mais que as receitas</h2>
+        <p className="section-intro">Aprenda cuidados de conservação, descubra novas combinações, organize custos e saiba como harmonizar suas criações. Esses cinco guias acompanham somente o Premium de R$29,90; o Básico de R$10 inclui as receitas.</p>
         <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, 220px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
         <div className="bonus-grid">
           {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
         </div>
-        <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$29,90</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
+        <div className="bonus-total"><strong>+200 RECEITAS + 5 GUIAS EXCLUSIVOS</strong><br/><b>Plano Premium: R$29,90 • Apenas R$19,90 a mais que o Básico</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
@@ -219,10 +249,10 @@ function Index() {
 
       <section className="offer section" id="oferta">
         <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
-        <h2>Escolha como quer começar hoje:</h2>
+        <h2>Escolha como quer começar hoje:</h2><p className="offer-intro">🥃 Você pode levar apenas as receitas... ou ter o kit completo! O Premium traz os mesmos +200 preparos do Básico e cinco guias complementares para aproveitar ainda mais.</p><p className="offer-difference">Tudo isso por apenas <strong>R$19,90 a mais</strong> que o Básico.</p>
         <div className="plans">
           <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO O BÁSICO — R$10,00</a></article>
-          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,98</strong></div><div className="cash">ou <strong>R$29,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$29,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 GUIAS EXCLUSIVOS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li><strong>Higiene e Conservação:</strong> cuidados para armazenar suas bebidas</li><li><strong>Precificação e Apresentação:</strong> organize custos e capriche na apresentação</li><li><strong>50 Drinks e Coquetéis:</strong> mais opções para experimentar</li><li><strong>Madeiras e Sabores:</strong> entenda como os aromas podem mudar</li><li><strong>Harmonização:</strong> ideias para combinar com pratos e petiscos</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,98</strong></div><div className="cash">ou <strong>R$29,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$29,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
       </section>
 
@@ -239,15 +269,15 @@ function Index() {
         <OptimizedImage src={IMG+"garantia-7-dias-risco-zero-420.webp"} alt="Selo de garantia de 7 dias com risco zero" loading="lazy" decoding="async" className="guarantee-img"/>
       </section>
 
-      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
+      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href="#oferta">🔒 ESCOLHER MEU PLANO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
 
       <FAQ />
-      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href="#oferta">🥃 CONHECER O KIT COMPLETO</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o Kit +200 Batidas por R$10,00">
-        <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
-        <small>Pagamento único • Pix ou cartão</small>
+      <a className="fixed-buy-bar" href="#comparar-planos" aria-label="Comparar o Plano Premium e o Plano Básico">
+        <span className="fixed-buy-label">🥃 CONHECER O KIT COMPLETO</span>
+        <small>Premium R$29,90 • Básico R$10,00</small>
       </a>
     </main>
   );
