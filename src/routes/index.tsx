@@ -168,20 +168,27 @@ function Index() {
         <h2 id="quick-compare-title">🥃 Você pode levar apenas as receitas... ou ter o kit completo!</h2>
         <p className="quick-compare-intro">Com o Plano Premium, além das +200 receitas, você recebe 5 guias especiais para aprender sobre conservação, novas combinações, harmonização, apresentação e muito mais.</p>
         <p className="quick-compare-difference">Tudo isso por apenas <strong>R$19,90 a mais</strong> que o Básico.</p>
+        <p className="quick-compare-value-note">Você leva os 5 guias extras por uma diferença equivalente a <strong>R$3,98 por guia</strong>, além das receitas já incluídas.</p>
         <div className="quick-compare-grid">
           <article className="quick-plan quick-plan-premium">
-            <span className="quick-plan-tag">⭐ PACOTE MAIS COMPLETO</span>
+            <span className="quick-plan-tag">⭐ KIT COMPLETO • 6 MATERIAIS DIGITAIS</span>
             <OptimizedImage className="quick-plan-image" src={IMG+"premium-800.webp"} sizes="(max-width: 767px) 180px, 210px" alt="Kit Premium com mais de 200 receitas e cinco guias extras" loading="lazy" decoding="async" />
             <h3>Plano Premium</h3>
-            <p className="quick-plan-summary">+200 receitas <strong>+ 5 guias exclusivos</strong> para aproveitar ainda mais o material.</p>
+            <p className="quick-plan-summary">Tudo do Básico e mais <strong>5 guias exclusivos</strong> para você aproveitar melhor cada receita.</p>
+            <ul className="quick-premium-points">
+              <li>Cuidados de higiene e conservação</li>
+              <li>50 novas ideias de drinks e coquetéis</li>
+              <li>Harmonização, sabores e apresentação</li>
+            </ul>
             <div className="quick-plan-price">R$29,90</div>
+            <p className="quick-plan-price-note">Somente R$19,90 a mais pelo kit completo</p>
             <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O KIT COMPLETO</a>
             <small>Pagamento único • Acesso digital • Garantia de 7 dias</small>
           </article>
           <article className="quick-plan quick-plan-basic">
             <span className="quick-plan-label">OPÇÃO ESSENCIAL</span>
             <h3>Plano Básico</h3>
-            <p className="quick-plan-summary">As +200 receitas digitais, sem os cinco guias complementares do Premium.</p>
+            <p className="quick-plan-summary">A biblioteca com mais de 200 receitas para preparar em casa, sem os 5 guias extras.</p>
             <div className="quick-plan-price">R$10,00</div>
             <a className="quick-basic-link" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>Quero somente as receitas por R$10,00 →</a>
             <small>Pagamento único • Acesso digital • Garantia de 7 dias</small>
@@ -236,9 +243,9 @@ function Index() {
         <p className="section-intro">Aprenda cuidados de conservação, descubra novas combinações, organize custos e saiba como harmonizar suas criações. Esses cinco guias acompanham somente o Premium de R$29,90; o Básico de R$10 inclui as receitas.</p>
         <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, 220px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
         <div className="bonus-grid">
-          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
+          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>GUIA COMPLEMENTAR</b><div className="bonus-price"><strong>✓ INCLUSO NO PREMIUM</strong></div><small>Não incluso no Básico</small></article>)}
         </div>
-        <div className="bonus-total"><strong>+200 RECEITAS + 5 GUIAS EXCLUSIVOS</strong><br/><b>Plano Premium: R$29,90 • Apenas R$19,90 a mais que o Básico</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
+        <div className="bonus-total"><strong>UMA BIBLIOTECA COMPLETA + 5 GUIAS PARA IR ALÉM</strong><br/><b>Premium: R$29,90</b><span>Por uma diferença de R$19,90 em relação ao Básico, leve os 5 guias extras — equivalente a R$3,98 por guia.</span><span>Prefere somente as receitas? O Básico de R$10,00 continua disponível.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
@@ -249,10 +256,10 @@ function Index() {
 
       <section className="offer section" id="oferta">
         <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
-        <h2>Escolha como quer começar hoje:</h2><p className="offer-intro">🥃 Você pode levar apenas as receitas... ou ter o kit completo! O Premium traz os mesmos +200 preparos do Básico e cinco guias complementares para aproveitar ainda mais.</p><p className="offer-difference">Tudo isso por apenas <strong>R$19,90 a mais</strong> que o Básico.</p>
+        <h2>Escolha como quer começar hoje:</h2><p className="offer-intro">🥃 Você pode levar apenas as receitas... ou ter o kit completo! O Premium traz os mesmos +200 preparos do Básico e cinco guias complementares para aproveitar ainda mais.</p><p className="offer-difference">Tudo isso por apenas <strong>R$19,90 a mais</strong> que o Básico — com os 5 guias extras já incluídos.</p>
         <div className="plans">
           <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO O BÁSICO — R$10,00</a></article>
-          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 GUIAS EXCLUSIVOS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li><strong>Higiene e Conservação:</strong> cuidados para armazenar suas bebidas</li><li><strong>Precificação e Apresentação:</strong> organize custos e capriche na apresentação</li><li><strong>50 Drinks e Coquetéis:</strong> mais opções para experimentar</li><li><strong>Madeiras e Sabores:</strong> entenda como os aromas podem mudar</li><li><strong>Harmonização:</strong> ideias para combinar com pratos e petiscos</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,98</strong></div><div className="cash">ou <strong>R$29,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$29,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+          <article className="plan featured"><div className="badge">⭐ PREMIUM • KIT MAIS COMPLETO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 GUIAS EXCLUSIVOS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li><strong>Higiene e Conservação:</strong> cuidados para armazenar suas bebidas</li><li><strong>Precificação e Apresentação:</strong> organize custos e capriche na apresentação</li><li><strong>50 Drinks e Coquetéis:</strong> mais opções para experimentar</li><li><strong>Madeiras e Sabores:</strong> entenda como os aromas podem mudar</li><li><strong>Harmonização:</strong> ideias para combinar com pratos e petiscos</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><div className="featured-value-note"><strong>Mais 5 guias no seu pacote</strong><span>A diferença para o Básico é de R$19,90 no total — equivalente a R$3,98 por guia extra.</span></div><div className="installments">5x de <strong>R$5,98</strong></div><div className="cash">ou <strong>R$29,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$29,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
         </div>
       </section>
 
