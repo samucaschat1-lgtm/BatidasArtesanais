@@ -1440,3 +1440,137 @@ footer{padding-bottom:110px}
   .cacha-page .plans .plan.featured{order:-1;margin-top:0}
   .cacha-page .plans .plan.simple{order:1}
 }
+
+
+/* Refinamento visual incremental: preservar toda a estrutura e os CTAs já validados. */
+.cacha-page .quick-compare{
+  max-width:1010px;
+  margin-top:14px;
+  margin-bottom:16px;
+  border:1px solid #e9d5b3;
+  border-radius:26px;
+  background:linear-gradient(160deg,#fffdf8 0%,#fbf3e4 60%,#f7edd8 100%);
+  box-shadow:0 14px 32px rgba(68,43,21,.065);
+}
+.cacha-page .quick-compare-value-note{
+  max-width:665px;
+  margin: -8px auto 18px;
+  color:#65523e;
+  font-size:13px;
+  line-height:1.4;
+}
+.cacha-page .quick-compare-value-note strong{color:#286a35}
+.cacha-page .quick-plan{transition:border-color .15s ease,box-shadow .15s ease}
+.cacha-page .quick-plan-premium{
+  background:linear-gradient(156deg,#fffcf3 0%,#f7e8c9 100%);
+  border-color:#b98436;
+  box-shadow:0 15px 37px rgba(81,51,22,.13),inset 0 0 0 1px rgba(255,255,255,.65);
+}
+.cacha-page .quick-plan-tag{letter-spacing:.018em;padding:7px 13px}
+.cacha-page .quick-plan-summary{line-height:1.48}
+.cacha-page .quick-premium-points{
+  width:100%;
+  max-width:335px;
+  padding:0 4px;
+  margin:3px auto 2px;
+  text-align:left;
+  list-style:none;
+  display:grid;
+  gap:7px;
+}
+.cacha-page .quick-premium-points li{
+  position:relative;
+  color:#493a2d;
+  padding-left:23px;
+  font-size:13px;
+  font-weight:620;
+  line-height:1.4;
+}
+.cacha-page .quick-premium-points li:before{
+  content:"✓";
+  position:absolute;
+  left:1px;
+  top:0;
+  color:#23753b;
+  font-weight:900;
+}
+.cacha-page .quick-plan-price-note{
+  font-size:12px;
+  color:#38663b;
+  font-weight:800;
+  margin: -5px auto 1px;
+  line-height:1.35;
+}
+.cacha-page .quick-plan-basic{background:#fffdf9;border-color:#e6ddcf;box-shadow:0 6px 20px rgba(58,34,18,.055)}
+.cacha-page .quick-basic-link{color:#5c3d22}
+.cacha-page .quick-basic-link:hover{color:#206432}
+.cacha-page .bonus-card{
+  border-color:#e8d7b5;
+  border-radius:17px;
+  box-shadow:0 11px 25px rgba(23,12,5,.13);
+}
+.cacha-page .bonus-card h3{color:#422b18}
+.cacha-page .bonus-card .bonus-price{
+  width:max-content;
+  max-width:100%;
+  margin:6px auto 0;
+  border-radius:100px;
+  border:1px solid #d6e8d0;
+  background:#edf7e9;
+  padding:5px 9px;
+  font-size:10px;
+  line-height:1.3;
+}
+.cacha-page .bonus-card .bonus-price strong{color:#326d35}
+.cacha-page .bonus-total{
+  margin:24px auto 18px;
+  max-width:780px;
+  padding:17px 16px;
+  border:1px solid rgba(223,181,111,.38);
+  border-radius:18px;
+  background:rgba(255,246,230,.075);
+}
+.cacha-page .bonus-total strong{color:#f1d3a2;display:inline-block;margin-bottom:2px}
+.cacha-page .bonus-total>b{font-size:clamp(23px,3.5vw,35px);color:#d8eeab}
+.cacha-page .bonus-total span{font-size:13px;line-height:1.45;max-width:620px;margin:4px auto}
+.cacha-page .plans .plan.featured{
+  background:linear-gradient(150deg,#fffdf7,#f8edd8);
+  border-color:#bf8b39;
+  box-shadow:0 18px 39px rgba(77,48,21,.15);
+}
+.cacha-page .plans .plan.simple{box-shadow:0 9px 27px rgba(61,42,25,.08)}
+.cacha-page .featured-value-note{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  max-width:420px;
+  margin:4px auto 16px;
+  padding:11px 14px;
+  background:#f0f7e9;
+  border:1px solid #cfdfc3;
+  border-radius:12px;
+  text-align:center;
+  color:#3a6737;
+  line-height:1.38;
+}
+.cacha-page .featured-value-note strong{font-size:14px}
+.cacha-page .featured-value-note span{font-size:12px}
+.cacha-page .offer-difference{max-width:730px}
+@media(max-width:767px){
+  .cacha-page .quick-compare{
+    width:calc(100% - 24px);
+    padding-left:14px;
+    padding-right:14px;
+    margin:12px auto 18px;
+    border-radius:20px;
+  }
+  .cacha-page .quick-compare-value-note{font-size:12px;margin-bottom:14px}
+  .cacha-page .quick-premium-points{max-width:300px}
+  .cacha-page .quick-plan-tag{font-size:11px;line-height:1.35}
+  .cacha-page .bonus-total{padding:14px 12px}
+  .cacha-page .bonus-total>b{font-size:24px}
+  .cacha-page .bonus-total span{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cacha-page .quick-plan{transition:none}
+}
