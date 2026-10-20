@@ -1401,3 +1401,37 @@ footer{padding-bottom:110px}
     contain-intrinsic-size: auto 720px;
   }
 }
+
+
+/* Refino visual discreto, preservando integralmente a estrutura da oferta. */
+.cacha-page .hero h1{letter-spacing:-.028em;text-wrap:balance}
+.cacha-page .section>h2,.cacha-page .dark-section>h2{letter-spacing:-.022em;text-wrap:balance}
+.cacha-page .hero .lead{max-width:700px}
+.cacha-page .steps article,.cacha-page .bonus-card,.cacha-page .plan,.cacha-page .faq details{
+ border-radius:17px;border-color:#e8d9bf;box-shadow:0 5px 19px rgba(49,32,17,.065)
+}
+.cacha-page .steps article{background:#fffbf3}
+.cacha-page .faq details{background:#fffdf8}
+.cacha-page .plan.featured{border-color:#b88a40;box-shadow:0 12px 28px rgba(56,33,13,.12)}
+.cacha-page .plan.simple{box-shadow:0 7px 19px rgba(56,33,13,.065)}
+.cacha-page .section-kicker{letter-spacing:.12em}
+.cacha-page .cta:focus-visible,.cacha-page .fixed-buy-bar:focus-visible{
+ outline:3px solid #d5a049;outline-offset:4px
+}
+.cacha-page .bonus-card img,.cacha-page .testimonial-image img{border-radius:12px}
+@media(max-width:767px){
+ /* A grade já mostra todos os bônus; remover o carrossel duplicado evita animação desnecessária. */
+ .cacha-page .bonus-marquee{display:none}
+ .cacha-page .hero-mockup{filter:drop-shadow(0 9px 15px rgba(28,16,9,.13))}
+ .cacha-page .steps article,.cacha-page .bonus-card,.cacha-page .plan,.cacha-page .faq details{
+   box-shadow:0 3px 11px rgba(49,32,17,.055)
+ }
+ .cacha-page .plan.featured{box-shadow:0 8px 20px rgba(56,33,13,.10)}
+ .cacha-page .cta{box-shadow:0 3px 0 #087326,0 6px 15px rgba(22,165,58,.22)}
+ .upgrade-overlay{backdrop-filter:none}
+}
+@media(hover:none){
+ .cacha-page .cta:before{display:none}
+ .cacha-page .cta:hover{transform:none;filter:none}
+ .cacha-page .cta:hover:after{transform:none}
+}
