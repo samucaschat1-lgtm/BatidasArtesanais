@@ -1401,3 +1401,42 @@ footer{padding-bottom:110px}
     contain-intrinsic-size: auto 720px;
   }
 }
+
+
+/* Teste de oferta Premium — comparação curta logo após o hero (20/10/2026). */
+.cacha-page .quick-compare{max-width:1050px;text-align:center;scroll-margin-top:16px;padding-top:35px;padding-bottom:52px}
+.cacha-page .quick-compare h2{font-size:clamp(27px,3.8vw,41px);line-height:1.12;max-width:820px;margin:0 auto 15px}
+.cacha-page .quick-compare-intro{max-width:750px;margin:0 auto 12px;color:#54473e;font-size:17px}
+.cacha-page .quick-compare-difference,.cacha-page .offer-difference{font-size:19px;color:#3d2516;font-weight:800;margin:10px auto 22px}
+.cacha-page .quick-compare-difference strong,.cacha-page .offer-difference strong{color:#14763b}
+.cacha-page .quick-compare-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:stretch;max-width:850px;margin:22px auto}
+.cacha-page .quick-plan{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:9px;padding:24px;border-radius:22px;border:1px solid #dfd2ba;background:#fffdf9;box-shadow:0 8px 28px #39271a10;min-width:0}
+.cacha-page .quick-plan-premium{background:linear-gradient(145deg,#fffaf0,#f8ecd2);border:2px solid #c58a32;box-shadow:0 14px 37px #75501a24}
+.cacha-page .quick-plan-tag{display:inline-block;background:#4b2a16;color:#ffe1a9;padding:5px 14px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.03em}
+.cacha-page .quick-plan-label{display:inline-block;color:#6a5b4d;font-weight:800;font-size:12px;letter-spacing:.04em}
+.cacha-page .quick-plan-image{width:min(188px,64%);max-height:165px;object-fit:contain;height:auto;margin:0 auto;filter:drop-shadow(0 8px 15px #30201322)}
+.cacha-page .quick-plan h3{font-size:25px;line-height:1.14;margin:0;color:#372318}
+.cacha-page .quick-plan-summary{font-size:15px;color:#54473e;max-width:310px;margin:0;line-height:1.45}
+.cacha-page .quick-plan-price{font-size:34px;font-weight:900;color:#332318;line-height:1.1;margin-top:auto;padding-top:8px}
+.cacha-page .quick-plan-premium .quick-plan-price{color:#206d2f}
+.cacha-page .quick-plan .cta{width:100%;font-size:14px;min-height:56px;padding:12px 14px;margin-top:3px}
+.cacha-page .quick-plan small{color:#695d51;font-size:12px}
+.cacha-page .quick-plan-basic{justify-content:center}
+.cacha-page .quick-basic-link{display:inline-block;padding:13px 9px;color:#53351d;font-size:14px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.cacha-page .quick-compare-more{display:inline-block;margin-top:3px;color:#503319;font-weight:800;text-underline-offset:3px}
+.cacha-page .offer-intro{font-size:16px;max-width:750px;margin:0 auto 8px;color:#54473e}
+.cacha-page .offer-difference{margin-bottom:20px}
+#oferta{scroll-margin-top:18px}
+@media(max-width:767px){
+  .cacha-page .quick-compare{padding-top:23px;padding-bottom:35px}
+  .cacha-page .quick-compare h2{font-size:27px}
+  .cacha-page .quick-compare-intro{font-size:15px}
+  .cacha-page .quick-compare-difference,.cacha-page .offer-difference{font-size:17px}
+  .cacha-page .quick-compare-grid{grid-template-columns:minmax(0,1fr);gap:15px}
+  .cacha-page .quick-plan{padding:21px 16px}
+  .cacha-page .quick-plan-premium{order:0}
+  .cacha-page .quick-plan-basic{order:1}
+  .cacha-page .quick-plan h3{font-size:24px}
+  .cacha-page .plans .plan.featured{order:-1;margin-top:0}
+  .cacha-page .plans .plan.simple{order:1}
+}
