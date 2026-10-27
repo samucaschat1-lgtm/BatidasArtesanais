@@ -1473,3 +1473,121 @@ footer{padding-bottom:110px}
 .cacha-page .bonus-price strong{font-size:12px;line-height:1.35}
 @media(min-width:851px){.cacha-page .how .steps{grid-template-columns:repeat(3,minmax(0,1fr));max-width:950px;margin:0 auto}}
 @media(max-width:520px){.cacha-page .hero .lead strong{display:inline}.cacha-page .premium-price-label{font-size:10px}}
+
+
+/* Diferenciais do Premium: três benefícios claramente separados da lista completa. */
+.cacha-page .premium-differentials,
+.upgrade-modal .premium-differentials{
+  margin:14px 0 18px;
+  border:1px solid #d6b57e;
+  background:#fff5df;
+  color:#4b321a;
+  border-radius:14px;
+  padding:14px;
+  text-align:left;
+  width:100%;
+  max-width:100%;
+}
+.cacha-page .premium-differentials-heading,
+.upgrade-modal .premium-differentials-heading{
+  display:block;
+  color:#81551e;
+  font-size:11px;
+  font-weight:900;
+  line-height:1.45;
+  letter-spacing:.055em;
+  margin-bottom:11px;
+}
+.cacha-page .premium-differentials-list,
+.upgrade-modal .premium-differentials-list{
+  display:grid;
+  gap:11px;
+}
+.cacha-page .premium-difference,
+.upgrade-modal .premium-difference{
+  display:grid;
+  grid-template-columns:30px minmax(0,1fr);
+  gap:10px;
+  align-items:start;
+}
+.cacha-page .premium-difference-icon,
+.upgrade-modal .premium-difference-icon{
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  flex:none;
+  border-radius:8px;
+  background:#6d4b2a;
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+}
+.cacha-page .premium-difference strong,
+.upgrade-modal .premium-difference strong{
+  display:block;
+  color:#3d2a18;
+  font-size:13px;
+  line-height:1.35;
+  font-weight:900;
+}
+.cacha-page .premium-difference small,
+.upgrade-modal .premium-difference small{
+  display:block;
+  margin-top:2px;
+  font-size:11px;
+  font-weight:500;
+  color:#705946;
+  line-height:1.42;
+}
+.upgrade-modal .premium-differentials-compact{
+  padding:12px 13px;
+  margin:10px 0 9px;
+}
+.upgrade-modal .premium-differentials-compact .premium-differentials-list{gap:8px}
+.upgrade-modal .premium-differentials-compact .premium-difference{
+  grid-template-columns:26px minmax(0,1fr);
+  gap:8px;
+}
+.upgrade-modal .premium-differentials-compact .premium-difference-icon{
+  width:26px;
+  height:26px;
+  font-size:12px;
+  border-radius:7px;
+}
+.upgrade-modal .premium-differentials-compact .premium-difference strong{font-size:12px}
+.upgrade-modal .premium-differentials-compact .premium-difference small{font-size:10px}
+.upgrade-modal .premium-differentials-compact .premium-differentials-heading{
+  font-size:10px;
+  margin-bottom:9px;
+}
+.upgrade-modal .upgrade-all-extras{
+  margin:8px 0 13px;
+  text-align:left;
+}
+.upgrade-modal .upgrade-all-extras summary{
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800;
+  color:#694623;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  padding:7px 3px;
+  line-height:1.4;
+}
+.upgrade-modal .upgrade-all-extras summary:focus-visible{
+  outline:3px solid #c58a32;
+  outline-offset:3px;
+}
+.upgrade-modal .upgrade-all-extras .upgrade-benefits{
+  margin:7px 0;
+  padding:0 4px;
+}
+@media(max-width:520px){
+ .cacha-page .plan.featured .premium-differentials{padding:12px;margin:11px 0 15px}
+ .cacha-page .plan.featured .premium-difference{gap:8px}
+ .cacha-page .plan.featured .premium-difference strong{font-size:12px}
+ .cacha-page .plan.featured .premium-difference small{font-size:11px}
+ .upgrade-modal .premium-differentials-compact{padding:10px}
+ .upgrade-modal .premium-differentials-compact .premium-difference small{font-size:10px}
+}
