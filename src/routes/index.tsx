@@ -107,7 +107,7 @@ function Index() {
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$21,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$14,90 em relação ao Básico, receba as +200 receitas, +200 videoaulas passo a passo e os cinco bônus exclusivos.</Dialog.Description>
+            <Dialog.Description className="upgrade-description">Por mais R$11,90 em relação ao Básico, receba as +200 receitas, +200 videoaulas passo a passo e os cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
               <div className="upgrade-summary"><strong>+200 receitas<br />+200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
@@ -229,7 +229,7 @@ function Index() {
             <div className="plan-video-box plan-video-premium"><span className="plan-video-icon" aria-hidden="true">▶</span><div><strong>+200 VIDEOAULAS INCLUSAS</strong><small>Passo a passo explicado • 100 aulas a mais que no Básico.</small></div></div>
             <ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>50 Combinações Especiais de Sabores</li><li>Guia de Cremosidade Perfeita</li><li>Guia de Ingredientes e Substituições</li><li>Tabela de Medidas e Quantidades</li><li>Guia de Batidas em Grandes Quantidades</li><li>20 Batidas Fáceis para Iniciantes</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul>
             <p className="premium-value-note">O kit para ir além do básico: +100 videoaulas, 5 guias exclusivos e mais ideias para variar suas bebidas.</p>
-            <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="cash">ou <strong>R$34,90 à vista</strong></div>
+            <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="cash"><strong>R$34,90 à vista</strong></div>
             <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>SIM, QUERO O KIT COMPLETO — R$34,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small>
           </article>
         </div>
