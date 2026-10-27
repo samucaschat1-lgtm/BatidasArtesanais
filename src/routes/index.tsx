@@ -127,7 +127,7 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
+        <h1><em>+200 Receitas e Video Aulas Prontas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
         <p className="lead"><strong>Chega de preparar sempre as mesmas bebidas.</strong> Tenha receitas com ingredientes, quantidades e modo de preparo organizados em um só lugar. Escolha o sabor, acompanhe as videoaulas e prepare no seu ritmo.</p>
         <ul className="checks">
