@@ -106,7 +106,7 @@ function Index() {
           <Dialog.Content className="upgrade-modal">
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
-            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$24,90</span></Dialog.Title>
+            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$21,90</span></Dialog.Title>
             <Dialog.Description className="upgrade-description">Por mais R$14,90 em relação ao Básico, receba as +200 receitas, +200 videoaulas passo a passo e os cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
@@ -116,8 +116,8 @@ function Index() {
               {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
               {["50 Combinações Especiais de Sabores", "Guia de Cremosidade Perfeita", "Guia de Ingredientes e Substituições", "Tabela de Medidas e Quantidades", "Guia de Batidas em Grandes Quantidades", "20 Batidas Fáceis para Iniciantes"].map((title) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
             </ul>
-            <div className="upgrade-price"><span>Premium na página: <s>R$37,90</s></span><strong>R$24,90</strong><small>Valor total • Pagamento único</small></div>
-            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$24,90 <span aria-hidden="true">→</span></a>
+            <div className="upgrade-price"><span>Premium na página: <s>R$34,90</s></span><strong>R$21,90</strong><small>Valor total • Pagamento único</small></div>
+            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$21,90 <span aria-hidden="true">→</span></a>
             <a className="upgrade-decline" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>Continuar com o Básico por R$10,00</a>
             <p className="upgrade-trust">🔒 Compra segura · Acesso após o pagamento · Garantia de 7 dias</p>
           </Dialog.Content>
@@ -201,7 +201,7 @@ function Index() {
         <div className="bonus-grid">
           {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><strong>JÁ INCLUSO • SEM CUSTO EXTRA</strong></div><small>Exclusivo do Plano Premium</small></article>)}
         </div>
-        <div className="bonus-total"><strong>UM KIT SÓ: +200 RECEITAS + 200 VIDEOAULAS + 5 BÔNUS</strong><br/><b>Premium por R$37,90 • Pagamento único</b><span>Mais aulas, mais ideias e materiais para aproveitar a biblioteca de forma completa.</span></div>
+        <div className="bonus-total"><strong>UM KIT SÓ: +200 RECEITAS + 200 VIDEOAULAS + 5 BÔNUS</strong><br/><b>Premium por R$34,90 • Pagamento único</b><span>Mais aulas, mais ideias e materiais para aproveitar a biblioteca de forma completa.</span></div>
         <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
         <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
@@ -229,8 +229,8 @@ function Index() {
             <div className="plan-video-box plan-video-premium"><span className="plan-video-icon" aria-hidden="true">▶</span><div><strong>+200 VIDEOAULAS INCLUSAS</strong><small>Passo a passo explicado • 100 aulas a mais que no Básico.</small></div></div>
             <ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>50 Combinações Especiais de Sabores</li><li>Guia de Cremosidade Perfeita</li><li>Guia de Ingredientes e Substituições</li><li>Tabela de Medidas e Quantidades</li><li>Guia de Batidas em Grandes Quantidades</li><li>20 Batidas Fáceis para Iniciantes</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul>
             <p className="premium-value-note">O kit para ir além do básico: +100 videoaulas, 5 guias exclusivos e mais ideias para variar suas bebidas.</p>
-            <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="installments">5x de <strong>R$7,58</strong></div><div className="cash">ou <strong>R$37,90 à vista</strong></div>
-            <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>SIM, QUERO O KIT COMPLETO — R$37,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small>
+            <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="cash">ou <strong>R$34,90 à vista</strong></div>
+            <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>SIM, QUERO O KIT COMPLETO — R$34,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small>
           </article>
         </div>
       </section>
@@ -266,7 +266,7 @@ function FAQ() {
   const items = [
     ["Preciso ter experiência para acompanhar?","Não. O material foi organizado para facilitar a consulta, mesmo para quem está começando."],
     ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
-    ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui as +200 receitas e +100 videoaulas. O Premium de R$37,90 inclui as +200 receitas, +200 videoaulas e os cinco bônus apresentados nesta página. Ambos são digitais e têm pagamento único."],
+    ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui as +200 receitas e +100 videoaulas. O Premium de R$34,90 inclui as +200 receitas, +200 videoaulas e os cinco bônus apresentados nesta página. Ambos são digitais e têm pagamento único."],
     ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
     ["As videoaulas já estão incluídas?","Sim. O Básico inclui +100 videoaulas e o Premium inclui +200 videoaulas, com explicações passo a passo."],
     ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
