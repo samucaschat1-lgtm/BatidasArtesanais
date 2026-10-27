@@ -106,8 +106,8 @@ function Index() {
           <Dialog.Content className="upgrade-modal">
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
-            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$19,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$9,90 em relação ao Básico, receba as +200 receitas, +200 videoaulas passo a passo e os cinco bônus exclusivos.</Dialog.Description>
+            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$24,90</span></Dialog.Title>
+            <Dialog.Description className="upgrade-description">Por mais R$14,90 em relação ao Básico, receba as +200 receitas, +200 videoaulas passo a passo e os cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
               <div className="upgrade-summary"><strong>+200 receitas<br />+200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
@@ -116,8 +116,8 @@ function Index() {
               {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
               {["50 Combinações Especiais de Sabores", "Guia de Cremosidade Perfeita", "Guia de Ingredientes e Substituições", "Tabela de Medidas e Quantidades", "Guia de Batidas em Grandes Quantidades", "20 Batidas Fáceis para Iniciantes"].map((title) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
             </ul>
-            <div className="upgrade-price"><span>Premium na página: <s>R$37,90</s></span><strong>R$19,90</strong><small>Valor total • Pagamento único</small></div>
-            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$19,90 <span aria-hidden="true">→</span></a>
+            <div className="upgrade-price"><span>Premium na página: <s>R$37,90</s></span><strong>R$24,90</strong><small>Valor total • Pagamento único</small></div>
+            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$24,90 <span aria-hidden="true">→</span></a>
             <a className="upgrade-decline" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>Continuar com o Básico por R$10,00</a>
             <p className="upgrade-trust">🔒 Compra segura · Acesso após o pagamento · Garantia de 7 dias</p>
           </Dialog.Content>
