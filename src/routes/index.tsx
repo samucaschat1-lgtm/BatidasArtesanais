@@ -114,6 +114,7 @@ function Index() {
             </div>
             <ul className="upgrade-benefits">
               {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
+              {["50 Combinações Especiais de Sabores", "Guia de Cremosidade Perfeita", "Guia de Ingredientes e Substituições", "Tabela de Medidas e Quantidades", "Guia de Batidas em Grandes Quantidades", "20 Batidas Fáceis para Iniciantes"].map((title) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
             </ul>
             <div className="upgrade-price"><span>Premium na página: <s>R$37,90</s></span><strong>R$19,90</strong><small>Valor total • Pagamento único</small></div>
             <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$19,90 <span aria-hidden="true">→</span></a>
@@ -217,7 +218,7 @@ function Index() {
             <OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/>
             <h3>PLANO BÁSICO — +200 RECEITAS</h3>
             <div className="plan-video-box"><span className="plan-video-icon" aria-hidden="true">▶</span><div><strong>+100 VIDEOAULAS INCLUSAS</strong><small>Passo a passo explicado para acompanhar o preparo.</small></div></div>
-            <ul className="checks"><li>+200 receitas de batidas artesanais</li><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul>
+            <ul className="checks"><li>+200 receitas de batidas artesanais</li><li>Guia de Batidas em Grandes Quantidades</li><li>20 Batidas Fáceis para Iniciantes</li><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul>
             <div className="price">R$10,00</div>
             <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO O BÁSICO — R$10,00</a>
           </article>
@@ -226,7 +227,7 @@ function Index() {
             <OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/>
             <h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3>
             <div className="plan-video-box plan-video-premium"><span className="plan-video-icon" aria-hidden="true">▶</span><div><strong>+200 VIDEOAULAS INCLUSAS</strong><small>Passo a passo explicado • 100 aulas a mais que no Básico.</small></div></div>
-            <ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul>
+            <ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>50 Combinações Especiais de Sabores</li><li>Guia de Cremosidade Perfeita</li><li>Guia de Ingredientes e Substituições</li><li>Tabela de Medidas e Quantidades</li><li>Guia de Batidas em Grandes Quantidades</li><li>20 Batidas Fáceis para Iniciantes</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul>
             <p className="premium-value-note">O kit para ir além do básico: +100 videoaulas, 5 guias exclusivos e mais ideias para variar suas bebidas.</p>
             <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="installments">5x de <strong>R$7,58</strong></div><div className="cash">ou <strong>R$37,90 à vista</strong></div>
             <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>SIM, QUERO O KIT COMPLETO — R$37,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small>
