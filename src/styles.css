@@ -1435,3 +1435,30 @@ footer{padding-bottom:110px}
  .cacha-page .cta:hover{transform:none;filter:none}
  .cacha-page .cta:hover:after{transform:none}
 }
+
+
+/* Blocos de videoaulas com contraste sutil, sem mudar a identidade validada. */
+.cacha-page .lessons-highlight{text-align:center;padding-top:34px;padding-bottom:38px}
+.cacha-page .lessons-highlight .section-intro,.cacha-page .plans-intro{max-width:690px;margin:10px auto 22px;text-align:center;color:#655447;font-size:15px;line-height:1.5}
+.cacha-page .lessons-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:780px;margin:0 auto}
+.cacha-page .lesson-option{display:flex;flex-direction:column;gap:8px;padding:18px;background:#fffaf2;border:1px solid #e2ceb1;border-radius:16px;box-shadow:0 5px 16px #38210d0a}
+.cacha-page .lesson-option-premium{border:2px solid #bb8f4b;background:#fff2d9}
+.cacha-page .lesson-eyebrow{font-size:11px;letter-spacing:.08em;font-weight:900;color:#796048}
+.cacha-page .lesson-option strong{font-size:28px;line-height:1.1;color:var(--brown)}
+.cacha-page .lesson-option strong small{font-size:16px}
+.cacha-page .lesson-option>span:last-child{font-size:13px;font-weight:600;color:#625043}
+.cacha-page .plan-video-box{display:flex;align-items:center;gap:11px;text-align:left;margin:12px 0 16px;padding:13px 14px;border:1px solid #dfcba9;border-radius:12px;background:#fff8ea}
+.cacha-page .plan-video-premium{background:#f7edce;border-color:#caa35d}
+.cacha-page .plan-video-icon{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:10px;background:#6b4b2a;color:#fff;font-size:16px}
+.cacha-page .plan-video-box strong{display:block;color:#3d2918;font-size:13px;font-weight:900;line-height:1.3}
+.cacha-page .plan-video-box small{display:block;margin-top:3px;color:#635246;font-size:12px;line-height:1.4}
+.cacha-page .premium-value-note{font-size:13px;line-height:1.45;font-weight:800;color:#715020;background:#fff7e6;border-radius:10px;padding:10px 12px;margin:10px 0 17px}
+@media(max-width:520px){
+.cacha-page .lessons-highlight{padding-top:28px;padding-bottom:34px}
+.cacha-page .lessons-comparison{grid-template-columns:1fr;gap:10px}
+.cacha-page .lesson-option{padding:13px 15px;gap:5px}
+.cacha-page .lesson-option strong{font-size:25px}
+.cacha-page .plan-video-box{padding:11px 12px;gap:10px}
+.cacha-page .plan-video-box strong{font-size:12px}
+.cacha-page .plans-intro{font-size:13px;padding:0 6px}
+}
