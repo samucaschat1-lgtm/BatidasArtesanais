@@ -159,8 +159,8 @@ function Index() {
         <h2 id="videoaulas-titulo">Receitas para consultar. Videoaulas para acompanhar o preparo.</h2>
         <p className="section-intro">Em vez de ficar tentando adivinhar o preparo, acompanhe as orientações em vídeo e avance no seu ritmo.</p>
         <div className="lessons-comparison">
-          <div className="lesson-option"><span className="lesson-eyebrow">PLANO BÁSICO</span><strong>+60 <small>videoaulas</small></strong><span>Acompanhe o preparo passo a passo</span></div>
-          <div className="lesson-option lesson-option-premium"><span className="lesson-eyebrow">PREMIUM • MAIS COMPLETO</span><strong>+150 <small>videoaulas</small></strong><span>100 videoaulas extras + 5 bônus exclusivos</span><a className="lesson-premium-link" href="#oferta">Conhecer o kit Premium ↓</a></div>
+          <div className="lesson-option"><span className="lesson-eyebrow">PLANO BÁSICO</span><strong>+100 <small>videoaulas</small></strong><span>Acompanhe o preparo passo a passo</span></div>
+          <div className="lesson-option lesson-option-premium"><span className="lesson-eyebrow">PREMIUM • MAIS COMPLETO</span><strong>+200 <small>videoaulas</small></strong><span>100 videoaulas extras + 5 bônus exclusivos</span><a className="lesson-premium-link" href="#oferta">Conhecer o kit Premium ↓</a></div>
         </div>
       </section>
 
