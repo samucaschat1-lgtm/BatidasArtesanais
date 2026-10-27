@@ -34,6 +34,27 @@ const bonuses = [
   ["BÔNUS 05", "bonus-5-600.webp", "Guia de Harmonização", "Encontre combinações de bebidas com pratos e petiscos para diferentes encontros."],
 ];
 
+const premiumDifferentials = [
+  ["▶", "+100 videoaulas extras", "200 no Premium, contra 100 no Básico."],
+  ["✦", "50 combinações especiais de sabores", "Mais opções para variar e descobrir novas misturas."],
+  ["✓", "Guias de preparo exclusivos", "Cremosidade perfeita, substituições de ingredientes e tabela de medidas."],
+] as const;
+
+function PremiumDifferentials({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={compact ? "premium-differentials premium-differentials-compact" : "premium-differentials"} aria-label="O que o Premium oferece a mais">
+      <strong className="premium-differentials-heading">✦ O QUE VOCÊ LEVA A MAIS NO PREMIUM</strong>
+      <div className="premium-differentials-list">
+        {premiumDifferentials.map(([icon, title, description]) => (
+          <div className="premium-difference" key={title}>
+            <span className="premium-difference-icon" aria-hidden="true">{icon}</span>
+            <div><strong>{title}</strong><small>{description}</small></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function TodayOffer() {
   return <div className="topbar">🥃 +200 RECEITAS + VIDEOAULAS • PLANOS A PARTIR DE R$10</div>;
@@ -112,10 +133,14 @@ function Index() {
               <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com receitas e cinco bônus" />
               <div className="upgrade-summary"><strong>+200 receitas<br />+200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
             </div>
-            <ul className="upgrade-benefits">
-              {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
-              {["50 Combinações Especiais de Sabores", "Guia de Cremosidade Perfeita", "Guia de Ingredientes e Substituições", "Tabela de Medidas e Quantidades", "Guia de Batidas em Grandes Quantidades", "20 Batidas Fáceis para Iniciantes"].map((title) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
-            </ul>
+            <PremiumDifferentials compact />
+            <details className="upgrade-all-extras">
+              <summary>Ver todos os 5 bônus e 6 materiais extras</summary>
+              <ul className="upgrade-benefits">
+                {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
+                {["50 Combinações Especiais de Sabores", "Guia de Cremosidade Perfeita", "Guia de Ingredientes e Substituições", "Tabela de Medidas e Quantidades", "Guia de Batidas em Grandes Quantidades", "20 Batidas Fáceis para Iniciantes"].map((title) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
+              </ul>
+            </details>
             <div className="upgrade-price"><span>Premium na página: <s>R$34,90</s></span><strong>R$19,90</strong><small>Valor total • Pagamento único</small></div>
             <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$19,90 <span aria-hidden="true">→</span></a>
             <a className="upgrade-decline" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>Continuar com o Básico por R$10,00</a>
@@ -227,8 +252,8 @@ function Index() {
             <OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/>
             <h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3>
             <div className="plan-video-box plan-video-premium"><span className="plan-video-icon" aria-hidden="true">▶</span><div><strong>+200 VIDEOAULAS INCLUSAS</strong><small>Passo a passo explicado • 100 aulas a mais que no Básico.</small></div></div>
+            <PremiumDifferentials />
             <ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>50 Combinações Especiais de Sabores</li><li>Guia de Cremosidade Perfeita</li><li>Guia de Ingredientes e Substituições</li><li>Tabela de Medidas e Quantidades</li><li>Guia de Batidas em Grandes Quantidades</li><li>20 Batidas Fáceis para Iniciantes</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul>
-            <p className="premium-value-note">O kit para ir além do básico: +100 videoaulas, 5 guias exclusivos e mais ideias para variar suas bebidas.</p>
             <div className="premium-price-label">KIT COMPLETO • PAGAMENTO ÚNICO</div><div className="cash"><strong>R$34,90 à vista</strong></div>
             <a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>SIM, QUERO O KIT COMPLETO — R$34,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small>
           </article>
