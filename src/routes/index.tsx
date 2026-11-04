@@ -142,11 +142,11 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar em casa e servir no churrasco</h1>
+        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead">Escolha as receitas no sábado, prepare tudo com calma e sirva suas próprias bebidas artesanais no churrasco de domingo com a família.</p>
+        <p className="lead">Receitas passo a passo para preparar em casa e servir no churrasco, com sabores tradicionais, frutados e cremosos. Consulte o material pelo celular e escolha sua próxima receita.</p>
         <ul className="checks">
-          <li>Batidas tradicionais, frutadas e cremosas</li><li>Cachaças saborizadas, licores, infusões e drinks</li><li>Ingredientes, quantidades e passo a passo</li><li>Material digital para consultar no celular enquanto prepara</li>
+          <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
         </ul>
         <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
@@ -162,7 +162,7 @@ function Index() {
 
       <section className="dark-section preview" id="batidas">
         <div className="section-kicker">+200 BATIDAS NO MATERIAL COMPLETO</div>
-        <h2>Escolha o que servir no próximo churrasco</h2>
+        <h2>Tradição e sabores para inspirar suas batidas:</h2>
         <a className="text-link" href="#oferta">Ver batidas completas ↓</a>
         <div className="marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["batida-out07-1-440.webp","batida-out07-2-440.webp","batida-out07-3-440.webp","batida-out07-4-440.webp","batida-out07-5-440.webp","batida-out07-6-440.webp","batida-out07-7-440.webp","batida-out07-8-440.webp"].map((x,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 155px, 170px" src={IMG+x} alt={"Receita de cachaça "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
@@ -171,14 +171,14 @@ function Index() {
       </section>
 
       <section className="how section">
-        <div className="section-kicker">COMO FUNCIONA</div><h2>Prepare no sábado e sirva no domingo</h2>
+        <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
         <div className="steps">
           {[
             ["1","📩","Receba o acesso","Material digital disponível após a compra."],
-            ["2","🥃","Escolha as receitas no sábado","Abra a biblioteca no celular e escolha o que quer servir no churrasco."],
-            ["3","🍋","Prepare tudo em casa","Confira os ingredientes e as quantidades e siga o passo a passo da receita."],
-            ["4","🔥","Sirva no churrasco de domingo","Quando a carne for pra churrasqueira, suas bebidas já estarão prontas para servir à família e aos amigos adultos."],
-            ["5","🥂","Conte que foi você que fez","Se perguntarem onde você comprou, conte que preparou em casa."]
+            ["2","🥃","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
+            ["3","🍋","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
+            ["4","📸","Fotografe","Registre os detalhes da sua criação artesanal."],
+            ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
@@ -242,7 +242,7 @@ function Index() {
       <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
 
       <FAQ />
-      <section className="final-cta"><h2>Faça em casa as bebidas que você vai servir no próximo churrasco.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS +200 RECEITAS POR R$10,00</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — +200 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
       <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o Kit +200 Batidas por R$10,00">
