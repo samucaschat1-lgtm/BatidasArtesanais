@@ -1600,3 +1600,45 @@ footer{padding-bottom:110px}
     flex:0 0 min(240px,72vw) !important;
   }
 }
+
+/* Dimensões da Biblioteca de Drinks: fonte única para os dois carrosséis. */
+.cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
+  display:block!important;width:365px!important;min-width:365px!important;
+  flex:0 0 365px!important;height:365px!important;max-height:none!important;
+  aspect-ratio:1/1!important;object-fit:cover!important;object-position:center!important;
+  border-radius:22px!important;padding:0!important;border:0!important;clip-path:none!important;
+}
+.cacha-page .preview .marquee.preview-large img{
+  display:block!important;width:329px!important;min-width:329px!important;
+  flex:0 0 329px!important;height:auto!important;max-height:none!important;
+  aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
+  padding:0!important;border:0!important;background:transparent!important;
+}
+.cacha-page .preview .marquee-track{gap:18px}
+.cacha-page .fixed-buy-bar{
+  position:fixed!important;inset:auto 0 0!important;transform:none!important;
+  width:100%!important;max-width:none!important;min-width:0!important;min-height:0!important;
+  display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:4px 15px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))!important;
+  margin:0!important;border:0!important;border-radius:0!important;
+  background:#5c7a2d!important;color:#fff!important;text-align:center;box-shadow:none!important;
+  font-family:Inter,system-ui,sans-serif;
+}
+.cacha-page .fixed-buy-bar .fixed-buy-label{font-size:17px;line-height:1.2;font-weight:900;letter-spacing:.005em}
+.cacha-page .fixed-buy-bar small{font-size:12px;font-weight:500;color:#f3f4e9;line-height:1.2}
+@media(max-width:520px){
+  .cacha-page{padding-bottom:76px!important}
+  .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
+    width:294px!important;min-width:294px!important;flex-basis:294px!important;height:294px!important;
+  }
+  .cacha-page .preview .marquee.preview-large img{
+    width:232px!important;min-width:232px!important;flex-basis:232px!important;
+  }
+  .cacha-page .preview .marquee-track{gap:12px}
+  .cacha-page .fixed-buy-bar{
+    flex-direction:column;flex-wrap:nowrap;gap:2px;
+    padding:7px 10px calc(7px + env(safe-area-inset-bottom,0px))!important;
+  }
+  .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:16px;line-height:1.25}
+  .cacha-page .fixed-buy-bar small{font-size:11px;line-height:1.2}
+}
