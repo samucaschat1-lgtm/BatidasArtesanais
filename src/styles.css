@@ -1467,3 +1467,32 @@ footer{padding-bottom:110px}
   .cacha-page .hero .hero-benefits{padding:25px 21px;border-radius:23px;gap:20px}
   .cacha-page .hero .hero-benefits li{font-size:clamp(16px,4.3vw,20px);line-height:1.4}
 }
+
+
+/* Barra fixa no estilo da Biblioteca de Drinks; identidade de cachaça preservada. */
+.cacha-page .fixed-buy-bar{
+  background:#55762b;
+  border-radius:0 0 0 18px;
+  min-height:63px;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  padding:11px 18px calc(11px + env(safe-area-inset-bottom, 0px));
+  box-shadow:0 -4px 18px rgba(26,15,5,.16);
+}
+.cacha-page .fixed-buy-bar .fixed-buy-label{
+  font-size:clamp(20px,2.55vw,28px);
+  line-height:1.2;
+  font-weight:900;
+}
+.cacha-page .fixed-buy-bar small{
+  font-size:clamp(14px,1.75vw,18px);
+  line-height:1.3;
+  opacity:.95;
+}
+@media(max-width:600px){
+  .cacha-page .fixed-buy-bar{min-height:64px;gap:3px;flex-direction:column;padding:9px 12px calc(9px + env(safe-area-inset-bottom, 0px));border-radius:0 0 0 14px}
+  .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:clamp(17px,5vw,22px)}
+  .cacha-page .fixed-buy-bar small{font-size:12px}
+}
