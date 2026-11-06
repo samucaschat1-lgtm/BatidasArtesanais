@@ -148,15 +148,14 @@ function Index() {
         <ul className="checks hero-benefits">
           <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
-        <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
-        <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
-        <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
-        <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$29,90.</p>
-        <div className="micro trust-micro">
-          <span><OptimizedImage src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" aria-hidden="true" />WhatsApp</span>
-          <span><OptimizedImage src="https://cdn.simpleicons.org/gmail/EA4335" alt="" aria-hidden="true" />E-mail</span>
-          <span>Acesso imediato</span>
+        <div className="hero-access">
+          <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
+          <p className="hero-access-copy">Das batidas tradicionais às combinações com frutas: descubra receitas para preparar em casa e compartilhar nos churrascos e encontros com amigos.</p>
+          <div className="hero-access-tags">
+            <span>📱 Digital no celular</span>
+            <span>🍓 Receitas variadas</span>
+            <span>🥃 Ideal para churrascos e encontros</span>
+          </div>
         </div>
       </section>
 
