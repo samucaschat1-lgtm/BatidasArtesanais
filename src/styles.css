@@ -1535,68 +1535,41 @@ footer{padding-bottom:110px}
 }
 
 
-/* Primeiro carrossel de cachaças: fotos maiores, escala da Biblioteca de Drinks. */
-.cacha-page .carousel-cachacas img,
-.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{
-  width:260px;
-  height:330px;
-  object-fit:cover;
-  border-radius:14px;
-}
-.cacha-page .carousel-cachacas .marquee-track{gap:18px;animation-duration:42s}
-@media(max-width:520px){
- .cacha-page .carousel-cachacas img,
- .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:190px;height:245px}
- .cacha-page .carousel-cachacas .marquee-track{gap:12px;animation-duration:36s}
-}
-
-/* Ampliação adicional apenas do primeiro carrossel de cachaças. */
-.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:340px;height:430px;object-fit:cover}
-@media(max-width:520px){.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:250px;height:320px}}
-
-/* Carrossel de cachaças ainda maior, mantendo apenas esta seção responsiva. */
-.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:440px;height:550px;object-fit:cover}
-@media(max-width:520px){.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:310px;height:395px}}
-
-/* Ampliação solicitada: somente o primeiro carrossel de garrafas. */
-.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:540px;height:675px;object-fit:cover}
-@media(max-width:520px){
-  .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:min(360px,88vw);height:auto;aspect-ratio:4/5;object-fit:cover}
-}
-
-/* Ajuste fino: carrosséis em tamanho médio, fotos completas sem corte. */
+/* Carrosséis iguais aos da Biblioteca de Drinks (public/drinks/styles.css).
+   Mantém as imagens completas, sem cortar o topo das garrafas. */
 .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
-  width:420px !important;
-  min-width:420px !important;
-  height:525px !important;
-  aspect-ratio:4/5 !important;
-  flex:0 0 420px !important;
+  display:block;
+  width:170px !important;
+  min-width:170px !important;
+  height:215px !important;
+  flex:0 0 170px !important;
+  aspect-ratio:auto !important;
   object-fit:contain !important;
   object-position:center center !important;
-  border-radius:16px;
+  border-radius:10px;
 }
 .cacha-page .preview .marquee.preview-large img{
-  width:330px !important;
-  min-width:330px !important;
-  height:auto !important;
+  display:block;
+  width:300px !important;
+  min-width:300px !important;
+  height:385px !important;
+  flex:0 0 300px !important;
   aspect-ratio:auto !important;
-  flex:0 0 330px !important;
   object-fit:contain !important;
   object-position:center center !important;
-  border-radius:16px;
+  border-radius:14px;
 }
 @media(max-width:520px){
   .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
-    width:min(300px,85vw) !important;
-    min-width:min(300px,85vw) !important;
-    height:auto !important;
-    aspect-ratio:4/5 !important;
-    flex:0 0 min(300px,85vw) !important;
+    width:125px !important;
+    min-width:125px !important;
+    height:165px !important;
+    flex:0 0 125px !important;
   }
   .cacha-page .preview .marquee.preview-large img{
-    width:min(240px,72vw) !important;
-    min-width:min(240px,72vw) !important;
-    height:auto !important;
-    flex:0 0 min(240px,72vw) !important;
+    width:210px !important;
+    min-width:210px !important;
+    height:270px !important;
+    flex:0 0 210px !important;
   }
 }
