@@ -1553,3 +1553,7 @@ footer{padding-bottom:110px}
 /* Ampliação adicional apenas do primeiro carrossel de cachaças. */
 .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:340px;height:430px;object-fit:cover}
 @media(max-width:520px){.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:250px;height:320px}}
+
+/* Carrossel de cachaças ainda maior, mantendo apenas esta seção responsiva. */
+.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:440px;height:550px;object-fit:cover}
+@media(max-width:520px){.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:310px;height:395px}}
