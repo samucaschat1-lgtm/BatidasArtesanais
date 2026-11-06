@@ -1606,7 +1606,7 @@ footer{padding-bottom:110px}
   display:block!important;width:365px!important;min-width:365px!important;
   flex:0 0 365px!important;height:auto!important;max-height:none!important;
   aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
-  border-radius:22px!important;padding:0!important;border:0!important;clip-path:inset(0 round 22px)!important;
+  border-radius:22px!important;padding:0!important;border:0!important;clip-path:inset(0 0 2px 0 round 22px)!important;
   background:transparent!important;box-sizing:border-box!important;
 }
 .cacha-page .preview .marquee.preview-large img{
