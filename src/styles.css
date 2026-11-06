@@ -1564,40 +1564,39 @@ footer{padding-bottom:110px}
   .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:min(360px,88vw);height:auto;aspect-ratio:4/5;object-fit:cover}
 }
 
-/* 06/11 — os dois carrosséis maiores, sem cortar as tampas das garrafas.
-   Sobrescreve as regras antigas da seção preview que fixavam 170px com !important. */
+/* Ajuste fino: carrosséis em tamanho médio, fotos completas sem corte. */
 .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
-  width:600px !important;
-  min-width:600px !important;
-  height:750px !important;
+  width:420px !important;
+  min-width:420px !important;
+  height:525px !important;
   aspect-ratio:4/5 !important;
-  flex:0 0 600px !important;
+  flex:0 0 420px !important;
   object-fit:contain !important;
   object-position:center center !important;
   border-radius:16px;
 }
 .cacha-page .preview .marquee.preview-large img{
-  width:400px !important;
-  min-width:400px !important;
+  width:330px !important;
+  min-width:330px !important;
   height:auto !important;
   aspect-ratio:auto !important;
-  flex:0 0 400px !important;
+  flex:0 0 330px !important;
   object-fit:contain !important;
   object-position:center center !important;
   border-radius:16px;
 }
 @media(max-width:520px){
   .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
-    width:min(390px,92vw) !important;
-    min-width:min(390px,92vw) !important;
+    width:min(300px,85vw) !important;
+    min-width:min(300px,85vw) !important;
     height:auto !important;
     aspect-ratio:4/5 !important;
-    flex:0 0 min(390px,92vw) !important;
+    flex:0 0 min(300px,85vw) !important;
   }
   .cacha-page .preview .marquee.preview-large img{
-    width:min(290px,78vw) !important;
-    min-width:min(290px,78vw) !important;
+    width:min(240px,72vw) !important;
+    min-width:min(240px,72vw) !important;
     height:auto !important;
-    flex:0 0 min(290px,78vw) !important;
+    flex:0 0 min(240px,72vw) !important;
   }
 }
