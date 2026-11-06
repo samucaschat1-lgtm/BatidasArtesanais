@@ -1605,14 +1605,15 @@ footer{padding-bottom:110px}
 .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
   display:block!important;width:365px!important;min-width:365px!important;
   flex:0 0 365px!important;height:365px!important;max-height:none!important;
-  aspect-ratio:1/1!important;object-fit:cover!important;object-position:center!important;
-  border-radius:22px!important;padding:0!important;border:0!important;clip-path:none!important;
+  aspect-ratio:1/1!important;object-fit:contain!important;object-position:center!important;
+  border-radius:22px!important;padding:6px!important;border:0!important;clip-path:none!important;
+  background:transparent!important;box-sizing:border-box!important;
 }
 .cacha-page .preview .marquee.preview-large img{
   display:block!important;width:329px!important;min-width:329px!important;
   flex:0 0 329px!important;height:auto!important;max-height:none!important;
   aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
-  padding:0!important;border:0!important;background:transparent!important;
+  padding:6px!important;border:0!important;background:transparent!important;box-sizing:border-box!important;
 }
 .cacha-page .preview .marquee-track{gap:18px}
 .cacha-page .fixed-buy-bar{
