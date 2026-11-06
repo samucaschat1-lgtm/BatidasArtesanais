@@ -1535,48 +1535,41 @@ footer{padding-bottom:110px}
 }
 
 
-/* Carrosséis superiores: cartões de dimensões idênticas e imagens completas.
-   Remove fundos e bordas brancas; conserva a proporção original da fotografia. */
-.cacha-page .preview .marquee.carousel-cachacas img,
-.cacha-page .preview .marquee.preview-large img {
-  display:block !important;
-  width:200px !important;
-  min-width:200px !important;
-  max-width:200px !important;
-  height:255px !important;
-  min-height:255px !important;
-  max-height:255px !important;
-  flex:0 0 200px !important;
+/* Carrosséis iguais aos da Biblioteca de Drinks (public/drinks/styles.css).
+   Mantém as imagens completas, sem cortar o topo das garrafas. */
+.cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
+  display:block;
+  width:170px !important;
+  min-width:170px !important;
+  height:215px !important;
+  flex:0 0 170px !important;
   aspect-ratio:auto !important;
   object-fit:contain !important;
   object-position:center center !important;
-  background:transparent !important;
-  border:0 !important;
-  padding:0 !important;
-  box-sizing:border-box !important;
-  border-radius:12px !important;
-  box-shadow:none !important;
-  vertical-align:middle;
+  border-radius:10px;
 }
-.cacha-page .preview .marquee.carousel-cachacas .marquee-track,
-.cacha-page .preview .marquee.preview-large .marquee-track {
-  display:flex;
-  align-items:center;
-  gap:14px;
+.cacha-page .preview .marquee.preview-large img{
+  display:block;
+  width:300px !important;
+  min-width:300px !important;
+  height:385px !important;
+  flex:0 0 300px !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  border-radius:14px;
 }
 @media(max-width:520px){
-  .cacha-page .preview .marquee.carousel-cachacas img,
-  .cacha-page .preview .marquee.preview-large img {
-    width:155px !important;
-    min-width:155px !important;
-    max-width:155px !important;
-    height:198px !important;
-    min-height:198px !important;
-    max-height:198px !important;
-    flex:0 0 155px !important;
+  .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
+    width:125px !important;
+    min-width:125px !important;
+    height:165px !important;
+    flex:0 0 125px !important;
   }
-  .cacha-page .preview .marquee.carousel-cachacas .marquee-track,
-  .cacha-page .preview .marquee.preview-large .marquee-track {
-    gap:10px;
+  .cacha-page .preview .marquee.preview-large img{
+    width:210px !important;
+    min-width:210px !important;
+    height:270px !important;
+    flex:0 0 210px !important;
   }
 }
