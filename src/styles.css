@@ -1557,3 +1557,9 @@ footer{padding-bottom:110px}
 /* Carrossel de cachaças ainda maior, mantendo apenas esta seção responsiva. */
 .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:440px;height:550px;object-fit:cover}
 @media(max-width:520px){.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:310px;height:395px}}
+
+/* Ampliação solicitada: somente o primeiro carrossel de garrafas. */
+.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:540px;height:675px;object-fit:cover}
+@media(max-width:520px){
+  .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:min(360px,88vw);height:auto;aspect-ratio:4/5;object-fit:cover}
+}
