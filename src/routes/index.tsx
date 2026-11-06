@@ -52,7 +52,7 @@ function TodayOffer() {
       document.removeEventListener("visibilitychange", updateDate);
     };
   }, []);
-  return <div className="topbar">🥃 OFERTA DE HOJE{date ? `, ${date}` : ""} • +200 RECEITAS POR R$10</div>;
+  return <div className="topbar">🥃 OFERTA ESPECIAL APENAS PARA HOJE{date ? `, ${date}` : ""}</div>;
 }
 
 const CHECKOUT_PREMIUM_UPGRADE = "https://ggcheckout.app/checkout/v5/OUw0ZukdRUiMvA1DYVk2";
@@ -142,14 +142,14 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> Para preparar na sua própria casa</h1>
+        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> para preparar em casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead">Receitas passo a passo para preparar em casa e servir no churrasco, com sabores tradicionais, frutados e cremosos. Consulte o material pelo celular e escolha sua próxima receita.</p>
-        <ul className="checks">
-          <li>Batidas explicadas passo a passo</li><li>Infusões com frutas do Brasil</li><li>Drinks, licores e combinações variadas</li><li>Material digital para consultar no celular</li>
+        <p className="lead hero-description">+200 receitas prontas para imprimir ou consultar no celular. No Premium, você ainda recebe 5 bônus exclusivos para explorar novos sabores e combinações artesanais.</p>
+        <ul className="checks hero-benefits">
+          <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
         <p className="lead"><strong>Plano Básico: R$10,00 • Pagamento único • Material digital</strong></p>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO AS RECEITAS — R$10,00</a>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
         <small className="cta-note">🔒 Pix ou cartão • Garantia de 7 dias</small>
         <p className="cta-note">Produto 100% digital. Acesso após a confirmação do pagamento. Não inclui garrafas ou livros físicos.</p>
         <p className="social-proof">Escolha o Básico por R$10,00 ou o Premium com 5 bônus por R$29,90.</p>
