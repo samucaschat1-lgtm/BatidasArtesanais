@@ -1496,3 +1496,14 @@ footer{padding-bottom:110px}
   .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:clamp(17px,5vw,22px)}
   .cacha-page .fixed-buy-bar small{font-size:12px}
 }
+
+
+/* Barra fixa compacta: texto e altura reduzidos. */
+.cacha-page .fixed-buy-bar{min-height:40px;gap:12px;padding:5px 12px calc(5px + env(safe-area-inset-bottom,0px));border-radius:0 0 0 12px}
+.cacha-page .fixed-buy-bar .fixed-buy-label{font-size:15px;line-height:1.2}
+.cacha-page .fixed-buy-bar small{font-size:11px;line-height:1.2}
+@media(max-width:600px){
+ .cacha-page .fixed-buy-bar{min-height:42px;flex-direction:row;flex-wrap:wrap;gap:3px 9px;padding:5px 9px calc(5px + env(safe-area-inset-bottom,0px))}
+ .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:14px}
+ .cacha-page .fixed-buy-bar small{font-size:10px}
+}
