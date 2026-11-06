@@ -1507,3 +1507,14 @@ footer{padding-bottom:110px}
  .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:14px}
  .cacha-page .fixed-buy-bar small{font-size:10px}
 }
+
+
+/* Barra fixa ultracompacta (06/11): preservar área clicável e liberar tela. */
+.cacha-page .fixed-buy-bar{min-height:30px;gap:8px;padding:3px 8px calc(3px + env(safe-area-inset-bottom,0px));border-radius:0 0 0 9px}
+.cacha-page .fixed-buy-bar .fixed-buy-label{font-size:12px;line-height:1.15;letter-spacing:0}
+.cacha-page .fixed-buy-bar small{font-size:9px;line-height:1.15}
+@media(max-width:600px){
+ .cacha-page .fixed-buy-bar{min-height:30px;flex-direction:row;flex-wrap:wrap;gap:2px 7px;padding:3px 7px calc(3px + env(safe-area-inset-bottom,0px))}
+ .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:11px}
+ .cacha-page .fixed-buy-bar small{font-size:9px}
+}
