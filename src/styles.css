@@ -1604,18 +1604,19 @@ footer{padding-bottom:110px}
 /* Dimensões da Biblioteca de Drinks: fonte única para os dois carrosséis. */
 .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
   display:block!important;width:365px!important;min-width:365px!important;
-  flex:0 0 365px!important;height:365px!important;max-height:none!important;
-  aspect-ratio:1/1!important;object-fit:contain!important;object-position:center!important;
-  border-radius:22px!important;padding:6px!important;border:0!important;clip-path:none!important;
+  flex:0 0 365px!important;height:auto!important;max-height:none!important;
+  aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
+  border-radius:22px!important;padding:0!important;border:0!important;clip-path:inset(0 round 22px)!important;
   background:transparent!important;box-sizing:border-box!important;
 }
 .cacha-page .preview .marquee.preview-large img{
   display:block!important;width:329px!important;min-width:329px!important;
   flex:0 0 329px!important;height:auto!important;max-height:none!important;
   aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;
-  padding:6px!important;border:0!important;background:transparent!important;box-sizing:border-box!important;
+  padding:0!important;border:0!important;background:transparent!important;box-sizing:border-box!important;
+  border-radius:18px!important;clip-path:inset(0 round 18px)!important;
 }
-.cacha-page .preview .marquee-track{gap:18px}
+.cacha-page .preview .marquee-track{gap:18px;align-items:flex-start}
 .cacha-page .fixed-buy-bar{
   position:fixed!important;inset:auto 0 0!important;transform:none!important;
   width:100%!important;max-width:none!important;min-width:0!important;min-height:0!important;
@@ -1630,7 +1631,7 @@ footer{padding-bottom:110px}
 @media(max-width:520px){
   .cacha-page{padding-bottom:76px!important}
   .cacha-page .preview .marquee.carousel-cachacas:not(.preview-large) img{
-    width:294px!important;min-width:294px!important;flex-basis:294px!important;height:294px!important;
+    width:294px!important;min-width:294px!important;flex-basis:294px!important;height:auto!important;
   }
   .cacha-page .preview .marquee.preview-large img{
     width:232px!important;min-width:232px!important;flex-basis:232px!important;
