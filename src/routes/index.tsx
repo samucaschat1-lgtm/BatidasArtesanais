@@ -184,6 +184,25 @@ function Index() {
         <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>
       </section>
 
+      <section className="preview section" aria-labelledby="novas-receitas-title">
+        <div className="section-kicker">MAIS SABORES PARA DESCOBRIR</div>
+        <h2 id="novas-receitas-title">Explore receitas com frutas diferentes</h2>
+        <div className="marquee marquee-reverse preview-large" aria-label="Demonstração de receitas com frutas variadas">
+          <div className="marquee-track">
+            {[0, 1].flatMap(set => [
+              ["banana-canela", "Banana com Canela"],
+              ["cambuci", "Cambuci"],
+              ["uvaia", "Uvaia"],
+              ["grumixama", "Grumixama"],
+              ["araca-boi", "Araçá-boi"],
+              ["cambuca", "Cambucá"],
+              ["bacuri", "Bacuri"],
+              ["abiu", "Abiu"],
+            ].map(([file, name]) => <OptimizedImage key={set + file} src={IMG + "receita-frutas-" + file + ".webp"} alt={set === 0 ? "Receita de cachaça de " + name : ""} aria-hidden={set === 1 ? true : undefined} sizes="(max-width: 520px) 232px, 329px" loading="lazy" decoding="async" />))}
+          </div>
+        </div>
+      </section>
+
       <section className="testimonials section">
         <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
         <h2>Veja o que dizem sobre o material:</h2>
