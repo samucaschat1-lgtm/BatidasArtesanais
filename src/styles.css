@@ -1518,3 +1518,18 @@ footer{padding-bottom:110px}
  .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:11px}
  .cacha-page .fixed-buy-bar small{font-size:9px}
 }
+
+
+/* Bloco inferior da hero inspirado na Biblioteca de Drinks: CTA, mensagem e três etiquetas. */
+.cacha-page .hero-access{max-width:900px;margin:14px auto 0;text-align:center}
+.cacha-page .hero-access>.cta{width:min(520px,100%);font-size:clamp(18px,2.5vw,27px);min-height:92px;border-radius:21px;margin:0 auto 15px;padding:19px 22px}
+.cacha-page .hero-access-copy{max-width:790px;margin:0 auto 24px;color:#6d625b;font-size:clamp(17px,2.3vw,23px);font-weight:500;line-height:1.4}
+.cacha-page .hero-access-tags{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px 28px;max-width:760px;margin:0 auto}
+.cacha-page .hero-access-tags span{display:inline-flex;align-items:center;justify-content:center;gap:5px;border:1px solid #e6d9c5;background:#fffbf5;color:#776f68;font-weight:750;font-size:clamp(14px,1.85vw,19px);border-radius:13px;padding:9px 13px;line-height:1.3}
+@media(max-width:520px){
+ .cacha-page .hero-access{margin-top:10px}
+ .cacha-page .hero-access>.cta{min-height:70px;font-size:clamp(17px,5vw,22px);padding:15px 12px;border-radius:18px}
+ .cacha-page .hero-access-copy{font-size:18px;margin-bottom:20px;line-height:1.42}
+ .cacha-page .hero-access-tags{gap:12px 10px}
+ .cacha-page .hero-access-tags span{font-size:13px;padding:8px 10px}
+}
