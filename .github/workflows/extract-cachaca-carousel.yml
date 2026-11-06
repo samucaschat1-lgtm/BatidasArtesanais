@@ -1,0 +1,48 @@
+name: Extract uploaded cachaça carousel images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/7_imagens_carrossel_cachaca.zip"
+      - ".github/workflows/extract-cachaca-carousel.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extract and normalize seven carousel images
+        run: |
+          python3 - <<'PY'
+          import zipfile, pathlib, shutil
+          archive = pathlib.Path("public/7_imagens_carrossel_cachaca.zip")
+          target = pathlib.Path("public/assets/optimized-v1")
+          target.mkdir(parents=True, exist_ok=True)
+          with zipfile.ZipFile(archive) as z:
+              images = [(info.filename, info) for info in z.infolist()
+                        if not info.is_dir() and pathlib.PurePosixPath(info.filename).suffix.lower() == ".webp"]
+              images.sort(key=lambda entry: pathlib.PurePosixPath(entry[0]).name.lower())
+              if len(images) != 7:
+                  raise RuntimeError(f"Expected 7 WebP images in uploaded archive, found {len(images)}: {[x[0] for x in images]}")
+              for i, (filename, info) in enumerate(images, 1):
+                  output = target / f"carrossel-novo-{i}.webp"
+                  with z.open(info) as source, output.open("wb") as dest:
+                      shutil.copyfileobj(source, dest)
+                  print(f"{filename} -> {output}")
+          PY
+      - name: Commit extracted images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/optimized-v1/carrossel-novo-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Extract seven optimized cachaça carousel photos"
+            git push
+          fi
