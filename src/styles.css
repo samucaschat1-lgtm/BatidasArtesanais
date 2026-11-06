@@ -1533,3 +1533,19 @@ footer{padding-bottom:110px}
  .cacha-page .hero-access-tags{gap:12px 10px}
  .cacha-page .hero-access-tags span{font-size:13px;padding:8px 10px}
 }
+
+
+/* Primeiro carrossel de cachaças: fotos maiores, escala da Biblioteca de Drinks. */
+.cacha-page .carousel-cachacas img,
+.cacha-page .marquee.carousel-cachacas:not(.preview-large) img{
+  width:260px;
+  height:330px;
+  object-fit:cover;
+  border-radius:14px;
+}
+.cacha-page .carousel-cachacas .marquee-track{gap:18px;animation-duration:42s}
+@media(max-width:520px){
+ .cacha-page .carousel-cachacas img,
+ .cacha-page .marquee.carousel-cachacas:not(.preview-large) img{width:190px;height:245px}
+ .cacha-page .carousel-cachacas .marquee-track{gap:12px;animation-duration:36s}
+}
