@@ -146,7 +146,7 @@ function Index() {
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
         <h1><em>+300 Receitas de Batidas de Cachaça Artesanal</em> <span>para preparar em casa</span></h1>
-        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +300 Batidas de Cachaças Artesanais" />
+        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src="/cachacas-artesanais-300-receitas-200-videoaulas.webp" width="1254" height="1254" fetchPriority="high" decoding="async" alt="Kit +300 Batidas de Cachaças Artesanais" />
         <p className="lead"><strong>+300 receitas prontas para imprimir ou consultar no celular.</strong> No Premium, você ainda recebe <strong>200 videoaulas para acompanhar cada passo do preparo</strong> e <strong>5 bônus exclusivos</strong>.</p>
         <ul className="checks">
           <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
@@ -255,7 +255,7 @@ function Index() {
           <article className="plan featured" id="premium" aria-label="Plano Premium por R$29,90">
             <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
             <div className="hero-visual premium-plan-art">
-              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
+              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/cachacas-artesanais-300-receitas-200-videoaulas.webp" alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
             </div>
             <h3>PLANO PREMIUM</h3>
             <p className="plan-subtitle">+300 receitas, 200 videoaulas e 5 bônus exclusivos</p>
