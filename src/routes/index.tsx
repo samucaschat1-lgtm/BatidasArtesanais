@@ -214,7 +214,6 @@ function Index() {
           </div>
         </div>
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
-        <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
       <section className="bonus dark-section bonus-luxe" id="bonus-premium" aria-labelledby="bonus-luxe-title">
