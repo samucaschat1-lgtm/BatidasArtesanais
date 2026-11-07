@@ -248,10 +248,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="secure section">
-        <div className="security-card"><h3>🔒 PAGAMENTO 100% SEGURO</h3><p>Confira o valor e os dados do recebedor no checkout antes de confirmar o pagamento.</p></div>
-      </section>
-
       <section className="offer section" id="oferta">
         <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
         <h2>Escolha como quer começar hoje:</h2>
