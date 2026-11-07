@@ -285,7 +285,7 @@ function Index() {
       </section>
 
 
-      <section className="risk section"><div className="section-kicker">🛡️ VOCÊ COMPRA SEM RISCO</div><h2>Conheça o material por 7 dias</h2><p>Explore o material com tranquilidade. Se precisar solicitar o reembolso dentro do prazo, siga as condições da plataforma.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🔒 QUERO GARANTIR MEU ACESSO COM SEGURANÇA</a><small className="cta-note">Reembolso garantido em até 7 dias • Sem perguntas</small></section>
+      <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🍹 QUERO COMEÇAR AGORA</a></section>
 
       <FAQ />
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +200 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
