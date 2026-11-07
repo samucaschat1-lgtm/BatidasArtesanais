@@ -1957,7 +1957,7 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
   max-width:100%!important;
   height:auto!important;
   max-height:none!important;
-  aspect-ratio:3 / 2!important;
+  aspect-ratio:2 / 1!important;
   object-fit:fill!important;
   transform:none!important;
   left:auto!important;
