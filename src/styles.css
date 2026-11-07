@@ -2376,6 +2376,6 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 
 /* Ajuste isolado e discreto da largura visual do mockup no Hero. */
 .cacha-page.cacha-page .hero .hero-mockup{
-  transform:scaleX(1.09725)!important;
+  transform:scaleX(1.25)!important;
   transform-origin:center center!important;
 }
