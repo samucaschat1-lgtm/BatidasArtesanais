@@ -1712,3 +1712,194 @@ footer{padding-bottom:110px}
     margin-bottom: 13px;
   }
 }
+
+
+/* 07/11/2026 — Hero padronizado com Biblioteca de Drinks.
+   CSS isolado ao Hero, sem afetar preços, popup, checkout e demais seções. */
+.cacha-page > .hero{
+  max-width:1100px;
+  padding:46px 20px 54px;
+  text-align:center;
+}
+.cacha-page > .hero .eyebrow{
+  margin-bottom:18px;
+  color:#a66b2d;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(15px,2vw,21px);
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.cacha-page > .hero h1{
+  max-width:960px;
+  margin:0 auto 14px;
+  color:#201b17;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(40px,5.8vw,72px);
+  font-weight:900;
+  line-height:1.02;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.cacha-page > .hero h1 em{
+  color:#533022;
+  font-style:normal;
+}
+.cacha-page > .hero .hero-mockup{
+  display:block;
+  width:min(760px,100%);
+  max-width:100%;
+  max-height:none;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto 16px;
+  filter:drop-shadow(0 12px 24px rgba(28,16,9,.11));
+}
+.cacha-page > .hero .hero-description{
+  max-width:940px;
+  margin:0 auto 17px;
+  color:#554940;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(21px,2.6vw,28px);
+  font-weight:500;
+  line-height:1.42;
+  text-align:center;
+}
+.cacha-page > .hero .hero-description strong{
+  color:inherit;
+  font-weight:800;
+}
+.cacha-page > .hero .hero-benefits{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:15px;
+  max-width:880px;
+  margin:0 auto 16px;
+  padding:25px 30px;
+  list-style:none;
+  text-align:left;
+  background:#fffbf4;
+  border:1px solid #e9dccc;
+  border-radius:30px;
+  box-shadow:none;
+}
+.cacha-page > .hero .hero-benefits li{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+  margin:0;
+  padding:0;
+  color:#554940;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(18px,2.2vw,24px);
+  font-weight:750;
+  line-height:1.38;
+  text-align:left;
+}
+.cacha-page > .hero .hero-benefits li::before{
+  display:inline-block;
+  flex:none;
+  margin:0;
+  color:#5c7a30;
+}
+.cacha-page > .hero .hero-access{
+  max-width:900px;
+  margin:8px auto 0;
+  text-align:center;
+}
+.cacha-page > .hero .hero-access > .cta{
+  display:inline-flex;
+  width:min(520px,100%);
+  min-height:92px;
+  margin:0 auto 15px;
+  padding:19px 22px;
+  border-radius:21px;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(18px,2.5vw,27px);
+  font-weight:900;
+  line-height:1.2;
+}
+.cacha-page > .hero .hero-access-copy{
+  max-width:790px;
+  margin:0 auto 24px;
+  color:#6d625b;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(17px,2.3vw,23px);
+  font-weight:500;
+  line-height:1.4;
+  text-align:center;
+}
+.cacha-page > .hero .hero-access-tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:20px 28px;
+  max-width:760px;
+  margin:0 auto;
+}
+.cacha-page > .hero .hero-access-tags span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  padding:9px 13px;
+  border:1px solid #e6d9c5;
+  border-radius:13px;
+  background:#fffbf5;
+  color:#776f68;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:clamp(14px,1.85vw,19px);
+  font-weight:750;
+  line-height:1.3;
+}
+@media(max-width:767px){
+  .cacha-page > .hero{padding:34px 16px 38px}
+  .cacha-page > .hero .eyebrow{font-size:clamp(13px,2.8vw,19px);margin-bottom:15px}
+  .cacha-page > .hero h1{font-size:clamp(38px,6.4vw,52px);line-height:1.04;margin-bottom:11px}
+  .cacha-page > .hero .hero-mockup{width:100%;margin-bottom:12px}
+  .cacha-page > .hero .hero-description{font-size:clamp(19px,3.5vw,26px);line-height:1.4;margin-bottom:15px}
+  .cacha-page > .hero .hero-benefits{gap:13px;padding:21px 20px;border-radius:26px;margin-bottom:15px}
+  .cacha-page > .hero .hero-benefits li{font-size:clamp(17px,3.2vw,21px)}
+}
+@media(max-width:520px){
+  .cacha-page > .hero{padding-top:29px;padding-bottom:32px}
+  .cacha-page > .hero .eyebrow{font-size:15px;letter-spacing:.11em}
+  .cacha-page > .hero h1{font-size:clamp(35px,9vw,44px);line-height:1.05;letter-spacing:-.035em;margin-bottom:9px}
+  .cacha-page > .hero .hero-mockup{margin-bottom:10px}
+  .cacha-page > .hero .hero-description{font-size:clamp(19px,5vw,24px);line-height:1.42;margin-bottom:13px}
+  .cacha-page > .hero .hero-benefits{gap:12px;padding:19px 17px;border-radius:23px;margin-bottom:13px}
+  .cacha-page > .hero .hero-benefits li{font-size:clamp(16px,4.3vw,20px);line-height:1.4}
+  .cacha-page > .hero .hero-access{margin-top:10px}
+  .cacha-page > .hero .hero-access > .cta{min-height:70px;font-size:clamp(17px,5vw,22px);padding:15px 12px;border-radius:18px}
+  .cacha-page > .hero .hero-access-copy{font-size:18px;margin-bottom:20px;line-height:1.42}
+  .cacha-page > .hero .hero-access-tags{gap:12px 10px}
+  .cacha-page > .hero .hero-access-tags span{font-size:13px;padding:8px 10px}
+}
+
+/* Barra fixa com a tipografia e o espaçamento da referência. */
+.cacha-page > .fixed-buy-bar{
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px)) !important;
+  gap:4px 15px;
+  background:#5c7a2d !important;
+  font-family:Inter,system-ui,sans-serif;
+}
+.cacha-page > .fixed-buy-bar .fixed-buy-label{
+  font-size:17px;
+  line-height:1.2;
+  font-weight:900;
+}
+.cacha-page > .fixed-buy-bar small{
+  font-size:12px;
+  line-height:1.2;
+  font-weight:500;
+}
+@media(max-width:520px){
+  .cacha-page > .fixed-buy-bar{
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:4px 12px;
+    padding:7px 10px calc(7px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  .cacha-page > .fixed-buy-bar .fixed-buy-label{font-size:16px;line-height:1.25}
+  .cacha-page > .fixed-buy-bar small{font-size:11px;line-height:1.2}
+}
