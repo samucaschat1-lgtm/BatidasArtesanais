@@ -1950,3 +1950,16 @@ footer{padding-bottom:110px}
 /* Same neutral background and palette as the reference homepage. */
 :root{--bg:#f8f0e3;--ink:#29211b;--brown:#533022;--brown2:#3f291d;--gold:#ae7934;--green:#547d30;--muted:#6d625b}
 body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-gradient(circle at 92% 18%,#f0dfc5,transparent 25%),#f8f0e3;color:var(--ink)}
+
+/* Hero horizontal: substitute the inherited square/tall proportions without overflow. */
+.cacha-page.cacha-page .hero .hero-mockup{
+  width:min(100%,920px)!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:3 / 2!important;
+  object-fit:fill!important;
+  transform:none!important;
+  left:auto!important;
+  margin:16px auto 22px;
+}
