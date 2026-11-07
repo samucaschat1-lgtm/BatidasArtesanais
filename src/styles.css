@@ -2366,16 +2366,16 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 
 /* Ajuste fino solicitado: +3px de largura visual no mockup do Hero, sem alterar o Premium. */
 .cacha-page.cacha-page .hero .hero-mockup{
-  transform:scaleX(1.018)!important;
+  transform:scaleX(1.024)!important;
   transform-origin:center center!important;
 }
 
 /* Pequena redução do tamanho do Hero, preservando centralização. */
 .cacha-page.cacha-page .hero .hero-mockup{
-  max-height:535px!important;
+  max-height:515px!important;
 }
 @media(max-width:850px){
   .cacha-page.cacha-page .hero .hero-mockup{
-    max-height:clamp(290px,65vw,520px)!important;
+    max-height:clamp(280px,62vw,500px)!important;
   }
 }
