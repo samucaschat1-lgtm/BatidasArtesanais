@@ -2330,8 +2330,10 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 /* Preserve original mockup proportions in both placements. */
 .cacha-page.cacha-page .hero .hero-mockup{
   display:block!important;
-  width:min(100%,760px)!important;
+  width:auto!important;
+  max-width:100%!important;
   height:auto!important;
+  max-height:560px!important;
   aspect-ratio:auto!important;
   object-fit:contain!important;
   object-position:center!important;
@@ -2347,4 +2349,17 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
   object-fit:contain!important;
   object-position:center!important;
   margin:auto!important;
+}
+
+/* Match the visual height of the Biblioteca de Drinks hero on mobile,
+   without forcing a landscape aspect ratio on the square cachaça mockup. */
+@media(max-width:850px){
+  .cacha-page.cacha-page .hero .hero-mockup{
+    width:auto!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:clamp(300px,68vw,540px)!important;
+    object-fit:contain!important;
+    margin:12px auto 18px!important;
+  }
 }
