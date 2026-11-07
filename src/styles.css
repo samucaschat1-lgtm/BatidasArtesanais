@@ -1957,8 +1957,9 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
   max-width:100%!important;
   height:auto!important;
   max-height:none!important;
-  aspect-ratio:3 / 2!important;
-  object-fit:fill!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
   transform:none!important;
   left:auto!important;
   margin:16px auto 22px;
@@ -2324,4 +2325,26 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 @media(max-width:520px){
 .cacha-page.cacha-page .offer-plans-refresh .offer-intro{font-size:13px}
 .cacha-page.cacha-page .offer-plans-refresh .plans .plan.featured .hero-visual.premium-plan-art{height:275px!important;min-height:275px!important;max-height:275px!important;}
+}
+
+/* Preserve original mockup proportions in both placements. */
+.cacha-page.cacha-page .hero .hero-mockup{
+  display:block!important;
+  width:min(100%,760px)!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:12px auto 18px!important;
+}
+.cacha-page.cacha-page .offer-plans-refresh .plans .plan.featured .premium-plan-art__image{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
 }
