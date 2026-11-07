@@ -11,6 +11,9 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL8
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
       { rel: "preconnect", href: "https://ggcheckout.app", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
       { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 90vw, 560px", fetchPriority: "high" },
@@ -142,21 +145,20 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> para preparar em casa</h1>
+        <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> <span>para preparar em casa</span></h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead hero-description">+200 receitas prontas para imprimir ou consultar no celular. No Premium, você ainda recebe 5 bônus exclusivos para explorar novos sabores e combinações artesanais.</p>
-        <ul className="checks hero-benefits">
+        <p className="lead"><strong>+200 receitas prontas para imprimir ou consultar no celular.</strong> No Premium, você ainda recebe <strong>5 bônus exclusivos</strong> para explorar novos sabores e combinações artesanais.</p>
+        <ul className="checks">
           <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
-        <div className="hero-access">
+        
           <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
-          <p className="hero-access-copy">Das batidas tradicionais às combinações com frutas: descubra receitas para preparar em casa e compartilhar nos churrascos e encontros com amigos.</p>
-          <div className="hero-access-tags">
+          <p className="social-proof">Das batidas tradicionais às combinações com frutas: descubra receitas para preparar em casa e compartilhar nos churrascos e encontros com amigos.</p>
+          <div className="micro trust-micro">
             <span>📱 Digital no celular</span>
             <span>🍓 Receitas variadas</span>
             <span>🥃 Ideal para churrascos e encontros</span>
           </div>
-        </div>
       </section>
 
       <section className="dark-section preview" id="batidas">
