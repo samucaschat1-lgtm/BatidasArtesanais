@@ -2363,3 +2363,9 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
     margin:12px auto 18px!important;
   }
 }
+
+/* Ajuste fino solicitado: +3px de largura visual no mockup do Hero, sem alterar o Premium. */
+.cacha-page.cacha-page .hero .hero-mockup{
+  transform:scaleX(1.006)!important;
+  transform-origin:center center!important;
+}
