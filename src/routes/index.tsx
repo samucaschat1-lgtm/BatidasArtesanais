@@ -176,8 +176,8 @@ function Index() {
         <div className="steps">
           {[
             ["batida-out07-1-440.webp","Cachaças com frutas","Combinações com kiwi, morango, maracujá e outras frutas."],
-            ["batida-out07-2-440.webp","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
-            ["batida-out07-3-440.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
+            ["batida-out07-3-440.webp","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
+            ["batida-out07-2-440.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
             ["batida-out07-4-440.webp","Licores com cachaça","Sabores doces e artesanais para servir em diferentes ocasiões."],
             ["batida-out07-5-440.webp","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."]
           ].map(([photo,title,text])=><article key={title}><OptimizedImage className="step-photo" src={IMG + photo} alt={title} sizes="(max-width: 850px) 108px, 96px" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
