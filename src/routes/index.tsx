@@ -182,13 +182,9 @@ function Index() {
             ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
           ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
         </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
-        <small className="cta-note">🔒 Checkout pela GG Checkout • Garantia de 7 dias</small>
       </section>
 
-      <section className="preview section" aria-labelledby="novas-receitas-title">
-        <div className="section-kicker">MAIS SABORES PARA DESCOBRIR</div>
-        <h2 id="novas-receitas-title">Explore receitas com frutas diferentes</h2>
+      <section className="preview section" aria-label="Receitas com frutas variadas">
         <div className="marquee marquee-reverse preview-large" aria-label="Demonstração de receitas com frutas variadas">
           <div className="marquee-track">
             {[0, 1].flatMap(set => ([
@@ -203,6 +199,7 @@ function Index() {
              ] as const).map(([file, name]) => <OptimizedImage key={set + file} src={IMG + "receita-frutas-" + file + ".webp"} alt={set === 0 ? "Receita de cachaça de " + name : ""} aria-hidden={set === 1 ? true : undefined} sizes="(max-width: 520px) 232px, 329px" loading="lazy" decoding="async" />))}
           </div>
         </div>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
       </section>
 
       <section className="testimonials section">
