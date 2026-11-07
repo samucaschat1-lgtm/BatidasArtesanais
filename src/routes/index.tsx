@@ -247,12 +247,40 @@ function Index() {
         </div>
       </section>
 
-      <section className="offer section" id="oferta">
-        <div className="section-kicker">ESCOLHA SEU PLANO • PAGAMENTO ÚNICO</div>
-        <h2>Escolha como quer começar hoje:</h2>
+      <section className="offer section offer-plans-refresh" id="oferta">
+        <div className="section-kicker">ESCOLHA SUA VERSÃO</div>
+        <h2>Escolha o plano que combina com você</h2>
+        <p className="offer-intro">Os dois planos incluem mais de 200 receitas de batidas de cachaça para consultar no celular ou imprimir. Escolha o que prefere.</p>
         <div className="plans">
-          <article className="plan simple"><OptimizedImage sizes="(max-width: 520px) 90vw, 350px" className="basic-mockup" width="800" height="800" src={IMG+"basic-800.webp"} alt="+200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO BÁSICO — +200 RECEITAS</h3><ul className="checks"><li>Material 100% digital</li><li>Acesso imediato após a compra</li></ul><div className="price">R$10,00</div><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO O BÁSICO — R$10,00</a></article>
-          <article className="plan featured"><div className="badge">⭐ MELHOR CUSTO-BENEFÍCIO</div><OptimizedImage className="premium-mockup" sizes="(max-width: 520px) 90vw, 390px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit completo com mais de 200 batidas de cachaças artesanais" loading="lazy" decoding="async"/><h3>PLANO PREMIUM — +200 RECEITAS + 5 BÔNUS</h3><ul className="checks"><li>+200 batidas de cachaças artesanais</li><li>Manual de Higiene e de Conservação</li><li>Guia de Precificação e Apresentação Profissional</li><li>50 Drinks e Coquetéis</li><li>Guia de Madeiras e Sabores</li><li>Guia de Harmonização</li><li>Material 100% digital</li><li>Acesso imediato</li><li>Garantia de 7 dias</li></ul><s>R$97,00</s><div className="installments">5x de <strong>R$5,98</strong></div><div className="cash">ou <strong>R$29,90 à vista</strong></div><a className="cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM — R$29,90</a><small>Pagamento único • Acesso imediato • Garantia de 7 dias</small></article>
+          <article className="plan featured" id="premium" aria-label="Plano Premium por R$29,90">
+            <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
+            <div className="hero-visual premium-plan-art">
+              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="800" height="800" src={IMG+"premium-800.webp"} alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
+            </div>
+            <h3>PLANO PREMIUM</h3>
+            <p className="plan-subtitle">+200 receitas e 5 bônus exclusivos</p>
+            <div className="plan-premium-benefit">🎁 5 BÔNUS EXCLUSIVOS INCLUSOS</div>
+            <ul className="checks">
+              <li><strong>Mais de 200 receitas</strong> para acessar no celular ou imprimir</li>
+              <li><strong>5 bônus exclusivos:</strong> higiene e conservação, precificação, drinks, madeiras e harmonização. <a className="plan-bonus-link" href="#bonus-premium">Ver todos os bônus</a></li>
+              <li>Todo o conteúdo do Plano Básico</li>
+              <li>Material 100% digital e garantia de 7 dias</li>
+            </ul>
+            <div className="price">R$29,90</div>
+            <a className="cta plan-choice-cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>🎁 QUERO O PREMIUM POR R$29,90</a>
+          </article>
+          <article className="plan simple" id="basico" aria-label="Plano Básico por R$10,00">
+            <h3>PLANO BÁSICO</h3>
+            <p className="plan-subtitle">+200 receitas de batidas de cachaça artesanal</p>
+            <ul className="checks">
+              <li><strong>Mais de 200 receitas</strong> com ingredientes e modo de preparo</li>
+              <li>Batidas, infusões e combinações com cachaça</li>
+              <li>Receitas para acessar no celular ou imprimir</li>
+              <li>Material 100% digital</li>
+            </ul>
+            <div className="price">R$10,00</div>
+            <a className="cta plan-choice-cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO O BÁSICO POR R$10</a>
+          </article>
         </div>
       </section>
 
