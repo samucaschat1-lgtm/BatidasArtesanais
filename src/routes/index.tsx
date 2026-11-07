@@ -191,7 +191,7 @@ function Index() {
         <h2 id="novas-receitas-title">Explore receitas com frutas diferentes</h2>
         <div className="marquee marquee-reverse preview-large" aria-label="Demonstração de receitas com frutas variadas">
           <div className="marquee-track">
-            {[0, 1].flatMap(set => [
+            {[0, 1].flatMap(set => ([
               ["banana-canela", "Banana com Canela"],
               ["cambuci", "Cambuci"],
               ["uvaia", "Uvaia"],
@@ -200,7 +200,7 @@ function Index() {
               ["cambuca", "Cambucá"],
               ["bacuri", "Bacuri"],
               ["abiu", "Abiu"],
-            ].map(([file, name]) => <OptimizedImage key={set + file} src={IMG + "receita-frutas-" + file + ".webp"} alt={set === 0 ? "Receita de cachaça de " + name : ""} aria-hidden={set === 1 ? true : undefined} sizes="(max-width: 520px) 232px, 329px" loading="lazy" decoding="async" />))}
+             ] as const).map(([file, name]) => <OptimizedImage key={set + file} src={IMG + "receita-frutas-" + file + ".webp"} alt={set === 0 ? "Receita de cachaça de " + name : ""} aria-hidden={set === 1 ? true : undefined} sizes="(max-width: 520px) 232px, 329px" loading="lazy" decoding="async" />))}
           </div>
         </div>
       </section>
