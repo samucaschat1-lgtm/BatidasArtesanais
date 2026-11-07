@@ -1,6 +1,8 @@
 name: Validate build
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
     paths:
@@ -9,6 +11,7 @@ on:
       - "package-lock.json"
       - "vite.config.ts"
       - "tsconfig.json"
+      - "vercel.json"
       - ".github/workflows/validate-build.yml"
   workflow_dispatch:
 
