@@ -2364,8 +2364,18 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
   }
 }
 
+/* Redução leve do mockup, sem alterar o layout das outras seções. */
+.cacha-page.cacha-page .hero .hero-mockup{
+  max-height:535px!important;
+}
+@media(max-width:850px){
+  .cacha-page.cacha-page .hero .hero-mockup{
+    max-height:clamp(290px,65vw,520px)!important;
+  }
+}
+
 /* Ajuste isolado e discreto da largura visual do mockup no Hero. */
 .cacha-page.cacha-page .hero .hero-mockup{
-  transform:scaleX(1.015)!important;
+  transform:scaleX(1.022)!important;
   transform-origin:center center!important;
 }
