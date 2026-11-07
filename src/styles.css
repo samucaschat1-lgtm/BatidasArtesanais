@@ -1644,3 +1644,71 @@ footer{padding-bottom:110px}
   .cacha-page .fixed-buy-bar .fixed-buy-label{font-size:16px;line-height:1.25}
   .cacha-page .fixed-buy-bar small{font-size:11px;line-height:1.2}
 }
+
+
+/* Hero mais integrado à referência Biblioteca de Drinks: mockup e conteúdo visualmente próximos. */
+.cacha-page .hero {
+  padding-top: 46px;
+  padding-bottom: 54px;
+}
+.cacha-page .hero h1 {
+  margin-bottom: 14px;
+}
+.cacha-page .hero .hero-mockup {
+  width: min(760px, 100%);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.cacha-page .hero .hero-description {
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+.cacha-page .hero .hero-benefits {
+  gap: 15px;
+  padding: 25px 30px;
+  margin-bottom: 16px;
+}
+.cacha-page .hero-access {
+  margin-top: 8px;
+}
+@media (max-width: 767px) {
+  .cacha-page .hero {
+    padding-top: 34px;
+    padding-bottom: 38px;
+  }
+  .cacha-page .hero h1 {
+    margin-bottom: 11px;
+  }
+  .cacha-page .hero .hero-mockup {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .cacha-page .hero .hero-description {
+    margin-bottom: 15px;
+  }
+  .cacha-page .hero .hero-benefits {
+    gap: 13px;
+    padding: 21px 20px;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 520px) {
+  .cacha-page .hero {
+    padding-top: 29px;
+    padding-bottom: 32px;
+  }
+  .cacha-page .hero h1 {
+    margin-bottom: 9px;
+  }
+  .cacha-page .hero .hero-mockup {
+    margin-bottom: 10px;
+  }
+  .cacha-page .hero .hero-description {
+    margin-bottom: 13px;
+  }
+  .cacha-page .hero .hero-benefits {
+    gap: 12px;
+    padding: 19px 17px;
+    margin-bottom: 13px;
+  }
+}
