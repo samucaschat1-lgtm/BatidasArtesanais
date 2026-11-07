@@ -1971,3 +1971,20 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 .cacha-page.cacha-page .bonus-luxe__header p{font-weight:400}
 .cacha-page.cacha-page .bonus-luxe__body h3,
 .cacha-page.cacha-page .bonus-luxe__body p{text-align:left}
+
+/* Photo cards matching the drinks library. */
+.cacha-page .steps .step-photo {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 18px #4c2b1b14;
+}
+@media (max-width: 850px) {
+  .cacha-page .steps .step-photo {
+    width: 108px;
+    height: 108px;
+  }
+}
