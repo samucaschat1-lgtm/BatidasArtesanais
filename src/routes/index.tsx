@@ -172,14 +172,14 @@ function Index() {
       </section>
 
       <section className="how section">
-        <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
+        <div className="section-kicker">SABORES COM CACHAÇA</div><h2>Receitas para todos os gostos</h2>
         <div className="steps">
           {[
-            ["basic-800.webp","Receba o acesso","Material digital disponível após a compra."],
-            ["batida-out07-1-440.webp","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
-            ["batida-out07-2-440.webp","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
-            ["batida-out07-3-440.webp","Fotografe","Registre os detalhes da sua criação artesanal."],
-            ["batida-out07-4-440.webp","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
+            ["batida-out07-1-440.webp","Cachaças com frutas","Combinações com kiwi, morango, maracujá e outras frutas."],
+            ["batida-out07-2-440.webp","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
+            ["batida-out07-3-440.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
+            ["batida-out07-4-440.webp","Licores com cachaça","Sabores doces e artesanais para servir em diferentes ocasiões."],
+            ["batida-out07-5-440.webp","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."]
           ].map(([photo,title,text])=><article key={title}><OptimizedImage className="step-photo" src={IMG + photo} alt={title} sizes="(max-width: 850px) 108px, 96px" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
