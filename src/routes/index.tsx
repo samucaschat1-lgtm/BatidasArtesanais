@@ -144,7 +144,7 @@ function Index() {
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
         <h1><em>+200 Receitas de Batidas de Cachaça Artesanal</em> para preparar em casa</h1>
         <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src={IMG+"basic-800.webp"} width="800" height="800" fetchPriority="high" decoding="async" alt="Kit +200 Batidas de Cachaças Artesanais" />
-        <p className="lead hero-description">+200 receitas prontas para imprimir ou consultar no celular. No Premium, você ainda recebe 5 bônus exclusivos para explorar novos sabores e combinações artesanais.</p>
+        <p className="lead hero-description"><strong>+200 receitas prontas para imprimir ou consultar no celular.</strong> No Premium, você ainda recebe <strong>5 bônus exclusivos</strong> para explorar novos sabores e combinações artesanais.</p>
         <ul className="checks hero-benefits">
           <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
