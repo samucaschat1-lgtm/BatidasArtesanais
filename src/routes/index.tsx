@@ -220,17 +220,35 @@ function Index() {
         <small className="cta-note">🔒 Compra segura • Acesso imediato após o pagamento</small>
       </section>
 
-      <section className="bonus dark-section">
-        <div className="section-kicker">5 BÔNUS EXCLUSIVOS DO PLANO PREMIUM</div>
-        <h2>Vá além das receitas com o Plano Premium</h2>
-        <p className="section-intro">Os cinco materiais abaixo acompanham somente o Plano Premium de R$29,90. O Básico de R$10 inclui as +200 receitas, sem estes bônus.</p>
-        <div className="marquee bonus-marquee"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>bonuses.map(([tag,img,title],i)=><OptimizedImage key={"b"+set+i} sizes="(max-width: 520px) 190px, 220px" src={IMG+img} alt={tag+" — "+title} loading="lazy" decoding="async" />))}</div></div>
-        <div className="bonus-grid">
-          {bonuses.map(([tag,img,title,desc])=><article className="bonus-card" key={img}><span>{tag}</span><OptimizedImage src={IMG+img} alt={"Capa do "+title} loading="lazy" decoding="async"/><h3>{title}</h3><p>{desc}</p><b>INCLUSO NO PREMIUM</b><div className="bonus-price"><s>R$18,00</s> <strong>POR R$0,00</strong></div><small>Exclusivo do Plano Premium</small></article>)}
+      <section className="bonus dark-section bonus-luxe" id="bonus-premium" aria-labelledby="bonus-luxe-title">
+        <div className="bonus-luxe__wrap">
+          <header className="bonus-luxe__header">
+            <div className="bonus-luxe__eyebrow"><span aria-hidden="true">✦</span> EXCLUSIVO DO PLANO PREMIUM <span aria-hidden="true">✦</span></div>
+            <h2 id="bonus-luxe-title">5 bônus para aproveitar ainda mais suas batidas</h2>
+            <p>Mais ideias, cuidados e técnicas para preparar tudo em casa.</p>
+          </header>
+          <div className="bonus-luxe__grid">
+            {bonuses.map(([tag, img, title, desc], index) => (
+              <article className="bonus-luxe__card" key={img}>
+                <div className="bonus-luxe__visual">
+                  <span className="bonus-luxe__number">{tag}</span>
+                  <OptimizedImage src={IMG + img} alt={"Capa do " + title} sizes="(max-width: 680px) 112px, 220px" loading="lazy" decoding="async" />
+                </div>
+                <div className="bonus-luxe__body">
+                  <h3><span aria-hidden="true">{["🛡️", "💰", "🍹", "🪵", "🧀"][index]}</span> {title}</h3>
+                  <p>{desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="bonus-luxe__footer">
+            <div className="bonus-luxe__footer-copy">
+              <span className="bonus-luxe__gift" aria-hidden="true">🎁</span>
+              <div><strong>Os 5 bônus já estão no Premium</strong><span>Conteúdo extra para deixar seu kit mais completo.</span></div>
+            </div>
+            <a className="cta bonus-luxe__cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
+          </div>
         </div>
-        <div className="bonus-total"><strong>+200 RECEITAS + 5 BÔNUS</strong><br/><b>Plano Premium: R$29,90</b><span>Prefere começar só com as receitas? Escolha o Básico de R$10,00 na comparação abaixo.</span></div>
-        <a className="cta" href="#oferta">COMPARAR BÁSICO E PREMIUM</a>
-        <small className="cta-note">Pagamento único • Acesso imediato • Garantia de 7 dias</small>
       </section>
 
       <section className="secure section">
