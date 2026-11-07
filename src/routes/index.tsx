@@ -175,12 +175,12 @@ function Index() {
         <div className="section-kicker">COMO FUNCIONA</div><h2>Funciona assim:</h2>
         <div className="steps">
           {[
-            ["1","📩","Receba o acesso","Material digital disponível após a compra."],
-            ["2","🥃","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
-            ["3","🍋","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
-            ["4","📸","Fotografe","Registre os detalhes da sua criação artesanal."],
-            ["5","💰","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
-          ].map(([n,icon,title,text])=><article key={n}><span className="step-icon">{n}{icon}</span><h3>{title}</h3><p>{text}</p></article>)}
+            ["basic-800.webp","Receba o acesso","Material digital disponível após a compra."],
+            ["batida-out07-1-440.webp","Escolha uma receita","Explore as batidas e escolha seu próximo sabor."],
+            ["batida-out07-2-440.webp","Prepare em casa","Separe os ingredientes e siga as orientações da receita."],
+            ["batida-out07-3-440.webp","Fotografe","Registre os detalhes da sua criação artesanal."],
+            ["batida-out07-4-440.webp","Compartilhe","Celebre os sabores brasileiros com responsabilidade."]
+          ].map(([photo,title,text])=><article key={title}><OptimizedImage className="step-photo" src={IMG + photo} alt={title} sizes="(max-width: 850px) 108px, 96px" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
 
