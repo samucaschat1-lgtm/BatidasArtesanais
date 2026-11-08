@@ -78,18 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "+5.000 Proyectos para Fabricar y Vender" },
+      { title: "+200 Receitas de Batidas de Cachaça Artesanal" },
       {
         name: "description",
         content:
-          "Biblioteca digital con más de 5.000 proyectos de herrería para consultar, estudiar, fabricar y vender.",
+          "Biblioteca digital com mais de 200 receitas de batidas de cachaça artesanal para consultar no celular ou imprimir.",
       },
-      { name: "author", content: "+5.000 Proyectos para Fabricar y Vender" },
-      { property: "og:title", content: "+5.000 Proyectos para Fabricar y Vender" },
+      { name: "author", content: "+200 Receitas de Batidas de Cachaça Artesanal" },
+      { property: "og:title", content: "+200 Receitas de Batidas de Cachaça Artesanal" },
       {
         property: "og:description",
         content:
-          "Amplía las posibilidades de tu taller con miles de proyectos y referencias de fabricación metálica.",
+          "Receitas de batidas, drinks e combinações artesanais com cachaça.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -100,6 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://cdn.utmify.com.br", crossOrigin: "anonymous" },
       { rel: "icon", href: "/favicon-96.png?v=20261023", type: "image/png", sizes: "96x96" },
       { rel: "shortcut icon", href: "/favicon-96.png?v=20261023", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon-96.png?v=20261023" },
@@ -131,7 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="es-419">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
