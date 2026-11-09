@@ -2379,3 +2379,82 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
   transform:scaleX(1.25)!important;
   transform-origin:center center!important;
 }
+
+
+/* 2026-11: Biblioteca de Drinks visual rhythm, without stretching the mockup. */
+.cacha-page.cacha-page .hero{
+  width:100%;
+  max-width:1000px;
+  padding:40px 20px 52px;
+  margin-inline:auto;
+}
+.cacha-page.cacha-page .hero h1{
+  max-width:900px;
+  font-size:clamp(35px,5vw,64px);
+  line-height:1.02;
+  letter-spacing:-.023em;
+}
+.cacha-page.cacha-page .hero .hero-mockup{
+  display:block!important;
+  width:min(100%,700px)!important;
+  max-width:700px!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  transform:none!important;
+  margin:16px auto 22px!important;
+}
+.cacha-page.cacha-page .hero .lead{max-width:735px;margin-inline:auto}
+.cacha-page.cacha-page .marquee,
+.cacha-page.cacha-page .testimonial-carousel{overflow:hidden}
+@keyframes batidas-loop-forward{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+@keyframes batidas-loop-reverse{
+  from{transform:translate3d(-50%,0,0)}
+  to{transform:translate3d(0,0,0)}
+}
+.cacha-page.cacha-page .marquee .marquee-track,
+.cacha-page.cacha-page .testimonial-carousel .testimonial-track{
+  display:flex;
+  width:max-content;
+  flex-wrap:nowrap;
+  animation:batidas-loop-forward 42s linear infinite!important;
+  animation-play-state:paused!important;
+  will-change:auto;
+}
+.cacha-page.cacha-page .marquee.marquee-reverse .marquee-track{
+  animation-name:batidas-loop-reverse!important;
+}
+.cacha-page.cacha-page .marquee[data-active="true"] .marquee-track,
+.cacha-page.cacha-page .testimonial-carousel[data-active="true"] .testimonial-track{
+  animation-play-state:running!important;
+  will-change:transform;
+}
+.cacha-page.cacha-page .marquee .marquee-track>img,
+.cacha-page.cacha-page .testimonial-carousel .testimonial-track>article{flex-shrink:0}
+.cacha-page.cacha-page .preview .marquee-track{gap:18px}
+.cacha-page.cacha-page .preview .marquee-track img{object-fit:contain}
+@media(max-width:520px){
+  .cacha-page.cacha-page .hero{padding:26px 16px 34px}
+  .cacha-page.cacha-page .hero h1{font-size:35px;line-height:1.05}
+  .cacha-page.cacha-page .hero .hero-mockup{
+    width:min(100%,420px)!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    transform:none!important;
+  }
+  .cacha-page.cacha-page .marquee .marquee-track,
+  .cacha-page.cacha-page .testimonial-carousel .testimonial-track{animation-duration:34s!important}
+  .cacha-page.cacha-page .preview .marquee-track{gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cacha-page.cacha-page .marquee .marquee-track,
+  .cacha-page.cacha-page .testimonial-carousel .testimonial-track{
+    animation:none!important;
+    will-change:auto!important;
+  }
+}
