@@ -175,12 +175,12 @@ function Index() {
         <div className="section-kicker">SABORES COM CACHAÇA</div><h2>Receitas para todos os gostos</h2>
         <div className="steps">
           {[
-            ["Poção Tropical de Maracujá Artesanal-1.png","Cachaças com frutas","Combinações com kiwi, morango, maracujá e outras frutas."],
-            ["Bebida Rústica de Kiwi Fresco-2.png","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
-            ["Caipirinha Tropical com Limão e Hortelã-3.png","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
-            ["Licor de laranja com especiarias rústicas-4.png","Licores com cachaça","Sabores doces e artesanais para servir em diferentes ocasiões."],
-            ["Garrafa de Infusão Frutada com Especiarias-5.png","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."],
-            ["Refresco Tropical Festivo com Maracujá-6.png","Drinks diferentes","Receitas criativas com cachaça para surpreender em cada ocasião."]
+            ["Poção Tropical de Maracujá Artesanal-1.webp","Cachaças com frutas","Combinações com kiwi, morango, maracujá e outras frutas."],
+            ["Bebida Rústica de Kiwi Fresco-2.webp","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
+            ["Caipirinha Tropical com Limão e Hortelã-3.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
+            ["Licor de laranja com especiarias rústicas-4.webp","Licores com cachaça","Sabores doces e artesanais para servir em diferentes ocasiões."],
+            ["Garrafa de Infusão Frutada com Especiarias-5.webp","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."],
+            ["Refresco Tropical Festivo com Maracujá-6.webp","Drinks diferentes","Receitas criativas com cachaça para surpreender em cada ocasião."]
           ].map(([photo,title,text])=><article key={title}><img className="step-photo" src={"/"+encodeURIComponent(photo)} alt={title} width="320" height="320" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
