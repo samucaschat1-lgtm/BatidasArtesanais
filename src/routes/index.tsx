@@ -202,6 +202,7 @@ function Index() {
         <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
       </section>
 
+      <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🍹 QUERO COMEÇAR AGORA</a></section>
       <section className="testimonials section">
         <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
         <h2>Veja o que dizem sobre o material:</h2>
@@ -287,7 +288,7 @@ function Index() {
       </section>
 
 
-      <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🍹 QUERO COMEÇAR AGORA</a></section>
+
 
       <FAQ />
       <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +300 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
