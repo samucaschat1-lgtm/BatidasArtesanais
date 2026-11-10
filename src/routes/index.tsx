@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
       { rel: "preconnect", href: "https://ggcheckout.app", crossOrigin: "anonymous" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
-      { rel: "preload", as: "image", type: "image/avif", imageSrcSet: [320, 480, 640, 800].map(width => `${IMG}basic-${width}.avif ${width}w`).join(", "), imageSizes: "(max-width: 520px) 90vw, 560px", fetchPriority: "high" },
+      { rel: "preload", as: "image", type: "image/webp", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
     ],
     meta: [
       { title: "+300 Batidas de Cachaça Artesanal" },
