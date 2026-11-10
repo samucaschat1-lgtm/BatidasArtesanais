@@ -100,9 +100,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/Favicom%20cachac%CC%A7a.png", type: "image/png", sizes: "96x96" },
-      { rel: "shortcut icon", href: "/Favicom%20cachac%CC%A7a.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/Favicom%20cachac%CC%A7a.png" },
+      { rel: "icon", href: "/Favicom%20cachac%CC%A7a.webp", type: "image/png", sizes: "96x96" },
+      { rel: "shortcut icon", href: "/Favicom%20cachac%CC%A7a.webp", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/Favicom%20cachac%CC%A7a.webp" },
     ],
     scripts: [
       {
