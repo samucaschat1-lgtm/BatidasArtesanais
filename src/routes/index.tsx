@@ -125,8 +125,8 @@ function Index() {
           <Dialog.Content className="upgrade-modal">
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
-            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$19,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$9,90 em relação ao Básico, receba as +300 receitas, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
+            <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$17,90</span></Dialog.Title>
+            <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +300 receitas, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src="/Biblioteca de Cachaças Artesanais.webp" width="1254" height="1254" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
               <div className="upgrade-summary"><strong>+300 receitas<br />200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
@@ -134,8 +134,8 @@ function Index() {
             <ul className="upgrade-benefits">
               {bonuses.map(([, , title]) => <li key={title}><span aria-hidden="true">✓</span>{title}</li>)}
             </ul>
-            <div className="upgrade-price"><span>Premium na página: <s>R$29,90</s></span><strong>R$19,90</strong><small>Valor total • Pagamento único</small></div>
-            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$19,90 <span aria-hidden="true">→</span></a>
+            <div className="upgrade-price"><span>Premium na página: <s>R$24,90</s></span><strong>R$17,90</strong><small>Valor total • Pagamento único</small></div>
+            <a className="upgrade-accept" href={upgradeCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>QUERO O PREMIUM POR R$17,90 <span aria-hidden="true">→</span></a>
             <a className="upgrade-decline" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>Continuar com o Básico por R$10,00</a>
             <p className="upgrade-trust">🔒 Compra segura · Acesso após o pagamento · Garantia de 7 dias</p>
           </Dialog.Content>
@@ -253,7 +253,7 @@ function Index() {
         <h2>Escolha o plano que combina com você</h2>
         <p className="offer-intro">Os dois planos incluem mais de 300 receitas de batidas de cachaça para consultar no celular ou imprimir. Escolha o que prefere.</p>
         <div className="plans">
-          <article className="plan featured" id="premium" aria-label="Plano Premium por R$29,90">
+          <article className="plan featured" id="premium" aria-label="Plano Premium por R$24,90">
             <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
             <div className="hero-visual premium-plan-art">
               <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.webp" alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
@@ -268,8 +268,8 @@ function Index() {
               <li>Todo o conteúdo do Plano Básico</li>
               <li>Material 100% digital e garantia de 7 dias</li>
             </ul>
-            <div className="price">R$29,90</div>
-            <a className="cta plan-choice-cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>🎁 QUERO O PREMIUM POR R$29,90</a>
+            <div className="price">R$24,90</div>
+            <a className="cta plan-choice-cta" href={premiumCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>🎁 QUERO O PREMIUM POR R$24,90</a>
           </article>
           <article className="plan simple" id="basico" aria-label="Plano Básico por R$10,00">
             <h3>PLANO BÁSICO</h3>
@@ -306,7 +306,7 @@ function FAQ() {
   const items = [
     ["Preciso ter experiência para acompanhar?","Não. As receitas e as videoaulas passo a passo ajudam você a acompanhar o preparo, mesmo começando do zero."],
     ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
-    ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui mais de 300 receitas e 80 videoaulas passo a passo. O Premium de R$29,90 inclui as mesmas receitas, 200 videoaulas no total e cinco bônus exclusivos. Ambos são digitais e têm pagamento único."],
+    ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui mais de 300 receitas e 80 videoaulas passo a passo. O Premium de R$24,90 inclui as mesmas receitas, 200 videoaulas no total e cinco bônus exclusivos. Ambos são digitais e têm pagamento único."],
     ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
     ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
     ["Funciona no celular?","Sim. Você pode consultar as receitas e assistir às videoaulas pelo celular. As receitas também podem ser impressas."],
