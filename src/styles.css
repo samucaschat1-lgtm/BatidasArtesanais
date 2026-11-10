@@ -2456,3 +2456,12 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
     animation-play-state: running !important;
   }
 }
+
+/* Six category cards: match the three-by-two layout of Biblioteca de Drinks. */
+.cacha-page.cacha-page .how .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.cacha-page.cacha-page .how .steps article{padding:24px 20px;border-radius:20px;min-width:0}
+.cacha-page.cacha-page .how .steps .step-photo{display:block;width:150px;height:150px;max-width:100%;object-fit:cover;border-radius:24px;margin:0 auto 14px}
+.cacha-page.cacha-page .how .steps h3{font-size:20px;line-height:1.25;margin:8px 0 10px}
+.cacha-page.cacha-page .how .steps p{font-size:16px;line-height:1.5;margin:0}
+@media(max-width:650px){.cacha-page.cacha-page .how .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cacha-page.cacha-page .how .steps article{padding:16px 12px}.cacha-page.cacha-page .how .steps .step-photo{width:112px;height:112px;border-radius:20px}.cacha-page.cacha-page .how .steps h3{font-size:16px}.cacha-page.cacha-page .how .steps p{font-size:14px}}
+@media(max-width:380px){.cacha-page.cacha-page .how .steps{grid-template-columns:1fr}.cacha-page.cacha-page .how .steps .step-photo{width:150px;height:150px}}
