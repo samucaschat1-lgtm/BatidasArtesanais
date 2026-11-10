@@ -2385,10 +2385,10 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 .cacha-page.cacha-page .testimonial-carousel{overflow:hidden}
 @keyframes batidas-loop-forward{
   from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-50%,0,0)}
+  to{transform:translate3d(calc(-50% - 9px),0,0)}
 }
 @keyframes batidas-loop-reverse{
-  from{transform:translate3d(-50%,0,0)}
+  from{transform:translate3d(calc(-50% - 9px),0,0)}
   to{transform:translate3d(0,0,0)}
 }
 .cacha-page.cacha-page .marquee .marquee-track,
