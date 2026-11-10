@@ -2027,12 +2027,7 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 .cacha-page.cacha-page .faq summary span {flex-shrink:0;}
 .cacha-page.cacha-page .pay-icons {flex-wrap:wrap;}
 .cacha-page.cacha-page footer {padding:28px 20px;}
-@media (min-width:681px) and (max-width:1000px) {
-  .cacha-page.cacha-page .steps {grid-template-columns:repeat(6,minmax(0,1fr));}
-  .cacha-page.cacha-page .steps article {grid-column:span 2;}
-  .cacha-page.cacha-page .steps article:nth-child(4) {grid-column:2 / span 2;}
-  .cacha-page.cacha-page .steps article:nth-child(5) {grid-column:4 / span 2;}
-}
+/* Removed obsolete six-track category grid layout. */
 @media (max-width:680px) {
   .cacha-page.cacha-page > .section {padding:36px 16px;}
   .cacha-page.cacha-page > .dark-section,
@@ -2480,3 +2475,9 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 @media (max-width:380px) {
   .cacha-page.cacha-page section.how .steps {grid-template-columns:minmax(0,1fr)!important;}
 }
+
+/* Stable six-card category grid across viewport and DevTools resizing. */
+.cacha-page.cacha-page section.how .steps {display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;width:100%!important;max-width:none!important;margin:0 auto!important;grid-auto-flow:row!important;}
+.cacha-page.cacha-page section.how .steps > article {grid-column:auto!important;grid-row:auto!important;min-width:0!important;width:auto!important;max-width:none!important;overflow-wrap:normal;word-break:normal;}
+@media(max-width:680px){.cacha-page.cacha-page section.how .steps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.cacha-page.cacha-page section.how .steps > article{padding:16px 12px!important}}
+@media(max-width:380px){.cacha-page.cacha-page section.how .steps{grid-template-columns:minmax(0,1fr)!important}}
