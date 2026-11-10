@@ -2424,3 +2424,14 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
     will-change:auto!important;
   }
 }
+
+/* Hero desktop: match the visual scale of Biblioteca de Drinks.
+   Scoped to the hero only; Premium plan artwork stays untouched. */
+@media(min-width:851px){
+  .cacha-page.cacha-page .hero{max-width:1120px!important;padding-left:16px!important;padding-right:16px!important}
+  .cacha-page.cacha-page .hero h1{max-width:1080px!important;font-size:clamp(42px,5vw,68px)!important;line-height:1.03!important}
+  .cacha-page.cacha-page .hero .hero-mockup{max-height:580px!important}
+}
+@media(min-width:521px) and (max-width:850px){
+  .cacha-page.cacha-page .hero .hero-mockup{max-height:clamp(420px,68vw,540px)!important}
+}
