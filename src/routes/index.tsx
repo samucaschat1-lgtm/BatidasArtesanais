@@ -255,7 +255,7 @@ function Index() {
           <article className="plan featured" id="premium" aria-label="Plano Premium por R$29,90">
             <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
             <div className="hero-visual premium-plan-art">
-              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.png" alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
+              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.webp" alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
             </div>
             <h3>PLANO PREMIUM</h3>
             <p className="plan-subtitle">+300 receitas, 200 videoaulas e 5 bônus exclusivos</p>
