@@ -125,6 +125,12 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es-419">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: 'window.pixelId = "6af36a753a798f2dc3b5bc39";',
+          }}
+        />
+        <script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer />
       </head>
       <body>
         {children}
