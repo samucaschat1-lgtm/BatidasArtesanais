@@ -106,15 +106,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        type: "text/javascript",
-        children: 'window.pixelId = "6ac0728777dce1611c2ba11d";',
-      },
-      {
-        src: "https://cdn.utmify.com.br/scripts/pixel/pixel.js",
-        async: true,
-        defer: true,
-      },
-      {
         src: "https://cdn.utmify.com.br/scripts/utms/latest.js",
         async: true,
         defer: true,
