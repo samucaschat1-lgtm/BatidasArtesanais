@@ -2435,3 +2435,15 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 @media(min-width:521px) and (max-width:850px){
   .cacha-page.cacha-page .hero .hero-mockup{max-height:clamp(420px,68vw,540px)!important}
 }
+
+/* Defer rendering of static, below-the-fold content without hiding it.
+   Hero, plans, sticky checkout and animated carousels are intentionally excluded. */
+@supports (content-visibility:auto) {
+  .cacha-page > section.how,
+  .cacha-page > section.risk,
+  .cacha-page > section.faq,
+  .cacha-page > section.bonus-luxe {
+    content-visibility:auto;
+    contain-intrinsic-size:auto 780px;
+  }
+}
