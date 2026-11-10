@@ -2447,3 +2447,12 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
     contain-intrinsic-size:auto 780px;
   }
 }
+
+/* Carousel recovery: keep every track moving without depending on JS visibility flags.
+   Infinite tracks already contain two copies of their slides. */
+@media (prefers-reduced-motion: no-preference) {
+  .cacha-page.cacha-page .marquee .marquee-track,
+  .cacha-page.cacha-page .testimonial-carousel .testimonial-track {
+    animation-play-state: running !important;
+  }
+}
