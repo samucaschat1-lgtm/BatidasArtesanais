@@ -2465,3 +2465,18 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 .cacha-page.cacha-page .how .steps p{font-size:16px;line-height:1.5;margin:0}
 @media(max-width:650px){.cacha-page.cacha-page .how .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cacha-page.cacha-page .how .steps article{padding:16px 12px}.cacha-page.cacha-page .how .steps .step-photo{width:112px;height:112px;border-radius:20px}.cacha-page.cacha-page .how .steps h3{font-size:16px}.cacha-page.cacha-page .how .steps p{font-size:14px}}
 @media(max-width:380px){.cacha-page.cacha-page .how .steps{grid-template-columns:1fr}.cacha-page.cacha-page .how .steps .step-photo{width:150px;height:150px}}
+
+/* Final layout fix: override legacy 5-column and 6-track placement rules. */
+@media (min-width:681px) {
+  .cacha-page.cacha-page section.how .steps {grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:100%!important;margin-inline:auto!important;}
+  .cacha-page.cacha-page section.how .steps > article,
+  .cacha-page.cacha-page section.how .steps > article:nth-child(4),
+  .cacha-page.cacha-page section.how .steps > article:nth-child(5) {grid-column:auto!important;grid-row:auto!important;}
+}
+@media (min-width:381px) and (max-width:680px) {
+  .cacha-page.cacha-page section.how .steps {grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:100%!important;}
+  .cacha-page.cacha-page section.how .steps > article {grid-column:auto!important;grid-row:auto!important;}
+}
+@media (max-width:380px) {
+  .cacha-page.cacha-page section.how .steps {grid-template-columns:minmax(0,1fr)!important;}
+}
