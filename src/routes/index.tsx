@@ -128,7 +128,7 @@ function Index() {
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$19,90</span></Dialog.Title>
             <Dialog.Description className="upgrade-description">Por mais R$9,90 em relação ao Básico, receba as +300 receitas, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
-              <OptimizedImage sizes="145px" src={IMG+"premium-800.webp"} width="800" height="800" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
+              <OptimizedImage sizes="145px" src="/Biblioteca de Cachaças Artesanais.webp" width="1254" height="1254" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
               <div className="upgrade-summary"><strong>+300 receitas<br />200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
             </div>
             <ul className="upgrade-benefits">
