@@ -11,18 +11,15 @@ const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL8
 export const Route = createFileRoute("/")({
   head: () => ({
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
-      { rel: "preconnect", href: "https://ggcheckout.app", crossOrigin: "anonymous" },
+      { rel: "preconnect", href: "https://ggcheckout.app" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
       { rel: "preload", as: "image", type: "image/webp", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
     ],
     meta: [
-      { title: "+300 Batidas de Cachaça Artesanal" },
-      { name: "description", content: "Mais de 300 receitas de batidas de cachaça artesanal. Básico com 80 videoaulas; Premium com 200 videoaulas e cinco bônus exclusivos." },
-      { property: "og:title", content: "+300 Batidas de Cachaça Artesanal" },
-      { property: "og:description", content: "Para começar a produzir na sua própria casa." },
+      { title: "+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores" },
+      { name: "description", content: "Mais de 300 receitas de cachaças artesanais, batidas cremosas e licores para preparar em casa. Básico com 80 videoaulas; Premium com 200 videoaulas e cinco bônus exclusivos." },
+      { property: "og:title", content: "+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores" },
+      { property: "og:description", content: "Aprenda a preparar cachaças com frutas, batidas cremosas e licores em casa com receitas e videoaulas." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -126,7 +123,7 @@ function Index() {
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$17,90</span></Dialog.Title>
-            <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +300 receitas, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
+            <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +300 receitas de cachaças artesanais, batidas cremosas e licores, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
               <OptimizedImage sizes="145px" src="/Biblioteca de Cachaças Artesanais.webp" width="1254" height="1254" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
               <div className="upgrade-summary"><strong>+300 receitas<br />200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
@@ -145,15 +142,15 @@ function Index() {
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
-        <h1><em>+300 Receitas de Batidas de Cachaça Artesanal</em> <span>para preparar em casa</span></h1>
-        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src="/Mockup Rústico da Biblioteca de Cachaças.webp" width="1254" height="1254" fetchPriority="high" decoding="async" alt="Kit +300 Batidas de Cachaças Artesanais" />
+        <h1><em>+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores</em> <span>para preparar em casa</span></h1>
+        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src="/Mockup Rústico da Biblioteca de Cachaças.webp" width="1254" height="1254" fetchPriority="high" decoding="async" alt="Capa da biblioteca digital de receitas artesanais" />
         <p className="lead"><strong>+300 receitas prontas para imprimir ou consultar no celular.</strong> No Premium, você ainda recebe <strong>200 videoaulas para acompanhar cada passo do preparo</strong> e <strong>5 bônus exclusivos</strong>.</p>
         <ul className="checks">
-          <li>Batidas de cachaça com frutas e sabores variados</li><li>Receitas artesanais para preparar e servir em casa</li><li>Drinks, licores e combinações com cachaça</li><li>Material digital para consultar no celular ou imprimir</li>
+          <li>Cachaças artesanais com frutas e especiarias</li><li>Batidas cremosas de coco, morango e maracujá</li><li>Licores artesanais, como o de laranja com especiarias</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
         
           <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
-          <p className="social-proof">Das batidas tradicionais às combinações com frutas: descubra receitas para preparar em casa e compartilhar nos churrascos e encontros com amigos.</p>
+          <p className="social-proof">Sirva uma cachaça de frutas no churrasco, prepare uma batida de coco para os amigos ou prepare um licor para servir depois do almoço.</p>
           <div className="micro trust-micro">
             <span>📱 Digital no celular</span>
             <span>🍓 Receitas variadas</span>
@@ -162,23 +159,23 @@ function Index() {
       </section>
 
       <section className="dark-section preview" id="batidas">
-        <div className="section-kicker">+300 BATIDAS NO MATERIAL COMPLETO</div>
-        <h2>Tradição e sabores para inspirar suas batidas:</h2>
-        <a className="text-link" href="#oferta">Ver batidas completas ↓</a>
+        <div className="section-kicker">POR DENTRO DA BIBLIOTECA</div>
+        <h2>Comece pelas cachaças artesanais com frutas</h2>
+        <a className="text-link" href="#oferta">Ver os planos</a>
         <div className="marquee carousel-cachacas"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["carrossel-novo-1.webp","carrossel-novo-2.webp","carrossel-novo-3.webp","carrossel-novo-4.webp","carrossel-novo-5.webp","carrossel-novo-6.webp","carrossel-novo-7.webp"].map((photo,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 190px, 260px" src={IMG+photo} alt={"Cachaça artesanal — foto "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><OptimizedImage key={"p"+set+i} sizes="(max-width: 520px) 210px, 280px" src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS +300 BATIDAS POR R$10,00</a>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS +300 RECEITAS POR R$10,00</a>
       </section>
 
       <section className="how section">
-        <div className="section-kicker">SABORES COM CACHAÇA</div><h2>Receitas para todos os gostos</h2>
+        <div className="section-kicker">O QUE VOCÊ VAI PREPARAR</div><h2>Cachaças artesanais, batidas cremosas e licores</h2>
         <div className="steps">
           {[
             ["Poção Tropical de Maracujá Artesanal-1.webp","Cachaças com frutas","Combinações com kiwi, morango, maracujá e outras frutas."],
             ["Bebida Rústica de Kiwi Fresco-2.webp","Batidas cremosas","Cachaça com coco, frutas e combinações cheias de cremosidade."],
-            ["Caipirinha Tropical com Limão e Hortelã-3.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
             ["Licor de laranja com especiarias rústicas-4.webp","Licores com cachaça","Sabores doces e artesanais para servir em diferentes ocasiões."],
+            ["Caipirinha Tropical com Limão e Hortelã-3.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
             ["Garrafa de Infusão Frutada com Especiarias-5.webp","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."],
             ["Refresco Tropical Festivo com Maracujá-6.webp","Drinks diferentes","Receitas criativas com cachaça para surpreender em cada ocasião."]
           ].map(([photo,title,text])=><article key={title}><img className="step-photo" src={"/"+encodeURIComponent(photo)} alt={title} width="320" height="320" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
@@ -207,7 +204,7 @@ function Index() {
       <section className="testimonials section">
         <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
         <h2>Veja o que dizem sobre o material:</h2>
-        <p>Confira os relatos sobre as batidas de cachaças artesanais.</p>
+        <p>Confira os relatos de quem já recebeu a biblioteca de receitas.</p>
         <div className="testimonial-carousel">
           <div className="testimonial-track">
             {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
@@ -222,7 +219,7 @@ function Index() {
         <div className="bonus-luxe__wrap">
           <header className="bonus-luxe__header">
             <div className="bonus-luxe__eyebrow"><span aria-hidden="true">✦</span> EXCLUSIVO DO PLANO PREMIUM <span aria-hidden="true">✦</span></div>
-            <h2 id="bonus-luxe-title">5 bônus para aproveitar ainda mais suas batidas</h2>
+            <h2 id="bonus-luxe-title">5 bônus para preparar, conservar e servir suas bebidas</h2>
             <p>Mais ideias, cuidados e técnicas para preparar tudo em casa.</p>
           </header>
           <div className="bonus-luxe__grid">
@@ -252,18 +249,18 @@ function Index() {
       <section className="offer section offer-plans-refresh" id="oferta">
         <div className="section-kicker">ESCOLHA SUA VERSÃO</div>
         <h2>Escolha o plano que combina com você</h2>
-        <p className="offer-intro">Os dois planos incluem mais de 300 receitas de batidas de cachaça para consultar no celular ou imprimir. Escolha o que prefere.</p>
+        <p className="offer-intro">Os dois planos incluem a mesma coleção de cachaças artesanais, batidas cremosas e licores. Escolha quantas videoaulas quer acompanhar.</p>
         <div className="plans">
           <article className="plan featured" id="premium" aria-label="Plano Premium por R$24,90">
             <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
             <div className="hero-visual premium-plan-art">
-              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.webp" alt="Kit Premium de batidas de cachaça com receitas e cinco bônus" loading="lazy" decoding="async"/>
+              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.webp" alt="Kit Premium de receitas artesanais com cinco bônus" loading="lazy" decoding="async"/>
             </div>
             <h3>PLANO PREMIUM</h3>
             <p className="plan-subtitle">+300 receitas, 200 videoaulas e 5 bônus exclusivos</p>
             <div className="plan-premium-benefit">🎁 5 BÔNUS EXCLUSIVOS INCLUSOS</div>
             <ul className="checks">
-              <li><strong>Mais de 300 receitas</strong> para acessar no celular ou imprimir</li>
+              <li><strong>Mais de 300 receitas</strong> de cachaças artesanais, batidas cremosas e licores</li>
               <li><strong>200 videoaulas</strong> passo a passo — 120 aulas a mais que o Básico</li>
               <li><strong>5 bônus exclusivos:</strong> higiene e conservação, precificação, drinks, madeiras e harmonização. <a className="plan-bonus-link" href="#bonus-premium">Ver todos os bônus</a></li>
               <li>Todo o conteúdo do Plano Básico</li>
@@ -278,12 +275,12 @@ function Index() {
             <ul className="checks">
               <li><strong>Mais de 300 receitas</strong> com ingredientes e modo de preparo</li>
               <li><strong>80 videoaulas</strong> passo a passo</li>
-              <li>Batidas, infusões e combinações com cachaça</li>
+              <li>Cachaças artesanais, batidas cremosas e licores</li>
               <li>Receitas para acessar no celular ou imprimir</li>
               <li>Material 100% digital</li>
             </ul>
             <div className="price">R$10,00</div>
-            <a className="cta plan-choice-cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO O BÁSICO POR R$10</a>
+            <a className="cta plan-choice-cta" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>🥃 QUERO O BÁSICO POR R$10</a>
           </article>
         </div>
       </section>
@@ -292,10 +289,10 @@ function Index() {
 
 
       <FAQ />
-      <section className="final-cta"><h2>Leve a tradição e os sabores do Brasil para suas próprias batidas.</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +300 BATIDAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
-      <footer>© 2026 — +300 Batidas de Cachaças Artesanais<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
+      <section className="final-cta"><h2>Qual vai ser a primeira receita na sua casa?</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +300 RECEITAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <footer>© 2026 — Receitas de Cachaças Artesanais, Batidas Cremosas e Licores<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o Kit +300 Batidas por R$10,00">
+      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout} aria-label="Comprar o kit com +300 receitas por R$10,00">
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
@@ -306,7 +303,7 @@ function Index() {
 function FAQ() {
   const items = [
     ["Preciso ter experiência para acompanhar?","Não. As receitas e as videoaulas passo a passo ajudam você a acompanhar o preparo, mesmo começando do zero."],
-    ["Quais sabores vou encontrar?","Você encontrará combinações variadas, infusões com frutas, licores, drinks e outras sugestões."],
+    ["Quais sabores vou encontrar?","Nos dois planos você encontra cachaças artesanais com frutas, batidas cremosas como as de coco e maracujá e licores como o de laranja com especiarias."],
     ["Qual a diferença entre Básico e Premium?","O Básico de R$10 inclui mais de 300 receitas e 80 videoaulas passo a passo. O Premium de R$24,90 inclui as mesmas receitas, 200 videoaulas no total e cinco bônus exclusivos. Ambos são digitais e têm pagamento único."],
     ["Vou receber garrafas ou um livro físico?","Não. O produto é 100% digital."],
     ["Como recebo o material?","Após a confirmação da compra, o acesso ao material é disponibilizado digitalmente."],
