@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { getTrackedCheckoutUrl } from "../lib/checkout-tracking";
 
 const IMG = "/assets/optimized-v1/";
+const PREMIUM_ART = IMG + "premium-800.webp";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/5SfdPOXyzhseBblYFSS4";
 const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL85";
 
@@ -103,14 +104,17 @@ function Index() {
   }, []);
 
   function offerPremium(event: MouseEvent<HTMLAnchorElement>) {
-    prepareCheckout(event);
-    if (!CHECKOUT_PREMIUM_UPGRADE || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      prepareCheckout(event);
+      return;
+    }
     event.preventDefault();
     // Capture the click before checkout pixels intercept it at the link.
     // Only the final checkout choice should be tracked as InitiateCheckout.
     event.stopPropagation();
-    setBasicCheckout(event.currentTarget.href);
-    setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE, event.currentTarget.href));
+    const checkout = event.currentTarget.href;
+    setBasicCheckout(checkout);
+    setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE, checkout));
     setUpgradeOpen(true);
   }
 
@@ -118,14 +122,14 @@ function Index() {
     <main className="cacha-page">
       <Dialog.Root open={upgradeOpen} onOpenChange={setUpgradeOpen}>
         <Dialog.Portal>
-          <Dialog.Overlay className="upgrade-overlay" />
+          <Dialog.Overlay className="upgrade-overlay" style={{ backdropFilter: "none" }} />
           <Dialog.Content className="upgrade-modal">
             <Dialog.Close className="upgrade-close" aria-label="Fechar oferta">×</Dialog.Close>
             <div className="upgrade-kicker">✦ UMA OPÇÃO MAIS COMPLETA</div>
             <Dialog.Title className="upgrade-title">Leve o Premium por <span>apenas R$17,90</span></Dialog.Title>
             <Dialog.Description className="upgrade-description">Por mais R$7,90 em relação ao Básico, receba as +300 receitas de cachaças artesanais, batidas cremosas e licores, 200 videoaulas passo a passo — 120 aulas a mais que o Básico — e cinco bônus exclusivos.</Dialog.Description>
             <div className="upgrade-package">
-              <OptimizedImage sizes="145px" src="/Biblioteca de Cachaças Artesanais.webp" width="1254" height="1254" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
+              <OptimizedImage sizes="145px" src={PREMIUM_ART} loading="eager" alt="Kit digital Premium com mais de 300 receitas, 200 videoaulas e cinco bônus" />
               <div className="upgrade-summary"><strong>+300 receitas<br />200 videoaulas<br />+ 5 bônus exclusivos</strong><span>Material 100% digital</span></div>
             </div>
             <ul className="upgrade-benefits">
@@ -254,7 +258,7 @@ function Index() {
           <article className="plan featured" id="premium" aria-label="Plano Premium por R$24,90">
             <div className="badge">⭐ MAIS VANTAJOSO • PREMIUM COMPLETO</div>
             <div className="hero-visual premium-plan-art">
-              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" width="1254" height="1254" src="/Biblioteca de Cachaças Artesanais.webp" alt="Kit Premium de receitas artesanais com cinco bônus" loading="lazy" decoding="async"/>
+              <OptimizedImage className="premium-plan-art__image" sizes="(max-width: 520px) calc(100vw - 72px), 500px" src={PREMIUM_ART} alt="Kit Premium de receitas artesanais com cinco bônus" loading="lazy" decoding="async"/>
             </div>
             <h3>PLANO PREMIUM</h3>
             <p className="plan-subtitle">+300 receitas, 200 videoaulas e 5 bônus exclusivos</p>
