@@ -280,7 +280,7 @@ function Index() {
               <li>Material 100% digital</li>
             </ul>
             <div className="price">R$10,00</div>
-            <a className="cta plan-choice-cta" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout}>🥃 QUERO O BÁSICO POR R$10</a>
+            <a className="cta plan-choice-cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO O BÁSICO POR R$10</a>
           </article>
         </div>
       </section>
@@ -292,7 +292,7 @@ function Index() {
       <section className="final-cta"><h2>Qual vai ser a primeira receita na sua casa?</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +300 RECEITAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — Receitas de Cachaças Artesanais, Batidas Cremosas e Licores<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={prepareCheckout} onAuxClickCapture={prepareCheckout} aria-label="Comprar o kit com +300 receitas por R$10,00">
+      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o kit com +300 receitas por R$10,00">
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
