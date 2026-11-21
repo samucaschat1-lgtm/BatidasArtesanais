@@ -78,18 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "+5.000 Proyectos para Fabricar y Vender" },
+      { title: "Batidas Artesanais | Cachaças Artesanais, Batidas Cremosas e Licores" },
       {
         name: "description",
         content:
-          "Biblioteca digital con más de 5.000 proyectos de herrería para consultar, estudiar, fabricar y vender.",
+          "Mais de 300 receitas de cachaças artesanais, batidas cremosas e licores para preparar em casa.",
       },
-      { name: "author", content: "+5.000 Proyectos para Fabricar y Vender" },
-      { property: "og:title", content: "+5.000 Proyectos para Fabricar y Vender" },
+      { name: "author", content: "Batidas Artesanais | Cachaças Artesanais, Batidas Cremosas e Licores" },
+      { property: "og:title", content: "Batidas Artesanais | Cachaças Artesanais, Batidas Cremosas e Licores" },
       {
         property: "og:description",
         content:
-          "Amplía las posibilidades de tu taller con miles de proyectos y referencias de fabricación metálica.",
+          "Conheça as receitas e videoaulas para preparar suas bebidas em casa.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -122,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="es-419">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
         <script
