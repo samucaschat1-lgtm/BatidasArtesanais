@@ -2481,3 +2481,27 @@ body{background:radial-gradient(circle at 8% 4%,#fff9ef,transparent 28%),radial-
 .cacha-page.cacha-page section.how .steps > article {grid-column:auto!important;grid-row:auto!important;min-width:0!important;width:auto!important;max-width:none!important;overflow-wrap:normal;word-break:normal;}
 @media(max-width:680px){.cacha-page.cacha-page section.how .steps{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.cacha-page.cacha-page section.how .steps > article{padding:16px 12px!important}}
 @media(max-width:380px){.cacha-page.cacha-page section.how .steps{grid-template-columns:minmax(0,1fr)!important}}
+
+/* Mobile performance: defer painting below-the-fold sections without changing layout. */
+@supports (content-visibility: auto) {
+  .how, .testimonials, .bonus-luxe, .faq {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 850px;
+  }
+}
+.purchase-assurance {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #5b4938;
+  font-weight: 650;
+  text-align: center;
+  margin: 12px auto 16px;
+  max-width: 660px;
+}
+.hero .purchase-assurance { margin-top: 17px; }
+@media (max-width: 520px) {
+  .purchase-assurance { font-size: 12px; padding: 0 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .testimonial-track { animation: none !important; }
+}
