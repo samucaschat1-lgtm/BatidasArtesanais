@@ -112,7 +112,7 @@ function Index() {
     // Capture the click before checkout pixels intercept it at the link.
     // Only the final checkout choice should be tracked as InitiateCheckout.
     event.stopPropagation();
-    const checkout = getTrackedCheckoutUrl(CHECKOUT_BASIC, basicCheckout);
+    const checkout = event.currentTarget.href;
     setBasicCheckout(checkout);
     setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE, checkout));
     setUpgradeOpen(true);
@@ -153,7 +153,7 @@ function Index() {
           <li>Cachaças artesanais com frutas e especiarias</li><li>Batidas cremosas de coco, morango e maracujá</li><li>Licores artesanais, como o de laranja com especiarias</li><li>Material digital para consultar no celular ou imprimir</li>
         </ul>
         
-          <a className="cta" href="#oferta">🥃 ESCOLHER MEU PLANO</a>
+          <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
           <p className="social-proof">Sirva uma cachaça de frutas no churrasco, prepare uma batida de coco para os amigos ou prepare um licor para servir depois do almoço.</p>
           <div className="micro trust-micro">
             <span>📱 Digital no celular</span>
@@ -169,7 +169,7 @@ function Index() {
         <div className="marquee carousel-cachacas"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["carrossel-novo-1.webp","carrossel-novo-2.webp","carrossel-novo-3.webp","carrossel-novo-4.webp","carrossel-novo-5.webp","carrossel-novo-6.webp","carrossel-novo-7.webp"].map((photo,i)=><OptimizedImage key={"r"+set+i} sizes="(max-width: 520px) 190px, 260px" src={IMG+photo} alt={"Cachaça artesanal — foto "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
         <h2>Uma prévia do que você vai receber</h2>
         <div className="marquee marquee-reverse preview-large"><div className="marquee-track">{[...Array(2)].flatMap((_,set)=>["previa-set23-6-800.webp","previa-set23-8-800.webp","previa-set23-10-800.webp","previa-set23-3-800.webp","previa-set23-5-800.webp","previa-set23-7-800.webp"].map((x,i)=><OptimizedImage key={"p"+set+i} sizes="(max-width: 520px) 210px, 280px" src={IMG+x} alt={"Prévia "+(i+1)} loading="lazy" decoding="async" />))}</div></div>
-        <a className="cta" href="#oferta">VER PLANOS DAS +300 RECEITAS</a>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>QUERO AS +300 RECEITAS POR R$10,00</a>
       </section>
 
       <section className="how section">
@@ -201,10 +201,10 @@ function Index() {
              ] as const).map(([file, name]) => <OptimizedImage key={set + file} src={IMG + "receita-frutas-" + file + ".webp"} alt={set === 0 ? "Receita de cachaça de " + name : ""} aria-hidden={set === 1 ? true : undefined} sizes="(max-width: 520px) 232px, 329px" loading="lazy" decoding="async" />))}
           </div>
         </div>
-        <a className="cta" href="#oferta">🥃 ESCOLHER MEU PLANO</a>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO COMEÇAR AGORA — ACESSO IMEDIATO</a>
       </section>
 
-      <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href="#oferta">🍹 VER PLANOS</a></section>
+      <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🍹 QUERO COMEÇAR AGORA</a></section>
       <section className="testimonials section">
         <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
         <h2>Veja o que dizem sobre o material:</h2>
@@ -216,7 +216,7 @@ function Index() {
             </article>)}
           </div>
         </div>
-        <a className="cta" href="#oferta">👉 VER PLANOS E RECEBER ACESSO</a>
+        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
       </section>
 
       <section className="bonus dark-section bonus-luxe" id="bonus-premium" aria-labelledby="bonus-luxe-title">
@@ -245,7 +245,7 @@ function Index() {
               <span className="bonus-luxe__gift" aria-hidden="true">🎁</span>
               <div><strong>Os 5 bônus já estão no Premium</strong><span>Conteúdo extra para deixar seu kit mais completo.</span></div>
             </div>
-            <a className="cta bonus-luxe__cta" href="#oferta">🥃 VER PLANOS DISPONÍVEIS</a>
+            <a className="cta bonus-luxe__cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSAR AGORA</a>
           </div>
         </div>
       </section>
@@ -293,11 +293,11 @@ function Index() {
 
 
       <FAQ />
-      <section className="final-cta"><h2>Qual vai ser a primeira receita na sua casa?</h2><a className="cta" href="#oferta">🥃 VER PLANOS E RECEBER ACESSO</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
+      <section className="final-cta"><h2>Qual vai ser a primeira receita na sua casa?</h2><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🥃 QUERO ACESSO ÀS +300 RECEITAS</a><small className="cta-note">Compra segura • Pix ou cartão em até 5x</small></section>
       <footer>© 2026 — Receitas de Cachaças Artesanais, Batidas Cremosas e Licores<br/><small>Material digital educacional destinado a maiores de 18 anos. Aprecie com moderação.</small></footer>
 
-      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Ver planos com mais de 300 receitas a partir de R$10,00">
-        <span className="fixed-buy-label">🥃 VER PLANOS A PARTIR DE R$10</span>
+      <a className="fixed-buy-bar" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout} aria-label="Comprar o kit com +300 receitas por R$10,00">
+        <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
     </main>
