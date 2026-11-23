@@ -77,7 +77,7 @@ function Index() {
   }
 
   useEffect(() => {
-    const carousels = Array.from(document.querySelectorAll<HTMLElement>(".marquee, .testimonial-carousel"));
+    const carousels = Array.from(document.querySelectorAll<HTMLElement>(".marquee"));
     const visible = new Set<HTMLElement>();
     const update = () => carousels.forEach(element => {
       const active = String(visible.has(element) && !document.hidden);
@@ -207,19 +207,6 @@ function Index() {
       </section>
 
       <section className="risk section"><div className="section-kicker">SIMPLES DE ACESSAR E DE PREPARAR</div><h2>Assista, escolha a receita e prepare do seu jeito</h2><p>Use o celular para consultar as receitas e videoaulas ou imprima suas favoritas para acompanhar ingredientes e preparo na cozinha.</p><a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>🍹 QUERO COMEÇAR AGORA</a></section>
-      <section className="testimonials section">
-        <div className="section-kicker">RESULTADOS COMPARTILHADOS</div>
-        <h2>Veja o que dizem sobre o material:</h2>
-        <p>Confira os relatos de quem já recebeu a biblioteca de receitas.</p>
-        <div className="testimonial-carousel">
-          <div className="testimonial-track">
-            {[3,5,2,4,1,3,5,2,4,1].map((n,i)=><article className="quote testimonial-image" key={i}>
-              <OptimizedImage src={IMG + "depoimento-atual-" + n + "-600.webp"} alt={"Depoimento " + n + " sobre as batidas de cachaças artesanais"} loading="lazy" decoding="async" />
-            </article>)}
-          </div>
-        </div>
-        <a className="cta" href={basicCheckout} onClickCapture={offerPremium} onAuxClickCapture={prepareCheckout}>👉 QUERO RECEBER MEU ACESSO AGORA</a>
-      </section>
 
       <section className="bonus dark-section bonus-luxe" id="bonus-premium" aria-labelledby="bonus-luxe-title">
         <div className="bonus-luxe__wrap">
