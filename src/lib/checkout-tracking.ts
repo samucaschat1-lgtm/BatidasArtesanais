@@ -22,7 +22,9 @@ export function captureCheckoutAttribution() {
   if (typeof window === "undefined") return new URLSearchParams();
   const current = trackingParameters(window.location.search);
   if (current.size) {
-    sessionAttribution = current.toString();
+    const serialized = current.toString();
+    if (serialized === sessionAttribution) return current;
+    sessionAttribution = serialized;
     try { window.sessionStorage.setItem(STORAGE_KEY, sessionAttribution); } catch { /* Storage may be disabled. */ }
     return current;
   }

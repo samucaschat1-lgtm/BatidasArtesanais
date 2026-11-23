@@ -1,3 +1,4 @@
+import { responsiveSource } from "../lib/responsive-source";
 import { memo, type ImgHTMLAttributes } from "react";
 import dimensions from "../lib/image-dimensions";
 
@@ -14,7 +15,7 @@ export const OptimizedImage = memo(function OptimizedImage({ src, sizes = "(max-
   const srcSet = mockup
     ? [320, 480, 640, 800].map(width => `${ASSETS}${mockup}-${width}.avif ${width}w`).join(", ")
     : asset?.srcSet;
-  if (!srcSet) return <img src={src} loading={loading} decoding="async" {...props} />;
+  if (!srcSet) return <img src={src} srcSet={responsiveSource(src)} sizes={sizes} loading={loading} decoding="async" {...props} />;
   return (
     <picture style={{ display: "contents" }}>
       <source type="image/avif" srcSet={srcSet} sizes={sizes} />

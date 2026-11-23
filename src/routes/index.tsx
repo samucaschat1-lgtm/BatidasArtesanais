@@ -1,3 +1,4 @@
+import { responsiveSource } from "../lib/responsive-source";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type MouseEvent } from "react";
 import { OptimizedImage } from "../components/optimized-image";
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://ggcheckout.app" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
-      { rel: "preload", as: "image", type: "image/webp", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
+      { rel: "preload", as: "image", type: "image/webp", imageSrcSet: responsiveSource("/Mockup Rústico da Biblioteca de Cachaças.webp"), imageSizes: "(max-width: 520px) 90vw, 560px", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
     ],
     meta: [
       { title: "+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores" },
@@ -184,7 +185,7 @@ function Index() {
             ["Caipirinha Tropical com Limão e Hortelã-3.webp","Caipirinhas de cachaça","Do limão tradicional às versões com frutas variadas."],
             ["Garrafa de Infusão Frutada com Especiarias-5.webp","Infusões artesanais","Frutas e especiarias para explorar novos aromas e sabores."],
             ["Refresco Tropical Festivo com Maracujá-6.webp","Drinks diferentes","Receitas criativas com cachaça para surpreender em cada ocasião."]
-          ].map(([photo,title,text])=><article key={title}><img className="step-photo" src={"/"+encodeURIComponent(photo)} alt={title} width="320" height="320" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
+          ].map(([photo,title,text])=><article key={title}><OptimizedImage sizes="150px" className="step-photo" src={"/"+encodeURIComponent(photo)} alt={title} width="320" height="320" loading="lazy" decoding="async" /><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
 
