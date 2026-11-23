@@ -5,7 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { getTrackedCheckoutUrl } from "../lib/checkout-tracking";
 
 const IMG = "/assets/optimized-v1/";
-const PREMIUM_ART = IMG + "premium-800.webp";
+const PREMIUM_ART = "/Biblioteca de Cachaças Artesanais.webp";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/5SfdPOXyzhseBblYFSS4";
 const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL85";
 
