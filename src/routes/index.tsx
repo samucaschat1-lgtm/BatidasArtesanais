@@ -1,11 +1,14 @@
 import { responsiveSource } from "../lib/responsive-source";
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type MouseEvent } from "react";
+import { memo, useCallback, useEffect, useRef, useState, type MouseEvent } from "react";
 import { OptimizedImage } from "../components/optimized-image";
 import * as Dialog from "@radix-ui/react-dialog";
 import { getTrackedCheckoutUrl } from "../lib/checkout-tracking";
 
 const IMG = "/assets/optimized-v1/";
+const MOBILE_HERO_SOURCES = [400, 720, 960]
+  .map(width => `/assets/fast/hero-cachacas-${width}.avif ${width}w`).join(", ");
+const MOBILE_HERO_MEDIA = "(max-width: 520px)";
 const PREMIUM_ART = "/Biblioteca de Cachaças Artesanais.webp";
 const CHECKOUT_BASIC = "https://ggcheckout.app/checkout/v5/5SfdPOXyzhseBblYFSS4";
 const CHECKOUT_PREMIUM = "https://ggcheckout.app/checkout/v5/EPvjTIozIE5MwFJWpL85";
@@ -15,7 +18,8 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://ggcheckout.app" },
       { rel: "dns-prefetch", href: "https://ggcheckout.app" },
-      { rel: "preload", as: "image", type: "image/webp", imageSrcSet: responsiveSource("/Mockup Rústico da Biblioteca de Cachaças.webp"), imageSizes: "(max-width: 520px) 90vw, 560px", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
+      { rel: "preload", as: "image", media: MOBILE_HERO_MEDIA, type: "image/avif", imageSrcSet: MOBILE_HERO_SOURCES, imageSizes: "90vw", fetchPriority: "high" },
+      { rel: "preload", as: "image", media: "(width > 520px)", type: "image/webp", imageSrcSet: responsiveSource("/Mockup Rústico da Biblioteca de Cachaças.webp"), imageSizes: "(max-width: 520px) 90vw, 560px", href: "/Mockup Rústico da Biblioteca de Cachaças.webp", fetchPriority: "high" },
     ],
     meta: [
       { title: "+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores" },
@@ -66,16 +70,29 @@ function Index() {
   const [premiumCheckout, setPremiumCheckout] = useState(CHECKOUT_PREMIUM);
   const [upgradeCheckout, setUpgradeCheckout] = useState(CHECKOUT_PREMIUM_UPGRADE);
 
-  useEffect(() => {
-    setBasicCheckout(getTrackedCheckoutUrl(CHECKOUT_BASIC));
-    setPremiumCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM));
-    setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE));
+  const preparedLinks = useRef({ search: "", urls: new Set<string>() });
+  const prepareUrl = useCallback((url: string, source?: string) => {
+    const tracked = getTrackedCheckoutUrl(url, source);
+    if (preparedLinks.current.search !== window.location.search) {
+      preparedLinks.current = { search: window.location.search, urls: new Set() };
+    }
+    preparedLinks.current.urls.add(tracked);
+    return tracked;
   }, []);
 
-  function prepareCheckout(event: MouseEvent<HTMLAnchorElement>) {
-    // Update before native checkout listeners run; retain normal link behavior.
-    event.currentTarget.href = getTrackedCheckoutUrl(event.currentTarget.href, basicCheckout);
-  }
+  useEffect(() => {
+    setBasicCheckout(prepareUrl(CHECKOUT_BASIC));
+    setPremiumCheckout(prepareUrl(CHECKOUT_PREMIUM));
+    setUpgradeCheckout(prepareUrl(CHECKOUT_PREMIUM_UPGRADE));
+  }, [prepareUrl]);
+
+  const prepareCheckout = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
+    const link = event.currentTarget;
+    const prepared = preparedLinks.current;
+    if (prepared.search === window.location.search && prepared.urls.has(link.href)) return;
+    // Attribution scripts may have decorated the anchor since the page loaded.
+    link.href = prepareUrl(link.href, basicCheckout);
+  }, [basicCheckout, prepareUrl]);
 
   useEffect(() => {
     const carousels = Array.from(document.querySelectorAll<HTMLElement>(".marquee"));
@@ -105,7 +122,7 @@ function Index() {
     };
   }, []);
 
-  function offerPremium(event: MouseEvent<HTMLAnchorElement>) {
+  const offerPremium = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
       prepareCheckout(event);
       return;
@@ -115,10 +132,11 @@ function Index() {
     // Only the final checkout choice should be tracked as InitiateCheckout.
     event.stopPropagation();
     const checkout = event.currentTarget.href;
+    if (checkout !== basicCheckout) preparedLinks.current.urls.clear();
     setBasicCheckout(checkout);
-    setUpgradeCheckout(getTrackedCheckoutUrl(CHECKOUT_PREMIUM_UPGRADE, checkout));
+    setUpgradeCheckout(prepareUrl(CHECKOUT_PREMIUM_UPGRADE, checkout));
     setUpgradeOpen(true);
-  }
+  }, [basicCheckout, prepareCheckout, prepareUrl]);
 
   return (
     <main className="cacha-page">
@@ -144,12 +162,30 @@ function Index() {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
+      <OfferContent basicCheckout={basicCheckout} premiumCheckout={premiumCheckout} offerPremium={offerPremium} prepareCheckout={prepareCheckout} />
+    </main>
+  );
+}
+
+type CheckoutClick = (event: MouseEvent<HTMLAnchorElement>) => void;
+
+const OfferContent = memo(function OfferContent({ basicCheckout, premiumCheckout, offerPremium, prepareCheckout }: {
+  basicCheckout: string;
+  premiumCheckout: string;
+  offerPremium: CheckoutClick;
+  prepareCheckout: CheckoutClick;
+}) {
+  return (
+    <>
       <TodayOffer />
 
       <section className="hero">
         <div className="eyebrow">BIBLIOTECA DE CACHAÇAS ARTESANAIS</div>
         <h1><em>+300 Receitas de Cachaças Artesanais, Batidas Cremosas e Licores</em> <span>para preparar em casa</span></h1>
-        <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src="/Mockup Rústico da Biblioteca de Cachaças.webp" width="1254" height="1254" fetchPriority="high" decoding="async" alt="Capa da biblioteca digital de receitas artesanais" />
+        <picture style={{ display: "contents" }}>
+          <source media={MOBILE_HERO_MEDIA} type="image/avif" srcSet={MOBILE_HERO_SOURCES} sizes="90vw" />
+          <OptimizedImage sizes="(max-width: 520px) 90vw, 560px" className="hero-mockup" src="/Mockup Rústico da Biblioteca de Cachaças.webp" width="1254" height="1254" fetchPriority="high" decoding="async" alt="Capa da biblioteca digital de receitas artesanais" />
+        </picture>
         <p className="lead"><strong>+300 receitas prontas para imprimir ou consultar no celular.</strong> No Premium, você ainda recebe <strong>200 videoaulas para acompanhar cada passo do preparo</strong> e <strong>5 bônus exclusivos</strong>.</p>
         <ul className="checks">
           <li>Cachaças artesanais com frutas e especiarias</li><li>Batidas cremosas de coco, morango e maracujá</li><li>Licores artesanais, como o de laranja com especiarias</li><li>Material digital para consultar no celular ou imprimir</li>
@@ -292,9 +328,9 @@ function Index() {
         <span className="fixed-buy-label">🥃 QUERO O BÁSICO — R$10</span>
         <small>Pagamento único • Pix ou cartão</small>
       </a>
-    </main>
+    </>
   );
-}
+});
 
 function FAQ() {
   const items = [
